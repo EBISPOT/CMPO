@@ -23,7 +23,6 @@ subsetdef: scalar_slim "Scalar slim"
 subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a template and require additional vetting by editors"
 subsetdef: value_slim "Value slim"
 subsetdef: virus_checked "Viral overhaul terms"
-subsetdef: http://www.ebi.ac.uk/cmpo/subset/cmpo "CMPO subset"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 ontology: http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/http://www.ebi.ac.uk/cmpo/subset/cmpo
 
