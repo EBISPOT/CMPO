@@ -7,9 +7,10 @@
     <!ENTITY obo "http://purl.obolibrary.org/obo/" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY subset "http://www.ebi.ac.uk/cmpo/subset/" >
+    <!ENTITY subset "http://purl.obolibrary.org/obo/cmpo" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY pato "http://purl.obolibrary.org/obo/pato#" >
+    <!ENTITY cmpo2 "http://purl.obolibrary.org/obo/cmpo#" >
     <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
     <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
     <!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#" >
@@ -19,15 +20,16 @@
 <rdf:RDF xmlns="&cmpo;cmpo"
      xml:base="&cmpo;cmpo"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:subset="&cmpo;subset/"
+     xmlns:subset="&obo;cmpo"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:pato="&obo;pato#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:cmpo="http://www.ebi.ac.uk/cmpo/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:cmpo2="&obo;cmpo#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#">
     <owl:Ontology rdf:about="&cmpo;cmpo.owl">
         <rdfs:label>Cellular Microscopy Phenotype Ontology</rdfs:label>
@@ -60,13 +62,18 @@
      -->
 
     <owl:AnnotationProperty rdf:about="&skos;prefLabel"/>
-    <owl:AnnotationProperty rdf:about="&oboInOwl;inSubset"/>
     <owl:AnnotationProperty rdf:about="&oboInOwl;hasScope"/>
+    <owl:AnnotationProperty rdf:about="&oboInOwl;inSubset"/>
+    <owl:AnnotationProperty rdf:about="&obo;cmpo#cmpo">
+        <rdfs:label>cmpo</rdfs:label>
+        <rdfs:comment xml:lang="en">CMPO subset</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&oboInOwl;SubsetProperty"/>
+    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="&oboInOwl;hasExactSynonym"/>
+    <owl:AnnotationProperty rdf:about="&oboInOwl;hasRelatedSynonym"/>
     <owl:AnnotationProperty rdf:about="&obo;IAO_0000115">
         <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="&oboInOwl;hasRelatedSynonym"/>
     <rdf:Description rdf:about="&obo;IAO_0000116">
         <obo:IAO_0000114 rdf:resource="&obo;IAO_0000122"/>
     </rdf:Description>
@@ -80,10 +87,6 @@
     </rdf:Description>
     <owl:AnnotationProperty rdf:about="&obo;RO_0001900"/>
     <owl:AnnotationProperty rdf:about="&oboInOwl;hasNarrowSynonym"/>
-    <owl:AnnotationProperty rdf:about="&cmpo;subset/cmpo">
-        <rdfs:comment xml:lang="en">CMPO subset</rdfs:comment>
-        <rdfs:subPropertyOf rdf:resource="&oboInOwl;SubsetProperty"/>
-    </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="&oboInOwl;hasBroadSynonym"/>
     <owl:AnnotationProperty rdf:about="&oboInOwl;id"/>
     
@@ -1710,7 +1713,7 @@
         <oboInOwl:id>CMPO:0000002</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a population of cells</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1721,7 +1724,7 @@
         <rdfs:label xml:lang="en">phenotype</rdfs:label>
         <obo:IAO_0000115>An observation where the phenotype is described in terms of a biological process, a cell population, a whole cell or a subcellular structure that bears a particular quality.</obo:IAO_0000115>
         <skos:prefLabel>phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1755,7 +1758,7 @@
         <oboInOwl:id>CMPO:0000005</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the whole cell relating to the cell&#39;s shape, size or structure</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1765,6 +1768,7 @@
     <owl:Class rdf:about="&cmpo;CMPO_0000006">
         <rdfs:label xml:lang="en">cell population</rdfs:label>
         <oboInOwl:id>CMPO_0000006</oboInOwl:id>
+        <obo:IAO_0000115>A group of cells in particular stages of the cell cycle</obo:IAO_0000115>
     </owl:Class>
     
 
@@ -1799,7 +1803,7 @@
         <oboInOwl:id>CMPO:0000007</oboInOwl:id>
         <oboInOwl:hasExactSynonym>cell physiology phenotype</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">cell process phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1843,7 +1847,7 @@
         <oboInOwl:id>CMPO:0000008</oboInOwl:id>
         <obo:IAO_0000115>An increase or decrease in the number of specified components within a cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell component number</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1877,7 +1881,7 @@
         <oboInOwl:id>CMPO:0000010</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to the components size</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell component size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1911,7 +1915,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to the components shape</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000011</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell component shape</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1945,7 +1949,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to the components structure</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000012</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell component structure</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -1979,7 +1983,7 @@
         <oboInOwl:id>CMPO:0000013</oboInOwl:id>
         <obo:IAO_0000115>A phenotype relating to the ability of a cell survive or to develop normally</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell viability</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2013,7 +2017,7 @@
         <oboInOwl:id>CMPO:0000014</oboInOwl:id>
         <obo:IAO_0000115>A cell phenotype where the cell is viable</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">viable cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2047,7 +2051,7 @@
         <oboInOwl:id>CMPO:0000015</oboInOwl:id>
         <obo:IAO_0000115>A cell phenotype where the cell is not viable</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">inviable cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2081,7 +2085,7 @@
         <oboInOwl:id>CMPO:0000016</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the whole cell relating to the cell&#39;s nucleation</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell nucleation</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2114,7 +2118,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000016"/>
         <oboInOwl:id>CMPO:0000017</oboInOwl:id>
         <skos:prefLabel xml:lang="en">mononuclear cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2149,7 +2153,7 @@
         <obo:IAO_0000115>A phenotype observation where a cell is multinucleate, e.g. have more than one nucleus per cell</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>polynuclear cell</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">multinucleated cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2189,7 +2193,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of any constituent part of the cytoskeleton, a cellular scaffolding or skeleton that maintains cell shape, enables some cell motion (using structures such as flagella and cilia), and plays important roles in both intra-cellular transport (e.g. the movement of vesicles and organelles) and cellular division. Includes constituent parts of intermediate filaments, microfilaments, microtubules, and the microtrabecular lattice.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000020</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cytoskeletal phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2226,7 +2230,7 @@
         <oboInOwl:id>CMPO:0000021</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of any constituent part of the endoplasmic reticulum, the irregular network of unit membranes, visible only by electron microscopy, that occurs in the cytoplasm of many eukaryotic cells. The membranes form a complex meshwork of tubular channels, which are often expanded into slitlike cavities called cisternae.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">endoplasmic reticulum phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2263,7 +2267,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of any constituent part of the Golgi apparatus, a compound membranous cytoplasmic organelle of eukaryotic cells, consisting of flattened, ribosome-free vesicles arranged in a more or less regular stack</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000022</oboInOwl:id>
         <skos:prefLabel xml:lang="en">golgi phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2301,7 +2305,7 @@
         <oboInOwl:hasExactSynonym>mitochondrial part phenotype</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000023</oboInOwl:id>
         <skos:prefLabel xml:lang="en">mitochondrion phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2338,7 +2342,7 @@
         <oboInOwl:id>CMPO:0000024</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of any constituent part of the nucleus, a membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">nuclear phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2372,7 +2376,7 @@
         <oboInOwl:id>CMPO:0000026</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular organelle relating to the organelle&#39;s shape</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">organelle shape</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2429,7 +2433,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:hasExactSynonym>nuclear shape</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the nucleus relating to the ratios of distances between its features (points, edges, surfaces and also holes etc).</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2463,7 +2467,7 @@
         <obo:IAO_0000115>A phenotype where the attachment of a cell, either to another cell or to an underlying substrate such as the extracellular matrix, via cell adhesion molecules is observed</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000028</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell adhesion phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2500,7 +2504,7 @@
         <oboInOwl:id>CMPO:0000029</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell cycle phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2535,7 +2539,7 @@
         <obo:IAO_0000115>A phenotype where the cell death process process is observed</obo:IAO_0000115>
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">cell death phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2569,7 +2573,7 @@
         <obo:IAO_0000115>A phenotype observation of a process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a membrane. A membrane is a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000032</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell membrane organisation phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2604,7 +2608,7 @@
         <obo:IAO_0000115>A phenotype of a cell involving its translation from one location to another</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000033</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell migration phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2638,7 +2642,7 @@
         <obo:IAO_0000115>A phenotype observation of the process in which a cell irreversibly increases in size over time by accretion and biosynthetic production of matter similar to that already present.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000035</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell growth phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2672,7 +2676,7 @@
         <obo:IAO_0000115>A phenotype observation of the process in which genetic material, in the form of chromosomes, is organized into specific structures and then physically separated and apportioned to two or more sets. In eukaryotes, chromosome segregation begins with the alignment of chromosomes at the metaphase plate, includes chromosome separation, and ends when chromosomes have completed movement to the spindle poles.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000036</oboInOwl:id>
         <skos:prefLabel xml:lang="en">chromosome segregation phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2709,7 +2713,7 @@
         <oboInOwl:id>CMPO:0000037</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">metabolic process phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2743,7 +2747,7 @@
         <obo:IAO_0000115>A phenotype observations where any process in which an organelle is transported to, and/or maintained in, a specific location.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000038</oboInOwl:id>
         <skos:prefLabel xml:lang="en">organelle localization phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2777,7 +2781,7 @@
         <obo:IAO_0000115>A phenotype observation where a process modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000039</oboInOwl:id>
         <skos:prefLabel xml:lang="en">regulation of metabolic process phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2811,7 +2815,7 @@
         <obo:IAO_0000115>A phenotype observation of a process that modulates the frequency, rate or extent of signal transduction.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000040</oboInOwl:id>
         <skos:prefLabel xml:lang="en">regulation of signal transduction phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2845,7 +2849,7 @@
         <obo:IAO_0000115>A phenotype observation of the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000041</oboInOwl:id>
         <skos:prefLabel xml:lang="en">transport phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2889,7 +2893,7 @@
         <obo:IAO_0000115>An increased number of specified cellular components relative to normal</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000042</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cell component number</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2933,7 +2937,7 @@
         <oboInOwl:id>CMPO:0000043</oboInOwl:id>
         <obo:IAO_0000115>A decrease in number of specified cellular components relative to normal</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased cell component number</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -2968,7 +2972,7 @@
         <obo:IAO_0000115>A phenotype observation where the cleavage of DNA during apoptosis, which usually occurs in two stages: cleavage into fragments of about 50 kbp followed by cleavage between nucleosomes to yield 200 bp fragments.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000047</oboInOwl:id>
         <skos:prefLabel xml:lang="en">apoptotic DNA fragmentation</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3004,7 +3008,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell is apoptotic</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000048</oboInOwl:id>
         <skos:prefLabel xml:lang="en">apoptotic cell shape</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3047,7 +3051,7 @@
         <oboInOwl:id>CMPO:0000049</oboInOwl:id>
         <oboInOwl:hasExactSynonym>aggregated cells</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>clustered cells</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3086,7 +3090,7 @@
         <obo:IAO_0000115>Number of cells in a population phenotype</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000050</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell number in population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3125,7 +3129,7 @@
         <obo:IAO_0000115>The population has an increased number of cells with respect to normal</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000051</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cell numbers</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3168,7 +3172,7 @@
         <skos:prefLabel xml:lang="en">decreased cell numbers</skos:prefLabel>
         <oboInOwl:hasExactSynonym>decreased cells</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>less cells</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3216,7 +3220,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000053</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of cells in S phase mitosis</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3265,7 +3269,7 @@
         <obo:IAO_0000115>A population of cells where a specifcied biological process is occuring or is observed. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000054</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell population process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3313,7 +3317,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000055</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased cell numbers in G1</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3362,7 +3366,7 @@
         <obo:IAO_0000115>increased number of cells in G2M</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>increased mitotic index</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000056</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3411,7 +3415,7 @@
         <oboInOwl:id>CMPO:0000057</oboInOwl:id>
         <obo:IAO_0000115>decreased number of cells in G1 phase</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>less cells in G1</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3461,7 +3465,7 @@
         <oboInOwl:hasExactSynonym>decreased mitotic index</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000058</oboInOwl:id>
         <obo:IAO_0000115>decreased number of cells in G2M phase</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3511,7 +3515,7 @@
         <oboInOwl:id>CMPO:0000059</oboInOwl:id>
         <oboInOwl:hasExactSynonym>decreased number of cells in S</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>less cells in S</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3556,7 +3560,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of focal adhesions where the components number has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000063</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3591,7 +3595,7 @@
         <oboInOwl:id>CMPO:0000064</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the focal adhesion is located in a position equidistant from the edges of the cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">centrally located focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3625,7 +3629,7 @@
         <oboInOwl:id>CMPO:0000065</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to the components position in the cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell component position</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3660,7 +3664,7 @@
         <obo:IAO_0000119>PMID:19667130</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation where the focal adhesions&#39;s position is at the edge or boundary of a related entity.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">peripheral focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3705,7 +3709,7 @@
         <oboInOwl:id>CMPO:0000067</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of filopodia</skos:prefLabel>
         <oboInOwl:hasExactSynonym>fewer filopodia</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3750,7 +3754,7 @@
         <oboInOwl:id>CMPO:0000068</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of microtubules where the components number has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased number of microtubules</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3793,7 +3797,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000069</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of dendritic branches where the components number has decreased. </obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3807,7 +3811,7 @@
         <oboInOwl:id>CMPO:0000071</oboInOwl:id>
         <oboInOwl:hasExactSynonym>cells with protrusions</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>Population of cells with protrusions</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3851,7 +3855,7 @@
         <obo:IAO_0000115>An increase in number of any cell projection relative to normal</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000072</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of cell projections</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3899,7 +3903,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000073</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of cells in population with projections</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3943,7 +3947,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of cell projections where the components number has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000074</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of cell projections</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -3991,7 +3995,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000075</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">decreased number of cells in population with projections</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4035,7 +4039,7 @@
         <oboInOwl:id>CMPO:0000076</oboInOwl:id>
         <oboInOwl:hasExactSynonym>more filopodia</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of filopodia where the components number has increased. </obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4074,7 +4078,7 @@
         <oboInOwl:id>CMPO:0000077</oboInOwl:id>
         <oboInOwl:hasBroadSynonym>bipolar cell</oboInOwl:hasBroadSynonym>
         <skos:prefLabel xml:lang="en">elongated cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4124,7 +4128,7 @@
         <obo:IAO_0000119>PMID:21893601; PMID:20531400</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000078</oboInOwl:id>
         <skos:prefLabel xml:lang="en">elongated cells in population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4168,7 +4172,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of lamellipodia where the components number has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000080</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of lamellipodia</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4212,7 +4216,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of lamellipodia where the components number has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000081</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of lamellipodia</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4280,7 +4284,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000083</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased lamellipodia cells in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4348,7 +4352,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000084</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">decreased lamellipodia cells in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4382,7 +4386,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the whole cell relating to the cell&#39;s ploidy</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000085</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell ploidy</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4416,7 +4420,7 @@
         <oboInOwl:id>CMPO:0000086</oboInOwl:id>
         <obo:IAO_0000115>A cell phenotype with more than two homologous sets of chromosomes.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">polyploid cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4450,7 +4454,7 @@
         <oboInOwl:id>CMPO:0000087</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of athe S phase of the mitotic cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">S phase mitotic phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4484,7 +4488,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of a G1 phase of the mitotic cell cycle</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000088</oboInOwl:id>
         <skos:prefLabel xml:lang="en">G1 phase mitotic phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4518,7 +4522,7 @@
         <oboInOwl:id>CMPO:0000089</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the G2/M transition of the mitotic cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">G2/M transition phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;CMPO_0000342"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4552,7 +4556,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of a cell cycle phase</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000090</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell cycle phase phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4600,7 +4604,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000091</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of polyploid cells in population</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4645,7 +4649,7 @@
         <oboInOwl:hasExactSynonym>increased focal adhesion abundance</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000092</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4679,7 +4683,7 @@
         <oboInOwl:id>CMPO:0000093</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of nucleoli where the components number has increased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased number of nucleoli</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4723,7 +4727,7 @@
         <oboInOwl:id>CMPO:0000094</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">A phenotype observation at the level of nucleoli where the components number has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased number of nucleoli</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4771,7 +4775,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000095</oboInOwl:id>
         <obo:IAO_0000115>more cells with decreased number of nucleoli</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4819,7 +4823,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000096</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of nucleoli in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4864,7 +4868,7 @@
         <oboInOwl:hasExactSynonym>more microtubules</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000097</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of microtubules</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4928,7 +4932,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the phagosomes, a membrane-bounded intracellular vesicle that arises from the ingestion of particulate material by phagocytosis.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000102</oboInOwl:id>
         <skos:prefLabel xml:lang="en">phagosomes</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4973,7 +4977,7 @@
         <obo:IAO_0000115>A phenotype observation where phagosomes are absent</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000103</oboInOwl:id>
         <skos:prefLabel xml:lang="en">phagosomes absent</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -4982,6 +4986,27 @@
 
     <owl:Class rdf:about="&cmpo;CMPO_0000104">
         <rdfs:label xml:lang="en">actin filament phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0002201"/>
@@ -5008,32 +5033,11 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>A phenotype observation at the level of the actin filaments, a filamentous structure formed of a two-stranded helical polymer of the protein actin and associated proteins. Actin filaments are a major component of the contractile apparatus of skeletal muscle and the microfilaments of the cytoskeleton of eukaryotic cells.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000104</oboInOwl:id>
         <skos:prefLabel xml:lang="en">actin filament phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5082,7 +5086,7 @@
         <oboInOwl:id>CMPO:0000105</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of actin filament</skos:prefLabel>
         <oboInOwl:hasExactSynonym>more actin</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5129,7 +5133,7 @@
         <oboInOwl:hasExactSynonym>less total actin</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>less actin</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">decreased number of actin filament</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5177,7 +5181,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000107</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of actin filament cells in population</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5226,7 +5230,7 @@
         <oboInOwl:hasExactSynonym>decreased number of actin filament cells</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000108</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">decreased number of actin filament phenotypes in population</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5264,7 +5268,7 @@
         <oboInOwl:id>CMPO:0000109</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the cytoskeleton is located in a position equidistant from the edges of the cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">centered cytoskeleton</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5302,7 +5306,7 @@
         <oboInOwl:id>CMPO:0000110</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the nucleus is located in a position equidistant from the edges of the cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">centered nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5340,7 +5344,7 @@
         <oboInOwl:id>CMPO:0000111</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the nucleus is distributed or spread over a considerable extent.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">dispersed nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5374,7 +5378,7 @@
         <oboInOwl:id>CMPO:0000112</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of nucleus consisting of blebbing of the nucleus and DNA fragmentation due to the cell undergoing a specific form of programmed cell death termed apoptosis.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">apoptopic nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5407,7 +5411,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>A phenotype observation where the nucleus is distorted in form</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000113</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5445,7 +5449,7 @@
         <obo:IAO_0000115>A phenotype observation where the nucleus&#39;s position is at the edge or boundary of a related entity.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000114</oboInOwl:id>
         <skos:prefLabel xml:lang="en">peripheral nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5483,7 +5487,7 @@
         <oboInOwl:id>CMPO:0000115</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the cytoskeleton&#39;s position is at the edge or boundary of a related entity.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">peripheral cytoskeleton</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5520,7 +5524,7 @@
         <oboInOwl:id>CMPO:0000116</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the shape is abnormal</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">abnormal cell shape</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5559,7 +5563,7 @@
         <oboInOwl:id>CMPO:0000117</oboInOwl:id>
         <obo:IAO_0000115>A lobed quality inhering in a nucleus by virtue of the nucleus being divided into or having two lobes.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">bilobed nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5594,11 +5598,11 @@
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <rdfs:comment>not spreading cell</rdfs:comment>
         <oboInOwl:id>CMPO:0000118</oboInOwl:id>
-        <skos:prefLabel xml:lang="en">round cell</skos:prefLabel>
         <oboInOwl:hasExactSynonym>spherical cell</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell is round</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>low eccentricity cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <skos:prefLabel xml:lang="en">round cell</skos:prefLabel>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5636,7 +5640,7 @@
         <oboInOwl:id>CMPO:0000119</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of the length of the focal adhesion is notably higher than the width.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>long focal adhesion</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5674,7 +5678,7 @@
         <oboInOwl:hasBroadSynonym>long nucleus</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>A phenotype observation of the length of the nucleus is notably higher than the width.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000120</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5708,7 +5712,7 @@
         <oboInOwl:id>CMPO:0000121</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell is arrow shaped, with a wide front and a sharp tail, displaying monopolar cell growth</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>triangular shaped cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5743,7 +5747,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying monopolar cell growth</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>arrow shaped cell</oboInOwl:hasBroadSynonym>
         <skos:prefLabel xml:lang="en">triangular shaped cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5779,7 +5783,7 @@
         <oboInOwl:id>CMPO:0000123</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the shape of the nucleus has every part of the surface or the circumference equidistant from the center.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">round nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5813,7 +5817,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the nuclear body, an extra-nucleolar nuclear domains usually visualized by confocal microscopy and fluorescent antibodies to specific proteins.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000125</oboInOwl:id>
         <skos:prefLabel xml:lang="en">nuclear body</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5848,7 +5852,7 @@
         <obo:IAO_0000119>PMID:22884692</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation where the nuclear body size is relatively high.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased nuclear body size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5883,7 +5887,7 @@
         <obo:IAO_0000119>PMID:22884692</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation where the nuclear body size is relatively low.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased nuclear body size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5920,11 +5924,11 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000128</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell size where a cell is larger with respect to normal/wild-type</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym xml:lang="en">big cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>large cell</oboInOwl:hasExactSynonym>
         <obo:IAO_0000119>PMID:20531400</obo:IAO_0000119>
+        <oboInOwl:hasExactSynonym xml:lang="en">big cell</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">increased cell size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5958,7 +5962,7 @@
         <oboInOwl:id>CMPO:0000129</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell size where a cell is smaller with respect to normal/wild-type</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym xml:lang="en">small cell</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -5996,7 +6000,7 @@
         <oboInOwl:id>CMPO:0000130</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the golgi where the golgi&#39;s volume has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased golgi volume</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6030,7 +6034,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of the golgi where the golgi&#39;s volume has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000131</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased golgi volume</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6068,7 +6072,7 @@
         <oboInOwl:id>CMPO:0000132</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cilium where the components length has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased cilium length</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6102,7 +6106,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of a cilium where the components length has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000133</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cilium length</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6140,7 +6144,7 @@
         <oboInOwl:id>CMPO:0000134</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the size of the focal adhesion has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased size of focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6174,7 +6178,7 @@
         <obo:IAO_0000115>A phenotype observation where the size of the focal adhesion has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000135</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased size of focal adhesion</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6214,7 +6218,7 @@
         <oboInOwl:hasExactSynonym>small focal adhesion</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where the area of the focal adhesion has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased focal adhesion area</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6250,7 +6254,7 @@
         <oboInOwl:id>CMPO:0000137</oboInOwl:id>
         <obo:IAO_0000119>pmid:19667130</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">increased focal adhesion area</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6286,7 +6290,7 @@
         <obo:IAO_0000119>pmid:19667130</obo:IAO_0000119>
         <oboInOwl:hasExactSynonym>short focal adhesion</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where the length of the focal adhesion has decreased. </obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6320,7 +6324,7 @@
         <obo:IAO_0000115>A phenotype observation where the length of the focal adhesion has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000139</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased focal adhesion length</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6359,7 +6363,7 @@
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000140</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased nucleus size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6397,7 +6401,7 @@
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">decreased nucleus size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6418,7 +6422,7 @@
         <obo:IAO_0000115>A phenotype of a cell that has both an increased nuclei size phenotypes and a  G1 phase phenotype</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000143</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased nuclei size in G1</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6440,7 +6444,7 @@
         <obo:IAO_0000115>A phenotype of a cell that has both a decreased nuclei size phenotypes and a  G1 phase phenotype</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased nuclei size in G1</skos:prefLabel>
         <oboInOwl:hasExactSynonym>small nuclei in G1</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6478,7 +6482,7 @@
         <obo:IAO_0000115>A phenotype observation where the thickness of the dendritic branches has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000145</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased thickness of dendritic branches</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6511,7 +6515,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000146</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the thickness of the dendritic branches has decreased. </obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6551,7 +6555,7 @@
         <obo:IAO_0000115>A phenotype observation where the microtublue structure is disorganised</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000147</oboInOwl:id>
         <skos:prefLabel xml:lang="en">disorganized microtubules</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6589,7 +6593,7 @@
         <obo:IAO_0000115>A phenotype observation at the level of podosomes, an actin-rich adhesion structure characterized by formation upon cell substrate contact and localization at the substrate-attached part of the cell.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000148</oboInOwl:id>
         <skos:prefLabel xml:lang="en">podosome</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6627,7 +6631,7 @@
         <oboInOwl:id>CMPO:0000149</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the cytoskeleton is symmetric, having equal proportions around a central point or axis.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">radial cytoskeleton</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6684,7 +6688,7 @@
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>Phenotype observation organised by specific named organelles.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000150</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6722,7 +6726,7 @@
         <obo:IAO_0000115>A phenotype observation where the structure of the endoplasmic reticulum is fragmented or broken.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000151</oboInOwl:id>
         <skos:prefLabel xml:lang="en">fragmented endoplasmic reticulum</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6761,7 +6765,7 @@
         <oboInOwl:id>CMPO:0000152</oboInOwl:id>
         <oboInOwl:hasExactSynonym>broken golgi phenotype</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">fragmented golgi</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6799,7 +6803,7 @@
         <obo:IAO_0000115>A phenotype observation where the structure of the mitochondria is fragmented or broken.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000153</oboInOwl:id>
         <skos:prefLabel xml:lang="en">fragmented mitochondria</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6834,7 +6838,7 @@
         <oboInOwl:id>CMPO:0000154</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the nuclear&#39;s color brightness is relatively high.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">bright nuclei</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6872,7 +6876,7 @@
         <obo:IAO_0000115>A phenotype observation where the structure of the nucleus is fragmented or broken.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000155</oboInOwl:id>
         <skos:prefLabel xml:lang="en">fragmented nucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6911,7 +6915,7 @@ Publication: http://www.ncbi.nlm.nih.gov/pubmed/20360735
 Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or small sets of chromosomes.  </rdfs:comment>
         <oboInOwl:hasRelatedSynonym>grape</oboInOwl:hasRelatedSynonym>
         <skos:prefLabel xml:lang="en">graped micronucleus</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6954,7 +6958,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>strange nuclear shape</oboInOwl:hasExactSynonym>
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation where the shape of the nucleus is abnormal</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -6975,7 +6979,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000158</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the G2/M transition of the mitotic cell cycle where the nuclei are decreased in size with respect to normal</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased nuclei size in G2/M</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7019,7 +7023,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000159</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component where the cell component is absent</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">absence of cellular component</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7063,7 +7067,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000160</oboInOwl:id>
         <skos:prefLabel>cell viability in population phenotype</skos:prefLabel>
         <obo:IAO_0000115>A phenotype of a cell population relating to the ability of the cells to live and develop normally</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7102,7 +7106,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000161</oboInOwl:id>
         <obo:IAO_0000115>increased number of viable cell phenotype in a population</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased cell viability in population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7141,7 +7145,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>decreased number of viable cell phenotype in a population</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000162</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased cell viability in population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7185,7 +7189,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000163</oboInOwl:id>
         <obo:IAO_0000115>A population phenotype relating to the size, shape or structure of the cells</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell population morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7229,7 +7233,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000164</oboInOwl:id>
         <obo:IAO_0000115>A phenotype that results in the absence of cytokinesis</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">absence of cytokinesis</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7294,7 +7298,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of cytokinesis</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000165</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cytokinesis phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7303,6 +7307,30 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
 
     <owl:Class rdf:about="&cmpo;CMPO_0000166">
         <rdfs:label xml:lang="en">cell division phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0051301"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0002201"/>
@@ -7339,35 +7367,11 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0051301"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000007"/>
         <oboInOwl:id>CMPO:0000166</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of the process resulting in the physical partitioning and separation of a cell into daughter cells.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell division phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7402,7 +7406,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000168</oboInOwl:id>
         <obo:IAO_0000115>A phenotype where the cell division process occurs at a higher rate</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased rate of cell division</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7437,7 +7441,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype where the cell division process occurs at a lower rate</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000169</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased rate of cell division</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7471,7 +7475,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000170</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of the catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1). Catalyzes extension of the 3&#39;- end of a DNA strand by one deoxynucleotide at a time using an internal RNA template that encodes the telomeric repeat sequence.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">telomerase activity phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7505,7 +7509,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the occurane of telomerase activity is decreased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000171</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased telomerase activity</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7539,7 +7543,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the occurane of telomerase activity is increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000172</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased telomerase activity</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7574,7 +7578,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:comment>(from GO) Under certain conditions, cells exit the cell cycle during G1 and remain in the G0 state as nongrowing, non-dividing (quiescent) cells. </rdfs:comment>
         <obo:IAO_0000115>A phenotype of a cell that is arrested at the G0/1 transition</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">G0/1 arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7613,7 +7617,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the endoplasmic reticulum is oriented in the cell with extremities at either end of the main axis. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000174</oboInOwl:id>
         <skos:prefLabel xml:lang="en">polarized endoplasmic reticulum</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7647,7 +7651,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a molecular component of a cell</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000175</oboInOwl:id>
         <skos:prefLabel xml:lang="en">molecular component phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7681,7 +7685,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000176</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell DNA</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell DNA phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7722,7 +7726,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>A phenotyoe observation where the nucleus has an irregular shape that is not ovoid.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000177</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7756,7 +7760,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the site of double-strand break, a region of a chromosome at which a DNA double-strand break has occurred.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000180</oboInOwl:id>
         <skos:prefLabel xml:lang="en">site of double-strand break</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7800,7 +7804,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of double strand breaks where the components number has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000181</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of site of double-strand break</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7834,7 +7838,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the number of double-strand breaks has increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000182</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of site of double-strand break</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7867,7 +7871,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000185</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell-matrix adhesion phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7901,7 +7905,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000186</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component where the components size has increased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased cell component size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -7935,7 +7939,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000187</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component where the components size has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased cell component size</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8001,7 +8005,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the morphogenetic process that results in flattening of a cell as a consequence of its adhesion to a substrate.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000188</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell spreading phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8038,7 +8042,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000189</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of a biological process whose specific outcome is the progression of a cell over time from an initial condition to a later condition.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cellular development phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8082,7 +8086,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of axons where the components number has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000190</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased number of axons</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8126,7 +8130,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of axons where the components number has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000191</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased number of axons</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8177,12 +8181,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                                                     <rdf:Description rdf:about="&obo;PATO_0000001"/>
                                                     <owl:Restriction>
                                                         <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
-                                                            </owl:Restriction>
-                                                        </owl:someValuesFrom>
+                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
                                                     </owl:Restriction>
                                                 </owl:intersectionOf>
                                             </owl:Class>
@@ -8213,7 +8212,12 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                                                     <rdf:Description rdf:about="&obo;PATO_0000001"/>
                                                     <owl:Restriction>
                                                         <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                                            </owl:Restriction>
+                                                        </owl:someValuesFrom>
                                                     </owl:Restriction>
                                                 </owl:intersectionOf>
                                             </owl:Class>
@@ -8230,7 +8234,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000194</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the mitotic cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">mitotic process phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8264,7 +8268,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000195</oboInOwl:id>
         <obo:IAO_0000115>A phenotype of a cell where a particular process is arrested, or ends earlier in time than expected</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">arrested process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8301,7 +8305,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype of a cell where the M phase of mitotic cell cycle process is arrested, or ends earlier in time than expected</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">M phase arrested</skos:prefLabel>
         <oboInOwl:hasExactSynonym>m phase arrest</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8347,7 +8351,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <oboInOwl:hasExactSynonym>Mitotic delay</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">mitosis delayed</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8381,7 +8385,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000203</oboInOwl:id>
         <obo:IAO_0000115>A phenotype of a cell is arrested in G2 pahse of the cell cycle.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">G2 arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8415,7 +8419,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000204</oboInOwl:id>
         <obo:IAO_0000115>A phenotype of a cell where the S pahse process is arrested, or ends earlier in time than expected</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">S phase arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8451,7 +8455,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the duration of the exit from mitosis is increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000205</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased duration of exit from mitosis</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8484,7 +8488,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000206</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased duration of exit from mitosis</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8518,7 +8522,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000207</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a G2 phase of the mitotic cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">G2 phase mitotic phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8552,7 +8556,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the mitotic metaphase of the cell cycle</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000208</oboInOwl:id>
         <skos:prefLabel xml:lang="en">mitotic metaphase phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8600,7 +8604,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <obo:IAO_0000115>mitotic metaphase cell phenotype observed in a population</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000209</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8648,7 +8652,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000210</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of mitotic metaphase cells in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8696,7 +8700,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000211</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">decreased number of mitotic metaphase cells in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8731,7 +8735,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000212</oboInOwl:id>
         <obo:IAO_0000115>A phenotype where the cell cycle is in some way abnormal</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">abnormal cell cycle</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8766,7 +8770,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>nuclei stay close together</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where a cell is binucleate, e.g. have two nuclei per cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">binuclear cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8801,7 +8805,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the duration of the mitotic chromosome condensation is increased</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased duration of mitotic chromosome condensation</skos:prefLabel>
         <oboInOwl:hasExactSynonym>longer mitotic chromosome condensation</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8835,7 +8839,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000215</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the duration of the mitotic chromosome condensation is decreased</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased duration of mitotic chromosome condensation</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8880,7 +8884,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype resulting from the absence of mitotic chromosome decondensation</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">absence of mitotic chromosome decondensation</skos:prefLabel>
         <oboInOwl:hasBroadSynonym>failure in decondensation</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8924,7 +8928,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000217</oboInOwl:id>
         <obo:IAO_0000115>A phenotype resulting in the absence of mitotic process</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">absence of mitotic process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -8958,7 +8962,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000218</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of mitotic chromosome condensation</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">mitotic chromosome condensation phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9023,7 +9027,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000219</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of mitotic chromosome decondensation</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">mitotic chromosome decondensation</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9057,7 +9061,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype where the apoptosis process is observed</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000220</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell apoptosis phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9105,7 +9109,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000221</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of apoptosis phenotypes in population</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9153,7 +9157,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <oboInOwl:id>CMPO:0000222</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">decreased number of apoptosis phenotypes in population</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9187,7 +9191,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the thickness of the axon has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000223</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased axon thickness</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9221,7 +9225,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the thickness of the axon has decreased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000224</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decresed axon thickness</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9255,7 +9259,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a axon where the components length has increased. </obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000227</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased axon length</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9289,7 +9293,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000228</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a axon where the components length has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased axon length</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9323,7 +9327,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasBroadSynonym>cell fusion event</oboInOwl:hasBroadSynonym>
         <oboInOwl:id>CMPO:0000229</oboInOwl:id>
         <skos:prefLabel xml:lang="en">plasma membrane fusion occurance</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9358,7 +9362,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000232</oboInOwl:id>
         <obo:IAO_0000115>A phenotype where the cell migration process occurs at an increased rate, typically observed as a faster moving cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased rate of cell migration process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9393,7 +9397,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000233</oboInOwl:id>
         <oboInOwl:hasNarrowSynonym>decreased speed of cell migration</oboInOwl:hasNarrowSynonym>
         <skos:prefLabel xml:lang="en">decreased rate of cell migration process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9427,7 +9431,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the whole cell relating to the cell&#39;s movement</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000234</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell movement</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9471,7 +9475,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where cell movement is increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000235</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cell movement</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9485,7 +9489,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000236</oboInOwl:id>
         <oboInOwl:hasExactSynonym>cell moves faster</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where the cell moves faster than normal/wild type.</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9499,7 +9503,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where the distance travelled by the cell is increased. The distance is measured as the euclidean distance between start and end point of the cell trajectory.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>increased cell migration distance</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cells cover a longer distance</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9543,7 +9547,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where cell movement is decreased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000238</oboInOwl:id>
         <skos:prefLabel xml:lang="en">decreased cell movement</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9556,7 +9560,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>cells cover a shorter distance</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000239</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where the distance travelled by the cell is decreased. The distance is measured as the euclidean distance between start and end point of the cell trajectory.</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9569,7 +9573,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000240</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell movement where the cell moves slower than normal/wild type.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>cell moves slower</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9619,7 +9623,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>increased proliferation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000241</oboInOwl:id>
         <obo:IAO_0000115 xml:lang="en">increased number of cells in population phenotype</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9654,7 +9658,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasNarrowSynonym>cell contraction</oboInOwl:hasNarrowSynonym>
         <obo:IAO_0000115>A phenotype of a cell contraction caused by an actin filament-based process in which cytoplasmic actin filaments slide past one another resulting in contraction of all or part of the cell body.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">actin-mediated cell contraction</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9688,7 +9692,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype where the directed, self-propelled movement of a cellular component without the involvement of an external agent such as a transporter or a pore is observed</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000244</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell component movement</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9722,7 +9726,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation of the controlled release of a substance by a cell.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000245</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell secretion phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9757,7 +9761,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:22660414</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000246</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the rate of release of proteins from a cell is increased</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9791,7 +9795,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasBroadSynonym>inhibition of protein secretion</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>A phenotype observation where the rate of release of proteins from a cell is decreased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000247</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9849,7 +9853,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000249</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the nucleus relating to the nuclear morphology</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">nuclear morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9883,7 +9887,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000250</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the golgi relating to the golgi&#39;s morphology</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">golgi morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9920,7 +9924,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000251</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cilium phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9941,7 +9945,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a cilium relating to the components shape, size or structure</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000252</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cilium morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -9975,7 +9979,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000258</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a single or whole cell.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">single cell phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10009,7 +10013,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000259</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cellular component phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10024,7 +10028,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">geometric cell</skos:prefLabel>
         <rdfs:comment>request geometric shape in pato</rdfs:comment>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10058,7 +10062,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>Fragmented and condensed DNA during or following apoptosis</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000262</oboInOwl:id>
         <skos:prefLabel xml:lang="en">apoptotic DNA</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10108,7 +10112,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>Increased occurrence of mitotic cells</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>increased number of mitotic cells</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>increased occurrence of mitosis</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10160,7 +10164,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>decreased occurrence of mitotic cells in population</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000264</oboInOwl:id>
         <oboInOwl:hasExactSynonym>decreased number of mitotic cells</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10194,7 +10198,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000265</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the M phase of the mitotic cell cycle</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">M phase mitotic phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10230,7 +10234,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where more lamellipoda is localised to one side of the cell with respect to the other</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000266</oboInOwl:id>
         <skos:prefLabel xml:lang="en">asymmetric lamellipodia</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10266,7 +10270,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasBroadSynonym>spiky cell</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell has a star-like or bristly shape</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">star shaped cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10301,7 +10305,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000268</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell has a star-like or bristly shape</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">spiny shaped cell</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10340,7 +10344,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A population of cells where the cells exhibit a high variability of size</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000269</oboInOwl:id>
         <oboInOwl:hasExactSynonym>variable cell size</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10387,7 +10391,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>variable cell shape</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A population of cells where the cells exhibit a high variability of shape</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000270</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10422,7 +10426,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>peripheral actin phenotype</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000271</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cortical actin cytoskeleton phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10458,7 +10462,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000272</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cortical actin cytoskeleton mass</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10494,7 +10498,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the cortical actin cytoskeleton where the components mass has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased cortical actin cytoskeleton mass</skos:prefLabel>
         <oboInOwl:hasExactSynonym>decreased peripheral actin</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10530,7 +10534,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <skos:prefLabel xml:lang="en">disorganised cortical actin cytoskeleton</skos:prefLabel>
         <oboInOwl:hasExactSynonym>disorganised peripheral actin phenotype</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the cortical actin cytoskeleton where the component shows an irregular organization</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10566,7 +10570,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000276</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a lamellipodia where the components width has increased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased lamellipodia width</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10602,7 +10606,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">decreased lamellipodia width</skos:prefLabel>
         <oboInOwl:hasExactSynonym>decreased width of lamellae</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10638,7 +10642,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">fan-shaped lamellipodia</skos:prefLabel>
         <oboInOwl:hasBroadSynonym>motile lamellae</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10672,7 +10676,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000279</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a lamellipodia; a thin sheetlike process extended by the leading edge of a crawling fibroblast; contains a dense meshwork of actin filaments.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">lamellipodium phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10706,7 +10710,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to a prolongation or process extending from a cell, e.g. a cilium, lamellipodium or axon.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000280</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell projection phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10740,7 +10744,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the filopodium; a thin, stiff protrusion extended by the leading edge of a motile cell such as a crawling fibroblast.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000281</oboInOwl:id>
         <skos:prefLabel xml:lang="en">filopodium</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10754,7 +10758,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000282</oboInOwl:id>
         <oboInOwl:hasBroadSynonym>layered cells</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>Cells not stopping at confluence and growing on top of each other in layers</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10788,7 +10792,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000283</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the actin cytoskeleton, the part of the cytoskeleton (the internal framework of a cell) composed of actin and associated proteins. Includes actin cytoskeleton-associated complexes.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">actin cytoskeleton</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10824,7 +10828,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <skos:prefLabel xml:lang="en">increased actin cytoskeleton mass</skos:prefLabel>
         <oboInOwl:hasBroadSynonym>more actin</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10860,7 +10864,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasBroadSynonym>less actin</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of a actin cytoskeleton where the components mass has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased actin cytoskeleton mass</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10896,7 +10900,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000286</oboInOwl:id>
         <skos:prefLabel xml:lang="en">aggregated microtubules</skos:prefLabel>
         <oboInOwl:hasExactSynonym>microtubule clumps</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10941,7 +10945,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000287</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the microtubules form two crescent shaped brackets around the nucleus</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">microtubules nuclear bracket</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -10987,7 +10991,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>microtubule nuclear ring</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where the microtubules form a ring around the nucleus</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">microtubules nuclear ring</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11023,7 +11027,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <skos:prefLabel xml:lang="en">increased amount of stress fibers</skos:prefLabel>
         <oboInOwl:hasExactSynonym>more actin stress fibers</oboInOwl:hasExactSynonym>
         <obo:IAO_0000119>pmid:21893601</obo:IAO_0000119>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11032,6 +11036,27 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
 
     <owl:Class rdf:about="&cmpo;CMPO_0000290">
         <rdfs:label xml:lang="en">punctate actin foci phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001512"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="&obo;RO_0002201"/>
@@ -11063,33 +11088,12 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001512"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:hasExactSynonym>puncta actin filament phenotype</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where actin is observed as small patches or spots all over the cell</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000290</oboInOwl:id>
         <skos:prefLabel xml:lang="en">punctate actin foci</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11146,7 +11150,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>increased actin puncta</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where a cell has an increased amount of actin observed as small patches or spots all over the cell</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased amount of punctate actin foci</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11160,7 +11164,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype of a culture in which cells grow as a monolayer that is attached to the culture substrate.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000292</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell layer phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11174,7 +11178,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>Loss of sheet like monolayer leading to empty patches</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000293</oboInOwl:id>
         <oboInOwl:hasExactSynonym>lost cell monolayer</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11237,7 +11241,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>increased nuclear actin</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation where many actin filaments are observed in or around the nucleus</obo:IAO_0000115>
         <obo:IAO_0000119>PMID: 21893601</obo:IAO_0000119>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11300,7 +11304,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000296</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where many actin filaments are observed in the cytoplasm</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>increased cytoplasmic actin</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11345,7 +11349,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <skos:prefLabel xml:lang="en">increased amount of stress fibers located in the cell cortex</skos:prefLabel>
         <obo:IAO_0000119>pmid:21893601</obo:IAO_0000119>
         <obo:IAO_0000119>A phenotype observation at the level of stress fibers localized to the cell cortex where the components number has increased. </obo:IAO_0000119>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11360,7 +11364,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:comment>Increased amount of actin stress fibers, forming transverse arcs located in the cell cortex</rdfs:comment>
         <oboInOwl:hasExactSynonym>more transverse actin stress fibers</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of stress fibers where the components number has increased and formed transverse arcs which are located in the cell cortex</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11375,7 +11379,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of stress fibers where the components number has increased and formed a zig zag pattern across the cell</obo:IAO_0000115>
         <rdfs:comment>Increased amount of actin stress fibers, with zig-zag pattern across the cell</rdfs:comment>
         <obo:IAO_0000119>pmid:21893601</obo:IAO_0000119>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11423,7 +11427,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000300</oboInOwl:id>
         <obo:IAO_0000115>Increased cells that are multinucleated</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11437,7 +11441,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>Absence of cells</obo:IAO_0000115>
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">no cells</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11483,7 +11487,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the microtubules form a ring around the nucleus</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000302</oboInOwl:id>
         <skos:prefLabel xml:lang="en">actin nuclear ring</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11517,7 +11521,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000303</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a cellular component relating to the components shape, size or structure</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell component morphology</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11575,7 +11579,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype of a cell where a particular process is arrested, or ends earlier in time than expected</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000304</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cell cycle arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11611,7 +11615,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype of a cell arrested in mitotic metaphase</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">metaphase arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11645,7 +11649,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000306</oboInOwl:id>
         <obo:IAO_0000115>A phenotype of a cell where a particular process is delayed</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">delayed process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11681,7 +11685,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000307</oboInOwl:id>
         <obo:IAO_0000115>A phenotype of a cell where mitotic metaphase is delayed</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">metaphase delayed</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11722,7 +11726,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000309</oboInOwl:id>
         <obo:IAO_0000115>A phenotype where the cell migration is impaired</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11757,7 +11761,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype where the cell migration process occurs for longer, typically observed as a cell moving a further distance</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000312</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased duration of cell migration process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11791,7 +11795,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000313</oboInOwl:id>
         <obo:IAO_0000115>A phenotype where the cell migration process duration is reduced, typically observed as a cell moving a shorter distance</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased duration of cell migration process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11825,7 +11829,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000314</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of the exit from mitosis</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">exit from mitosis</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11843,20 +11847,13 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
+                                    </owl:Restriction>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&obo;PATO_0001558"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000462"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -11910,13 +11907,20 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
-                                    </owl:Restriction>
+                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000462"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;PATO_0001558"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -11930,7 +11934,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of a cellular process where the cell process is absent</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000315</oboInOwl:id>
         <skos:prefLabel xml:lang="en">absence of cell process</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -11972,7 +11976,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000316</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of the process in which the cell growth is abnormal</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">abnormal cell growth</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12006,7 +12010,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000317</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation of the process in which the cell growth is arrested</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">cell growth arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12049,7 +12053,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the rate of release of proteins from a cell is mildly decreased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000318</oboInOwl:id>
         <oboInOwl:hasBroadSynonym>mild inhibition of protein secretion</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12092,7 +12096,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000319</oboInOwl:id>
         <obo:IAO_0000119>PMID:22660414</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation where the rate of release of proteins from a cell is severly decreased</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12126,7 +12130,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000320</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where there is an increased occurance of cell spreading</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">increased cell spreading</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12170,7 +12174,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000321</oboInOwl:id>
         <oboInOwl:hasBroadSynonym>moderate cell spreading</oboInOwl:hasBroadSynonym>
         <skos:prefLabel xml:lang="en">mild increase of cell spreading</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12213,7 +12217,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000322</oboInOwl:id>
         <oboInOwl:hasBroadSynonym>extensive cell spreading</oboInOwl:hasBroadSynonym>
         <skos:prefLabel xml:lang="en">strong increase of cell spreading</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12249,7 +12253,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000323</oboInOwl:id>
         <obo:IAO_0000119>PMID:19667130</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">decreased cell spreading</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12291,10 +12295,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>A phenotype observation where cell spreading is absent</obo:IAO_0000115>
-        <skos:prefLabel xml:lang="en">absence of cell spreading</skos:prefLabel>
         <oboInOwl:hasExactSynonym>no spreading cells</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000324</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <skos:prefLabel xml:lang="en">absence of cell spreading</skos:prefLabel>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12333,7 +12337,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where a cell shows a thin and large projected areas, with developed matrix adhesions at the cell periphery, as opposed to round cells with no or few adhesion sites</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">spread cell morphology</skos:prefLabel>
         <oboInOwl:hasExactSynonym>spreading cell shape</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12380,7 +12384,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <obo:IAO_0000115>A phenotype observation of the process in which the chromosome segregation is abnormal</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>multiple DNA masses</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12414,7 +12418,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the mitotic prophase of the cell cycle</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000327</oboInOwl:id>
         <skos:prefLabel xml:lang="en">mitotic prophase phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12448,7 +12452,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the duration of the mitotic prophase of the cell cycle is increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000328</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased duration of mitotic prophase</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12482,7 +12486,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000329</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the duration of the mitotic prophase of the cell cycle is decreased</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased duration of mitotic prophase</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12519,7 +12523,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000330</oboInOwl:id>
         <obo:IAO_0000119>PMID:23300644</obo:IAO_0000119>
         <oboInOwl:hasRelatedSynonym>decreased NF-kB oscillation</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12556,7 +12560,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasRelatedSynonym>increased NF-kB oscillation</oboInOwl:hasRelatedSynonym>
         <skos:prefLabel xml:lang="en">increased frequency of negative regulation of NF-kappaB transcription factor activity</skos:prefLabel>
         <obo:IAO_0000116>increased number of oscillations; the amplitude of the second and third peak is increased and nuclear translocation responses occur at increased intervals.</obo:IAO_0000116>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12593,7 +12597,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation where the frequency of a process that stops, prevents, or reduces the frequency, rate or extent of the activity of the transcription factor NF-kappaB is increased.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000332</oboInOwl:id>
         <skos:prefLabel xml:lang="en">cytoplasmic sequestering of NF-kappaB</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12634,7 +12638,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>PMID:23300644</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000333</oboInOwl:id>
         <skos:prefLabel xml:lang="en">abnormal release of cytoplasmic sequestered NF-kappaB</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12668,7 +12672,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000334</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule.</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">regulation of process phenotype</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12704,7 +12708,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000119>pmid:22884692</obo:IAO_0000119>
         <oboInOwl:hasRelatedSynonym>increased intensity of nuclear body</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>CMPO:0000335</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12737,7 +12741,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000337</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the shape of the focal adhesion has every part of the surface or the circumference equidistant from the center.</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12772,7 +12776,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype of a cell that is arrested at mitosis</obo:IAO_0000115>
         <obo:IAO_0000119>PMID:20360735</obo:IAO_0000119>
         <oboInOwl:hasExactSynonym>mitotic arrest</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12817,7 +12821,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A population phenotype where the overall cell size in the population is increased</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000340</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cell size in population</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12831,7 +12835,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype observation at the level of the nucleus underoging Pyknosis, or karyopyknosis, consisting of the irreversible condensation of chromatin in the nucleus of a cell undergoing necrosis or apoptosis.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>pyknotic nucleus</oboInOwl:hasExactSynonym>
         <oboInOwl:hasBroadSynonym>pyknotic cell</oboInOwl:hasBroadSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12866,7 +12870,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:hasExactSynonym>prometaphase arrest</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype of a cell arrested in mitotic prometaphase</obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">prometaphase arrested</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12901,7 +12905,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000344</oboInOwl:id>
         <oboInOwl:hasExactSynonym>prometaphase delay</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">prometaphase delayed</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12948,7 +12952,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000345</oboInOwl:id>
         <obo:IAO_0000115>A population of cells where the nuclei exhibit a high variability of shape</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>variable cell shape</oboInOwl:hasExactSynonym>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -12983,7 +12987,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000346</oboInOwl:id>
         <obo:IAO_0000119>pmid:21795383</obo:IAO_0000119>
         <skos:prefLabel xml:lang="en">decreased rate of intracellular protein transport</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -13027,7 +13031,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <obo:IAO_0000115>A phenotype resulting in the absence of mitotic metaphase process</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000347</oboInOwl:id>
         <skos:prefLabel xml:lang="en">absence of mitotic metaphase</skos:prefLabel>
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
 
@@ -14695,7 +14699,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="&owl;Nothing">
-        <oboInOwl:inSubset rdf:resource="&cmpo;subset/cmpo"/>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </rdf:Description>
     <rdf:Description rdf:about="&obo;PATO_0000546">
         <oboInOwl:inSubset rdf:resource="&obo;pato#disposition_slim"/>
