@@ -3,6 +3,7 @@ subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim "Attribute slim"
 subsetdef: cell_quality "cell_quality"
+subsetdef: cmpo "CMPO subset"
 subsetdef: Cross_product_review "Involved_in"
 subsetdef: disposition_slim "Disposition slim"
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
@@ -24,13 +25,13 @@ subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a t
 subsetdef: value_slim "Value slim"
 subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
-ontology: http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/http://www.ebi.ac.uk/cmpo/subset/cmpo
+ontology: http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo
 
 [Term]
 id: CMPO:0000002
 name: cell population phenotype
 def: "A phenotype observation at the level of a population of cells" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000003 ! phenotype
 property_value: prefLabel "cell population" xsd:string
 
@@ -38,13 +39,14 @@ property_value: prefLabel "cell population" xsd:string
 id: CMPO:0000003
 name: phenotype
 def: "An observation where the phenotype is described in terms of a biological process, a cell population, a whole cell or a subcellular structure that bears a particular quality." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
+property_value: prefLabel "phenotype" xsd:string
 
 [Term]
 id: CMPO:0000005
 name: cell morphology phenotype
 def: "A phenotype observation at the level of the whole cell relating to the cell's shape, size or structure" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell morphology" xsd:string
 
@@ -52,16 +54,16 @@ property_value: prefLabel "cell morphology" xsd:string
 id: CMPO:0000007
 name: cell process phenotype
 def: "A phenotype observation at the level of a cellular process" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell physiology phenotype" EXACT []
 is_a: CMPO:0000003 ! phenotype
-property_value: prefLabel "cell process" xsd:string
+property_value: prefLabel "cell process phenotype" xsd:string
 
 [Term]
 id: CMPO:0000008
 name: cell component number phenotype
 def: "An increase or decrease in the number of specified components within a cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell component number" xsd:string
 
@@ -69,7 +71,7 @@ property_value: prefLabel "cell component number" xsd:string
 id: CMPO:0000010
 name: cell component size phenotype
 def: "A phenotype observation at the level of a cellular component relating to the components size" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "cell component size" xsd:string
 
@@ -77,7 +79,7 @@ property_value: prefLabel "cell component size" xsd:string
 id: CMPO:0000011
 name: cell component shape phenotype
 def: "A phenotype observation at the level of a cellular component relating to the components shape" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "cell component shape" xsd:string
 
@@ -85,7 +87,7 @@ property_value: prefLabel "cell component shape" xsd:string
 id: CMPO:0000012
 name: cell component structure phenotype
 def: "A phenotype observation at the level of a cellular component relating to the components structure" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "cell component structure" xsd:string
 
@@ -93,7 +95,7 @@ property_value: prefLabel "cell component structure" xsd:string
 id: CMPO:0000013
 name: cell viability phenotype
 def: "A phenotype relating to the ability of a cell survive or to develop normally" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell viability" xsd:string
 
@@ -101,7 +103,7 @@ property_value: prefLabel "cell viability" xsd:string
 id: CMPO:0000014
 name: viable cell phenotype
 def: "A cell phenotype where the cell is viable" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000013 ! cell viability phenotype
 property_value: prefLabel "viable cell" xsd:string
 
@@ -109,7 +111,7 @@ property_value: prefLabel "viable cell" xsd:string
 id: CMPO:0000015
 name: inviable cell phenotype
 def: "A cell phenotype where the cell is not viable" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000013 ! cell viability phenotype
 property_value: prefLabel "inviable cell" xsd:string
 
@@ -117,14 +119,14 @@ property_value: prefLabel "inviable cell" xsd:string
 id: CMPO:0000016
 name: cell nucleation phenotype
 def: "A phenotype observation at the level of the whole cell relating to the cell's nucleation" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell nucleation" xsd:string
 
 [Term]
 id: CMPO:0000017
 name: mononuclear cell phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000016 ! cell nucleation phenotype
 property_value: prefLabel "mononuclear cell" xsd:string
 
@@ -132,7 +134,7 @@ property_value: prefLabel "mononuclear cell" xsd:string
 id: CMPO:0000018
 name: multinucleated cell phenotype
 def: "A phenotype observation where a cell is multinucleate, e.g. have more than one nucleus per cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "polynuclear cell" EXACT []
 is_a: CMPO:0000016 ! cell nucleation phenotype
 property_value: prefLabel "multinucleated cell" xsd:string
@@ -141,48 +143,48 @@ property_value: prefLabel "multinucleated cell" xsd:string
 id: CMPO:0000020
 name: cytoskeletal phenotype
 def: "A phenotype observation at the level of any constituent part of the cytoskeleton, a cellular scaffolding or skeleton that maintains cell shape, enables some cell motion (using structures such as flagella and cilia), and plays important roles in both intra-cellular transport (e.g. the movement of vesicles and organelles) and cellular division. Includes constituent parts of intermediate filaments, microfilaments, microtubules, and the microtrabecular lattice." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "cytoskeletal" xsd:string
+property_value: prefLabel "cytoskeletal phenotype" xsd:string
 
 [Term]
 id: CMPO:0000021
 name: endoplasmic reticulum phenotype
 def: "A phenotype observation at the level of any constituent part of the endoplasmic reticulum, the irregular network of unit membranes, visible only by electron microscopy, that occurs in the cytoplasm of many eukaryotic cells. The membranes form a complex meshwork of tubular channels, which are often expanded into slitlike cavities called cisternae." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "endoplasmic reticulum" xsd:string
+property_value: prefLabel "endoplasmic reticulum phenotype" xsd:string
 
 [Term]
 id: CMPO:0000022
 name: golgi phenotype
 def: "A phenotype observation at the level of any constituent part of the Golgi apparatus, a compound membranous cytoplasmic organelle of eukaryotic cells, consisting of flattened, ribosome-free vesicles arranged in a more or less regular stack" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "golgi" xsd:string
+property_value: prefLabel "golgi phenotype" xsd:string
 
 [Term]
 id: CMPO:0000023
 name: mitochondrion phenotype
 def: "A phenotype observation at the level of any constituent part of a mitochondrion, a semiautonomous, self replicating organelle that occurs in varying numbers, shapes, and sizes in the cytoplasm of virtually all eukaryotic cells." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "mitochondrial part phenotype" EXACT []
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "mitochondrion" xsd:string
+property_value: prefLabel "mitochondrion phenotype" xsd:string
 
 [Term]
 id: CMPO:0000024
 name: nuclear phenotype
 def: "A phenotype observation at the level of any constituent part of the nucleus, a membrane-bounded organelle of eukaryotic cells in which chromosomes are housed and replicated." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "nuclear" xsd:string
+property_value: prefLabel "nuclear phenotype" xsd:string
 
 [Term]
 id: CMPO:0000026
 name: organelle shape phenotype
 def: "A phenotype observation at the level of a cellular organelle relating to the organelle's shape" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000011 ! cell component shape phenotype
 is_a: CMPO:0000150 ! phenotypes by organelle
 property_value: prefLabel "organelle shape" xsd:string
@@ -191,7 +193,7 @@ property_value: prefLabel "organelle shape" xsd:string
 id: CMPO:0000027
 name: nucleus shape phenotype
 def: "A phenotype observation at the level of the nucleus relating to the ratios of distances between its features (points, edges, surfaces and also holes etc)." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "nuclear shape" EXACT []
 is_a: CMPO:0000026 ! organelle shape phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
@@ -200,105 +202,105 @@ is_a: CMPO:0000249 ! nuclear morphology phenotype
 id: CMPO:0000028
 name: cell adhesion phenotype
 def: "A phenotype where the attachment of a cell, either to another cell or to an underlying substrate such as the extracellular matrix, via cell adhesion molecules is observed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "cell adhesion" xsd:string
+property_value: prefLabel "cell adhesion phenotype" xsd:string
 
 [Term]
 id: CMPO:0000029
 name: cell cycle phenotype
 def: "A phenotype observation at the level of a cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "cell cycle" xsd:string
+property_value: prefLabel "cell cycle phenotype" xsd:string
 
 [Term]
 id: CMPO:0000030
 name: cell death phenotype
 def: "A phenotype where the cell death process process is observed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
 property_value: IAO:0000119 PMID:20360735 xsd:string
-property_value: prefLabel "cell death" xsd:string
+property_value: prefLabel "cell death phenotype" xsd:string
 
 [Term]
 id: CMPO:0000032
 name: cell membrane organisation phenotype
 def: "A phenotype observation of a process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a membrane. A membrane is a double layer of lipid molecules that encloses all cells, and, in eukaryotes, many organelles; may be a single or double lipid bilayer; also includes associated proteins." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "cell membrane organisation" xsd:string
+property_value: prefLabel "cell membrane organisation phenotype" xsd:string
 
 [Term]
 id: CMPO:0000033
 name: cell migration phenotype
 def: "A phenotype of a cell involving its translation from one location to another" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000244 ! cell component movement phenotype
 property_value: IAO:0000119 PMID:20360735 xsd:string
-property_value: prefLabel "cell migration" xsd:string
+property_value: prefLabel "cell migration phenotype" xsd:string
 
 [Term]
 id: CMPO:0000035
 name: cell growth phenotype
 def: "A phenotype observation of the process in which a cell irreversibly increases in size over time by accretion and biosynthetic production of matter similar to that already present." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "cell growth" xsd:string
+property_value: prefLabel "cell growth phenotype" xsd:string
 
 [Term]
 id: CMPO:0000036
 name: chromosome segregation phenotype
 def: "A phenotype observation of the process in which genetic material, in the form of chromosomes, is organized into specific structures and then physically separated and apportioned to two or more sets. In eukaryotes, chromosome segregation begins with the alignment of chromosomes at the metaphase plate, includes chromosome separation, and ends when chromosomes have completed movement to the spindle poles." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "chromosome segregation" xsd:string
+property_value: prefLabel "chromosome segregation phenotype" xsd:string
 
 [Term]
 id: CMPO:0000037
 name: metabolic process phenotype
 def: "A phenotype observation of chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "metabolic process" xsd:string
+property_value: prefLabel "metabolic process phenotype" xsd:string
 
 [Term]
 id: CMPO:0000038
 name: organelle localization phenotype
 def: "A phenotype observations where any process in which an organelle is transported to, and/or maintained in, a specific location." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "organelle localization" xsd:string
+property_value: prefLabel "organelle localization phenotype" xsd:string
 
 [Term]
 id: CMPO:0000039
 name: regulation of metabolic process phenotype
 def: "A phenotype observation where a process modulates the frequency, rate or extent of the chemical reactions and pathways within a cell or an organism." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000334 ! regulation of process phenotype
-property_value: prefLabel "regulation of metabolic process" xsd:string
+property_value: prefLabel "regulation of metabolic process phenotype" xsd:string
 
 [Term]
 id: CMPO:0000040
 name: regulation of signal transduction phenotype
 def: "A phenotype observation of a process that modulates the frequency, rate or extent of signal transduction." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000334 ! regulation of process phenotype
-property_value: prefLabel "regulation of signal transduction" xsd:string
+property_value: prefLabel "regulation of signal transduction phenotype" xsd:string
 
 [Term]
 id: CMPO:0000041
 name: transport phenotype
 def: "A phenotype observation of the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "transport" xsd:string
+property_value: prefLabel "transport phenotype" xsd:string
 
 [Term]
 id: CMPO:0000042
 name: increased cell component number phenotype
 def: "An increased number of specified cellular components relative to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000008 ! cell component number phenotype
 property_value: prefLabel "increased cell component number" xsd:string
 
@@ -306,7 +308,7 @@ property_value: prefLabel "increased cell component number" xsd:string
 id: CMPO:0000043
 name: decreased cell component number phenotype
 def: "A decrease in number of specified cellular components relative to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000008 ! cell component number phenotype
 property_value: prefLabel "decreased cell component number" xsd:string
 
@@ -314,7 +316,7 @@ property_value: prefLabel "decreased cell component number" xsd:string
 id: CMPO:0000047
 name: apoptotic DNA fragmentation phenotype
 def: "A phenotype observation where the cleavage of DNA during apoptosis, which usually occurs in two stages: cleavage into fragments of about 50 kbp followed by cleavage between nucleosomes to yield 200 bp fragments." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "apoptotic DNA" BROAD []
 is_a: CMPO:0000037 ! metabolic process phenotype
 property_value: prefLabel "apoptotic DNA fragmentation" xsd:string
@@ -324,7 +326,7 @@ id: CMPO:0000048
 name: apoptotic cell shape phenotype
 def: "A phenotype observation at the level of the cell shape where the cell is apoptotic" []
 comment: dispersed outline with blobby protrusions
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: prefLabel "apoptotic cell shape" xsd:string
 
@@ -332,7 +334,7 @@ property_value: prefLabel "apoptotic cell shape" xsd:string
 id: CMPO:0000049
 name: aggregated cells in population phenotype
 def: "Groups of cells gathered or tending to gather into a mass or whole." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "aggregated cells" EXACT []
 synonym: "cell aggregates" EXACT []
 synonym: "cell islands" EXACT []
@@ -344,7 +346,7 @@ property_value: prefLabel "aggregated cells in population" xsd:string
 id: CMPO:0000050
 name: cell number in population phenotype
 def: "Number of cells in a population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: prefLabel "cell number in population" xsd:string
 
@@ -352,7 +354,7 @@ property_value: prefLabel "cell number in population" xsd:string
 id: CMPO:0000051
 name: increased cell numbers phenotype
 def: "The population has an increased number of cells with respect to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000050 ! cell number in population phenotype
 property_value: prefLabel "increased cell numbers" xsd:string
 
@@ -360,7 +362,7 @@ property_value: prefLabel "increased cell numbers" xsd:string
 id: CMPO:0000052
 name: decreased cell numbers phenotype
 def: "The population has a decreased number of cells with respect to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased cells" EXACT []
 synonym: "fewer cells" EXACT []
 synonym: "less cells" EXACT []
@@ -372,7 +374,7 @@ property_value: prefLabel "decreased cell numbers" xsd:string
 id: CMPO:0000053
 name: more cells in S
 def: "increased number of cells in S phase mitosis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
 
@@ -380,7 +382,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000054
 name: cell population process phenotype
 def: "A population of cells where a specifcied biological process is occuring or is observed. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: prefLabel "cell population process" xsd:string
 
@@ -388,7 +390,7 @@ property_value: prefLabel "cell population process" xsd:string
 id: CMPO:0000055
 name: more cells in G1
 def: "increased cell numbers in G1" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
 
@@ -396,7 +398,8 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000056
 name: more cells in G2M
 def: "increased number of cells in G2M" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
+synonym: "increased mitotic index" EXACT []
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
 
@@ -404,7 +407,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000057
 name: fewer cells in G1
 def: "decreased number of cells in G1 phase" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "less cells in G1" EXACT []
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
@@ -413,7 +416,8 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000058
 name: fewer cells in G2M
 def: "decreased number of cells in G2M phase" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
+synonym: "decreased mitotic index" EXACT []
 synonym: "less cells in G2M" EXACT []
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
@@ -422,7 +426,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000059
 name: fewer cells in S
 def: "decreased number of cells in S phase" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased number of cells in S" EXACT []
 synonym: "less cells in S" EXACT []
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
@@ -432,7 +436,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000063
 name: decreased number of focal adhesion phenotype
 def: "A phenotype observation at the level of focal adhesions where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased focal adhesion abundance" EXACT []
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 property_value: prefLabel "decreased number of focal adhesion" xsd:string
@@ -441,7 +445,7 @@ property_value: prefLabel "decreased number of focal adhesion" xsd:string
 id: CMPO:0000064
 name: centrally located focal adhesion phenotype
 def: "A phenotype observation where the focal adhesion is located in a position equidistant from the edges of the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: IAO:0000119 PMID:19667130 xsd:string
 property_value: prefLabel "centrally located focal adhesion" xsd:string
@@ -450,7 +454,7 @@ property_value: prefLabel "centrally located focal adhesion" xsd:string
 id: CMPO:0000065
 name: cell component position phenotype
 def: "A phenotype observation at the level of a cellular component relating to the components position in the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000259 ! cellular component phenotype
 property_value: prefLabel "cell component position" xsd:string
 
@@ -458,7 +462,7 @@ property_value: prefLabel "cell component position" xsd:string
 id: CMPO:0000066
 name: peripheral focal adhesion phenotype
 def: "A phenotype observation where the focal adhesions's position is at the edge or boundary of a related entity." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: IAO:0000119 PMID:19667130 xsd:string
 property_value: prefLabel "peripheral focal adhesion" xsd:string
@@ -467,7 +471,7 @@ property_value: prefLabel "peripheral focal adhesion" xsd:string
 id: CMPO:0000067
 name: decreased number of filopodia phenotype
 def: "A phenotype observation at the level of filopodia where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "fewer filopodia" EXACT []
 is_a: CMPO:0000074 ! decreased number of cell projections phenotype
 property_value: prefLabel "decreased number of filopodia" xsd:string
@@ -476,7 +480,7 @@ property_value: prefLabel "decreased number of filopodia" xsd:string
 id: CMPO:0000068
 name: decreased number of microtubules phenotype
 def: "A phenotype observation at the level of microtubules where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "fewer microtubules" EXACT []
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 property_value: prefLabel "decreased number of microtubules" xsd:string
@@ -485,14 +489,14 @@ property_value: prefLabel "decreased number of microtubules" xsd:string
 id: CMPO:0000069
 name: decreased number of dendritic branches phenotyope
 def: "A phenotype observation at the level of dendritic branches where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 
 [Term]
 id: CMPO:0000071
 name: cells with projections
 def: "Population of cells with protrusions" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cells with protrusions" EXACT []
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: IAO:0000119 PMID:20531400 xsd:string
@@ -501,7 +505,7 @@ property_value: IAO:0000119 PMID:20531400 xsd:string
 id: CMPO:0000072
 name: increased number of cell projections phenotype
 def: "An increase in number of any cell projection relative to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000042 ! increased cell component number phenotype
 property_value: prefLabel "increased number of cell projections" xsd:string
 
@@ -509,14 +513,14 @@ property_value: prefLabel "increased number of cell projections" xsd:string
 id: CMPO:0000073
 name: more cells with projections
 def: "increased number of cells in population with projections" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000074
 name: decreased number of cell projections phenotype
 def: "A phenotype observation at the level of cell projections where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 property_value: prefLabel "decreased number of cell projections" xsd:string
 
@@ -524,14 +528,14 @@ property_value: prefLabel "decreased number of cell projections" xsd:string
 id: CMPO:0000075
 name: fewer cells with projections
 def: "decreased number of cells in population with projections" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 
 [Term]
 id: CMPO:0000076
 name: increased number of filopodia
 def: "A phenotype observation at the level of filopodia where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more filopodia" EXACT []
 is_a: CMPO:0000072 ! increased number of cell projections phenotype
 
@@ -539,7 +543,7 @@ is_a: CMPO:0000072 ! increased number of cell projections phenotype
 id: CMPO:0000077
 name: elongated cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell is elongated, with a length notably greater than its width" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "bipolar cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: prefLabel "elongated cell" xsd:string
@@ -548,7 +552,7 @@ property_value: prefLabel "elongated cell" xsd:string
 id: CMPO:0000078
 name: elongated cells in population phenotype
 def: "Cells in population with a length notably greater than their width" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000163 ! cell population morphology phenotype
 property_value: IAO:0000119 "PMID:21893601; PMID:20531400" xsd:string
 property_value: prefLabel "elongated cells in population" xsd:string
@@ -557,7 +561,7 @@ property_value: prefLabel "elongated cells in population" xsd:string
 id: CMPO:0000080
 name: increased number of lamellipodia phenotype
 def: "A phenotype observation at the level of lamellipodia where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000072 ! increased number of cell projections phenotype
 property_value: prefLabel "increased number of lamellipodia" xsd:string
 
@@ -565,7 +569,7 @@ property_value: prefLabel "increased number of lamellipodia" xsd:string
 id: CMPO:0000081
 name: decreased number of lamellipodia phenotype
 def: "A phenotype observation at the level of lamellipodia where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000074 ! decreased number of cell projections phenotype
 property_value: prefLabel "decreased number of lamellipodia" xsd:string
 
@@ -573,21 +577,21 @@ property_value: prefLabel "decreased number of lamellipodia" xsd:string
 id: CMPO:0000083
 name: more lamellipodia cells
 def: "increased lamellipodia cells in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000073 ! more cells with projections
 
 [Term]
 id: CMPO:0000084
 name: fewer lamellipodia cells
 def: "decreased lamellipodia cells in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000075 ! fewer cells with projections
 
 [Term]
 id: CMPO:0000085
 name: cell ploidy phenotype
 def: "A phenotype observation at the level of the whole cell relating to the cell's ploidy" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell ploidy" xsd:string
 
@@ -595,7 +599,7 @@ property_value: prefLabel "cell ploidy" xsd:string
 id: CMPO:0000086
 name: polyploid cell phenotype
 def: "A cell phenotype with more than two homologous sets of chromosomes." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000085 ! cell ploidy phenotype
 property_value: prefLabel "polyploid cell" xsd:string
 
@@ -603,48 +607,48 @@ property_value: prefLabel "polyploid cell" xsd:string
 id: CMPO:0000087
 name: S phase mitotic phenotype
 def: "A phenotype observation at the level of athe S phase of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "S phase mitotic" xsd:string
+property_value: prefLabel "S phase mitotic phenotype" xsd:string
 
 [Term]
 id: CMPO:0000088
 name: G1 phase mitotic phenotype
 def: "A phenotype observation at the level of a G1 phase of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "G1 phase mitotic" xsd:string
+property_value: prefLabel "G1 phase mitotic phenotype" xsd:string
 
 [Term]
 id: CMPO:0000089
 name: G2/M transition phenotype
 def: "A phenotype observation at the level of the G2/M transition of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "G2/M transition" xsd:string
+property_value: prefLabel "G2/M transition phenotype" xsd:string
 
 [Term]
 id: CMPO:0000090
 name: cell cycle phase phenotype
 def: "A phenotype observation at the level of a cell cycle phase" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000029 ! cell cycle phenotype
-property_value: prefLabel "cell cycle phase" xsd:string
+property_value: prefLabel "cell cycle phase phenotype" xsd:string
 
 [Term]
 id: CMPO:0000091
 name: more polyploid cells
 def: "increased number of polyploid cells in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000092
 name: increased number of focal adhesion phenotype
 def: "A phenotype observation at the level of focal adhesions where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased focal adhesion abundance" EXACT []
 is_a: CMPO:0000042 ! increased cell component number phenotype
 property_value: prefLabel "increased number of focal adhesion" xsd:string
@@ -653,7 +657,7 @@ property_value: prefLabel "increased number of focal adhesion" xsd:string
 id: CMPO:0000093
 name: increased number of nucleoli phenotype
 def: "A phenotype observation at the level of nucleoli where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 property_value: prefLabel "increased number of nucleoli" xsd:string
 
@@ -661,7 +665,7 @@ property_value: prefLabel "increased number of nucleoli" xsd:string
 id: CMPO:0000094
 name: decreased number of nucleoli phenotype
 def: "A phenotype observation at the level of nucleoli where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 property_value: prefLabel "decreased number of nucleoli" xsd:string
 
@@ -669,21 +673,21 @@ property_value: prefLabel "decreased number of nucleoli" xsd:string
 id: CMPO:0000095
 name: more cells with decreased number of nucleoli
 def: "more cells with decreased number of nucleoli" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000096
 name: more cells with increased number of nucleoli
 def: "increased number of nucleoli in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000097
 name: increased number of microtubules phenotype
 def: "A phenotype observation at the level of microtubules where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more microtubules" EXACT []
 is_a: CMPO:0000042 ! increased cell component number phenotype
 property_value: prefLabel "increased number of microtubules" xsd:string
@@ -692,7 +696,7 @@ property_value: prefLabel "increased number of microtubules" xsd:string
 id: CMPO:0000102
 name: phagosomes phenotype
 def: "A phenotype observation at the level of the phagosomes, a membrane-bounded intracellular vesicle that arises from the ingestion of particulate material by phagocytosis." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "phagosomes present phenotype" EXACT []
 is_a: CMPO:0000150 ! phenotypes by organelle
 property_value: prefLabel "phagosomes" xsd:string
@@ -701,7 +705,7 @@ property_value: prefLabel "phagosomes" xsd:string
 id: CMPO:0000103
 name: phagosomes absent phenotype
 def: "A phenotype observation where phagosomes are absent" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000159 ! absence of cellular component phenotype
 property_value: prefLabel "phagosomes absent" xsd:string
 
@@ -709,15 +713,15 @@ property_value: prefLabel "phagosomes absent" xsd:string
 id: CMPO:0000104
 name: actin filament phenotype
 def: "A phenotype observation at the level of the actin filaments, a filamentous structure formed of a two-stranded helical polymer of the protein actin and associated proteins. Actin filaments are a major component of the contractile apparatus of skeletal muscle and the microfilaments of the cytoskeleton of eukaryotic cells." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
-property_value: prefLabel "actin filament" xsd:string
+property_value: prefLabel "actin filament phenotype" xsd:string
 
 [Term]
 id: CMPO:0000105
 name: increased number of actin filament phenotype
 def: "A phenotype observation at the level of actin filaments where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "actin fiber cells" EXACT []
 synonym: "more actin" EXACT []
 synonym: "more total actin" EXACT []
@@ -731,7 +735,7 @@ property_value: prefLabel "increased number of actin filament" xsd:string
 id: CMPO:0000106
 name: decreased number of actin filament phenotype
 def: "A phenotype observation at the level of actin filaments where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "less actin" EXACT []
 synonym: "less total actin" EXACT []
 is_a: CMPO:0000043 ! decreased cell component number phenotype
@@ -743,14 +747,14 @@ property_value: prefLabel "decreased number of actin filament" xsd:string
 id: CMPO:0000107
 name: more actin filament cells
 def: "increased number of actin filament cells in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000108
 name: fewer actin filament cells
 def: "decreased number of actin filament phenotypes in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased number of actin filament cells" EXACT []
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 
@@ -758,7 +762,7 @@ is_a: CMPO:0000052 ! decreased cell numbers phenotype
 id: CMPO:0000109
 name: centered cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton is located in a position equidistant from the edges of the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "centered cytoskeleton" xsd:string
@@ -767,7 +771,7 @@ property_value: prefLabel "centered cytoskeleton" xsd:string
 id: CMPO:0000110
 name: centered nucleus phenotype
 def: "A phenotype observation where the nucleus is located in a position equidistant from the edges of the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "centered nucleus" xsd:string
@@ -776,7 +780,7 @@ property_value: prefLabel "centered nucleus" xsd:string
 id: CMPO:0000111
 name: dispersed nucleus phenotype
 def: "A phenotype observation where the nucleus is distributed or spread over a considerable extent." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "dispersed nucleus" xsd:string
@@ -785,7 +789,7 @@ property_value: prefLabel "dispersed nucleus" xsd:string
 id: CMPO:0000112
 name: apoptopic nucleus phenotype
 def: "A phenotype observation at the level of nucleus consisting of blebbing of the nucleus and DNA fragmentation due to the cell undergoing a specific form of programmed cell death termed apoptosis." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
 property_value: prefLabel "apoptopic nucleus" xsd:string
@@ -794,14 +798,14 @@ property_value: prefLabel "apoptopic nucleus" xsd:string
 id: CMPO:0000113
 name: deformed nucleus
 def: "A phenotype observation where the nucleus is distorted in form" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000249 ! nuclear morphology phenotype
 
 [Term]
 id: CMPO:0000114
 name: peripheral nucleus phenotype
 def: "A phenotype observation where the nucleus's position is at the edge or boundary of a related entity." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "peripheral nucleus" xsd:string
@@ -810,7 +814,7 @@ property_value: prefLabel "peripheral nucleus" xsd:string
 id: CMPO:0000115
 name: peripheral cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton's position is at the edge or boundary of a related entity." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "peripheral cytoskeleton" xsd:string
@@ -819,7 +823,7 @@ property_value: prefLabel "peripheral cytoskeleton" xsd:string
 id: CMPO:0000116
 name: abnormal cell shape phenotype
 def: "A phenotype observation at the level of the cell shape where the shape is abnormal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: prefLabel "abnormal cell shape" xsd:string
 
@@ -827,7 +831,7 @@ property_value: prefLabel "abnormal cell shape" xsd:string
 id: CMPO:0000117
 name: bilobed nucleus phenotype
 def: "A lobed quality inhering in a nucleus by virtue of the nucleus being divided into or having two lobes." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "bilobed" BROAD []
 is_a: CMPO:0000027 ! nucleus shape phenotype
 property_value: prefLabel "bilobed nucleus" xsd:string
@@ -837,7 +841,7 @@ id: CMPO:0000118
 name: round cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell is round" []
 comment: not spreading cell
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "circular cell" EXACT []
 synonym: "low eccentricity cell" EXACT []
 synonym: "spherical cell" EXACT []
@@ -849,7 +853,7 @@ property_value: prefLabel "round cell" xsd:string
 id: CMPO:0000119
 name: elongated focal adhesion
 def: "A phenotype observation of the length of the focal adhesion is notably higher than the width." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "long focal adhesion" BROAD []
 is_a: CMPO:0000011 ! cell component shape phenotype
 
@@ -857,15 +861,15 @@ is_a: CMPO:0000011 ! cell component shape phenotype
 id: CMPO:0000120
 name: elongated nucleus
 def: "A phenotype observation of the length of the nucleus is notably higher than the width." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "long nucleus" BROAD []
 is_a: CMPO:0000027 ! nucleus shape phenotype
 
 [Term]
 id: CMPO:0000121
-name: arrow shaped cell phenotype\n\n
+name: arrow shaped cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell is arrow shaped, with a wide front and a sharp tail, displaying monopolar cell growth" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "triangular shaped cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
 
@@ -873,7 +877,7 @@ is_a: CMPO:0000005 ! cell morphology phenotype
 id: CMPO:0000122
 name: triangular shaped cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying monopolar cell growth" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "arrow shaped cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: prefLabel "triangular shaped cell" xsd:string
@@ -882,7 +886,7 @@ property_value: prefLabel "triangular shaped cell" xsd:string
 id: CMPO:0000123
 name: round nucleus phenotype
 def: "A phenotype observation where the shape of the nucleus has every part of the surface or the circumference equidistant from the center." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "circular nucleus" EXACT []
 synonym: "round nucleus" EXACT []
 is_a: CMPO:0000027 ! nucleus shape phenotype
@@ -892,7 +896,7 @@ property_value: prefLabel "round nucleus" xsd:string
 id: CMPO:0000125
 name: nuclear body phenotype
 def: "A phenotype observation at the level of the nuclear body, an extra-nucleolar nuclear domains usually visualized by confocal microscopy and fluorescent antibodies to specific proteins." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 property_value: prefLabel "nuclear body" xsd:string
 
@@ -900,7 +904,7 @@ property_value: prefLabel "nuclear body" xsd:string
 id: CMPO:0000126
 name: increased nuclear body size phenotype
 def: "A phenotype observation where the nuclear body size is relatively high." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000125 ! nuclear body phenotype
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
@@ -911,7 +915,7 @@ property_value: prefLabel "increased nuclear body size" xsd:string
 id: CMPO:0000127
 name: decreased nuclear body size phenotype
 def: "A phenotype observation where the nuclear body size is relatively low." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000125 ! nuclear body phenotype
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
@@ -922,7 +926,7 @@ property_value: prefLabel "decreased nuclear body size" xsd:string
 id: CMPO:0000128
 name: increased cell size phenotype
 def: "A phenotype observation at the level of the cell size where a cell is larger with respect to normal/wild-type" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "big cell" EXACT []
 synonym: "large cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
@@ -933,7 +937,7 @@ property_value: prefLabel "increased cell size" xsd:string
 id: CMPO:0000129
 name: decreased cell size phenoptype
 def: "A phenotype observation at the level of the cell size where a cell is smaller with respect to normal/wild-type" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "small cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
 
@@ -941,7 +945,7 @@ is_a: CMPO:0000005 ! cell morphology phenotype
 id: CMPO:0000130
 name: decreased golgi volume phenotype
 def: "A phenotype observation at the level of the golgi where the golgi's volume has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000250 ! golgi morphology phenotype
 property_value: prefLabel "decreased golgi volume" xsd:string
@@ -950,7 +954,7 @@ property_value: prefLabel "decreased golgi volume" xsd:string
 id: CMPO:0000131
 name: increased golgi volume phenotype
 def: "A phenotype observation at the level of the golgi where the golgi's volume has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000250 ! golgi morphology phenotype
 property_value: prefLabel "increased golgi volume" xsd:string
@@ -959,7 +963,7 @@ property_value: prefLabel "increased golgi volume" xsd:string
 id: CMPO:0000132
 name: decreased cilium length phenotype
 def: "A phenotype observation at the level of a cilium where the components length has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000252 ! cilium morphology phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
@@ -969,7 +973,7 @@ property_value: prefLabel "decreased cilium length" xsd:string
 id: CMPO:0000133
 name: increased cilium length phenotype
 def: "A phenotype observation at the level of a cilium where the components length has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000252 ! cilium morphology phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
@@ -979,7 +983,7 @@ property_value: prefLabel "increased cilium length" xsd:string
 id: CMPO:0000134
 name: decreased size of focal adhesion phenotype
 def: "A phenotype observation where the size of the focal adhesion has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 property_value: prefLabel "decreased size of focal adhesion" xsd:string
 
@@ -987,7 +991,7 @@ property_value: prefLabel "decreased size of focal adhesion" xsd:string
 id: CMPO:0000135
 name: increased size of focal adhesion phenotype
 def: "A phenotype observation where the size of the focal adhesion has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 property_value: prefLabel "increased size of focal adhesion" xsd:string
 
@@ -995,7 +999,7 @@ property_value: prefLabel "increased size of focal adhesion" xsd:string
 id: CMPO:0000136
 name: decreased focal adhesion area phenotype
 def: "A phenotype observation where the area of the focal adhesion has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "small focal adhesion" EXACT []
 is_a: CMPO:0000134 ! decreased size of focal adhesion phenotype
 property_value: IAO:0000119 pmid:19667130 xsd:string
@@ -1005,7 +1009,7 @@ property_value: prefLabel "decreased focal adhesion area" xsd:string
 id: CMPO:0000137
 name: increased focal adhesion area phenotype
 def: "A phenotype observation where the area of the focal adhesion has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "large focal adhesion" EXACT []
 is_a: CMPO:0000135 ! increased size of focal adhesion phenotype
 property_value: IAO:0000119 pmid:19667130 xsd:string
@@ -1015,7 +1019,7 @@ property_value: prefLabel "increased focal adhesion area" xsd:string
 id: CMPO:0000138
 name: decreased focal adhesion length phenotype
 def: "A phenotype observation where the length of the focal adhesion has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "short focal adhesion" EXACT []
 is_a: CMPO:0000134 ! decreased size of focal adhesion phenotype
 property_value: IAO:0000119 pmid:19667130 xsd:string
@@ -1025,7 +1029,7 @@ property_value: prefLabel "decreased focal adhesion length" xsd:string
 id: CMPO:0000139
 name: increased focal adhesion length phenotype
 def: "A phenotype observation where the length of the focal adhesion has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000135 ! increased size of focal adhesion phenotype
 property_value: prefLabel "increased focal adhesion length" xsd:string
 
@@ -1033,7 +1037,7 @@ property_value: prefLabel "increased focal adhesion length" xsd:string
 id: CMPO:0000140
 name: increased nucleus size phenotype
 def: "A phenotype observation where the size of the nucleus has increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased DNA area" BROAD []
 synonym: "large nuclei" EXACT []
 synonym: "large nucleus" EXACT []
@@ -1047,7 +1051,7 @@ property_value: prefLabel "increased nucleus size" xsd:string
 id: CMPO:0000141
 name: decreased nucleus size phenotype
 def: "A phenotype observation where the size of the nucleus has decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased DNA area" BROAD []
 synonym: "small nucleus" EXACT []
 is_a: CMPO:0000187 ! decreased cell component size phenotype
@@ -1060,7 +1064,7 @@ property_value: prefLabel "decreased nucleus size" xsd:string
 id: CMPO:0000143
 name: increased nuclei size in G1 phenotype
 def: "A phenotype of a cell that has both an increased nuclei size phenotypes and a  G1 phase phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000088 ! G1 phase mitotic phenotype
 is_a: CMPO:0000140 ! increased nucleus size phenotype
 intersection_of: CMPO:0000088 ! G1 phase mitotic phenotype
@@ -1071,7 +1075,7 @@ property_value: prefLabel "increased nuclei size in G1" xsd:string
 id: CMPO:0000144
 name: decreased nuclei size in G1 phenotype
 def: "A phenotype of a cell that has both a decreased nuclei size phenotypes and a  G1 phase phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "small nuclei in G1" EXACT []
 is_a: CMPO:0000088 ! G1 phase mitotic phenotype
 is_a: CMPO:0000141 ! decreased nucleus size phenotype
@@ -1083,7 +1087,7 @@ property_value: prefLabel "decreased nuclei size in G1" xsd:string
 id: CMPO:0000145
 name: increased thickness of dendritic branches phenotype
 def: "A phenotype observation where the thickness of the dendritic branches has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 property_value: prefLabel "increased thickness of dendritic branches" xsd:string
 
@@ -1091,14 +1095,14 @@ property_value: prefLabel "increased thickness of dendritic branches" xsd:string
 id: CMPO:0000146
 name: decreased thickness of dendritic branches
 def: "A phenotype observation where the thickness of the dendritic branches has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 
 [Term]
 id: CMPO:0000147
 name: disorganized microtubules phenotype
 def: "A phenotype observation where the microtublue structure is disorganised" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "microtubule disorganised" EXACT []
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000020 ! cytoskeletal phenotype
@@ -1109,7 +1113,7 @@ property_value: prefLabel "disorganized microtubules" xsd:string
 id: CMPO:0000148
 name: podosome phenotype
 def: "A phenotype observation at the level of podosomes, an actin-rich adhesion structure characterized by formation upon cell substrate contact and localization at the substrate-attached part of the cell." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 property_value: prefLabel "podosome" xsd:string
 
@@ -1117,7 +1121,7 @@ property_value: prefLabel "podosome" xsd:string
 id: CMPO:0000149
 name: radial cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton is symmetric, having equal proportions around a central point or axis." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "radial cytoskeleton" xsd:string
@@ -1126,14 +1130,14 @@ property_value: prefLabel "radial cytoskeleton" xsd:string
 id: CMPO:0000150
 name: phenotypes by organelle
 def: "Phenotype observation organised by specific named organelles." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000259 ! cellular component phenotype
 
 [Term]
 id: CMPO:0000151
 name: fragmented endoplasmic reticulum phenotype
 def: "A phenotype observation where the structure of the endoplasmic reticulum is fragmented or broken." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000021 ! endoplasmic reticulum phenotype
 property_value: prefLabel "fragmented endoplasmic reticulum" xsd:string
@@ -1142,7 +1146,7 @@ property_value: prefLabel "fragmented endoplasmic reticulum" xsd:string
 id: CMPO:0000152
 name: fragmented golgi phenotype
 def: "A phenotype observation at the level of the golgi where the golgi's structure is broken" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "broken golgi phenotype" EXACT []
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000250 ! golgi morphology phenotype
@@ -1152,7 +1156,7 @@ property_value: prefLabel "fragmented golgi" xsd:string
 id: CMPO:0000153
 name: fragmented mitochondria phenotype
 def: "A phenotype observation where the structure of the mitochondria is fragmented or broken." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000023 ! mitochondrion phenotype
 property_value: prefLabel "fragmented mitochondria" xsd:string
@@ -1161,7 +1165,7 @@ property_value: prefLabel "fragmented mitochondria" xsd:string
 id: CMPO:0000154
 name: bright nuclei phenotype
 def: "A phenotype observation where the nuclear's color brightness is relatively high." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 property_value: IAO:0000119 PMID:20531400 xsd:string
 property_value: prefLabel "bright nuclei" xsd:string
@@ -1170,7 +1174,7 @@ property_value: prefLabel "bright nuclei" xsd:string
 id: CMPO:0000155
 name: fragmented nucleus phenotype
 def: "A phenotype observation where the structure of the nucleus is fragmented or broken." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
 property_value: prefLabel "fragmented nucleus" xsd:string
@@ -1180,7 +1184,7 @@ id: CMPO:0000156
 name: graped micronucleus phenotype
 def: "A phenotype observation where nuclear envelopes around single chromosomes or small sets of chromosomes. Forming a grape like structure" []
 comment: Mitocheck\nPublication: http://www.ncbi.nlm.nih.gov/pubmed/20360735\nMicronucleation, i.e. presumably nuclear envelopes around single chromosomes or small sets of chromosomes.  
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "grape" RELATED []
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000249 ! nuclear morphology phenotype
@@ -1191,7 +1195,7 @@ property_value: prefLabel "graped micronucleus" xsd:string
 id: CMPO:0000157
 name: abnormal nucleus shape phenotype
 def: "A phenotype observation where the shape of the nucleus is abnormal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "polylobed nuclear shape" BROAD []
 synonym: "strange nuclear shape" EXACT []
 is_a: CMPO:0000027 ! nucleus shape phenotype
@@ -1201,7 +1205,7 @@ property_value: IAO:0000119 PMID:20360735 xsd:string
 id: CMPO:0000158
 name: decreased nuclei size in G2/M phenotype
 def: "A phenotype observation at the level of the G2/M transition of the mitotic cell cycle where the nuclei are decreased in size with respect to normal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000089 ! G2/M transition phenotype
 is_a: CMPO:0000141 ! decreased nucleus size phenotype
 intersection_of: CMPO:0000089 ! G2/M transition phenotype
@@ -1212,46 +1216,47 @@ property_value: prefLabel "decreased nuclei size in G2/M" xsd:string
 id: CMPO:0000159
 name: absence of cellular component phenotype
 def: "A phenotype observation at the level of a cellular component where the cell component is absent" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000008 ! cell component number phenotype
 property_value: prefLabel "absence of cellular component" xsd:string
 
 [Term]
 id: CMPO:0000160
-name: cell viability in population
+name: cell viability in population phenotype
 def: "A phenotype of a cell population relating to the ability of the cells to live and develop normally" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
+property_value: prefLabel "cell viability in population phenotype" xsd:string
 
 [Term]
 id: CMPO:0000161
 name: increased cell viability in population phenotype
 def: "increased number of viable cell phenotype in a population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
-is_a: CMPO:0000160 ! cell viability in population
+subset: cmpo
+is_a: CMPO:0000160 ! cell viability in population phenotype
 property_value: prefLabel "increased cell viability in population" xsd:string
 
 [Term]
 id: CMPO:0000162
 name: decreased cell viability in population phenotype
 def: "decreased number of viable cell phenotype in a population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
-is_a: CMPO:0000160 ! cell viability in population
+subset: cmpo
+is_a: CMPO:0000160 ! cell viability in population phenotype
 property_value: prefLabel "decreased cell viability in population" xsd:string
 
 [Term]
 id: CMPO:0000163
 name: cell population morphology phenotype
 def: "A population phenotype relating to the size, shape or structure of the cells" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: prefLabel "cell population morphology" xsd:string
 
 [Term]
 id: CMPO:0000164
-name: absence of cytokinesis
+name: absence of cytokinesis phenotype
 def: "A phenotype that results in the absence of cytokinesis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000165 ! cytokinesis phenotype
 is_a: CMPO:0000315 ! absence of cell process phenotype
 property_value: prefLabel "absence of cytokinesis" xsd:string
@@ -1260,24 +1265,24 @@ property_value: prefLabel "absence of cytokinesis" xsd:string
 id: CMPO:0000165
 name: cytokinesis phenotype
 def: "A phenotype observation at the level of cytokinesis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000029 ! cell cycle phenotype
 is_a: CMPO:0000166 ! cell division phenotype
-property_value: prefLabel "cytokinesis" xsd:string
+property_value: prefLabel "cytokinesis phenotype" xsd:string
 
 [Term]
 id: CMPO:0000166
 name: cell division phenotype
 def: "A phenotype observation of the process resulting in the physical partitioning and separation of a cell into daughter cells." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "cell division" xsd:string
+property_value: prefLabel "cell division phenotype" xsd:string
 
 [Term]
 id: CMPO:0000168
 name: increased rate of cell division phenotype
 def: "A phenotype where the cell division process occurs at a higher rate" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "faster cell division" EXACT []
 is_a: CMPO:0000166 ! cell division phenotype
 property_value: prefLabel "increased rate of cell division" xsd:string
@@ -1286,7 +1291,7 @@ property_value: prefLabel "increased rate of cell division" xsd:string
 id: CMPO:0000169
 name: decreased rate of cell division phenotype
 def: "A phenotype where the cell division process occurs at a lower rate" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "slower cell division" EXACT []
 is_a: CMPO:0000166 ! cell division phenotype
 property_value: prefLabel "decreased rate of cell division" xsd:string
@@ -1295,15 +1300,15 @@ property_value: prefLabel "decreased rate of cell division" xsd:string
 id: CMPO:0000170
 name: telomerase activity phenotype
 def: "A phenotype observation of the catalysis of the reaction: deoxynucleoside triphosphate + DNA(n) = diphosphate + DNA(n+1). Catalyzes extension of the 3'- end of a DNA strand by one deoxynucleotide at a time using an internal RNA template that encodes the telomeric repeat sequence." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000037 ! metabolic process phenotype
-property_value: prefLabel "telomerase activity" xsd:string
+property_value: prefLabel "telomerase activity phenotype" xsd:string
 
 [Term]
 id: CMPO:0000171
 name: decreased telomerase activity phenotype
 def: "A phenotype observation where the occurane of telomerase activity is decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000170 ! telomerase activity phenotype
 property_value: prefLabel "decreased telomerase activity" xsd:string
 
@@ -1311,7 +1316,7 @@ property_value: prefLabel "decreased telomerase activity" xsd:string
 id: CMPO:0000172
 name: increased telomerase activity phenotype
 def: "A phenotype observation where the occurane of telomerase activity is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000170 ! telomerase activity phenotype
 property_value: prefLabel "increased telomerase activity" xsd:string
 
@@ -1320,7 +1325,7 @@ id: CMPO:0000173
 name: G0/1 arrested phenotype
 def: "A phenotype of a cell that is arrested at the G0/1 transition" []
 comment: (from GO) Under certain conditions, cells exit the cell cycle during G1 and remain in the G0 state as nongrowing, non-dividing (quiescent) cells. 
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000195 ! arrested process phenotype
 property_value: prefLabel "G0/1 arrested" xsd:string
 
@@ -1328,7 +1333,7 @@ property_value: prefLabel "G0/1 arrested" xsd:string
 id: CMPO:0000174
 name: polarized endoplasmic reticulum phenotype
 def: "A phenotype observation where the endoplasmic reticulum is oriented in the cell with extremities at either end of the main axis. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "polarized endoplasmic reticulum" EXACT []
 is_a: CMPO:0000021 ! endoplasmic reticulum phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
@@ -1338,30 +1343,30 @@ property_value: prefLabel "polarized endoplasmic reticulum" xsd:string
 id: CMPO:0000175
 name: molecular component phenotype
 def: "A phenotype observation at the level of a molecular component of a cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000003 ! phenotype
-property_value: prefLabel "molecular component" xsd:string
+property_value: prefLabel "molecular component phenotype" xsd:string
 
 [Term]
 id: CMPO:0000176
 name: cell DNA phenotype
 def: "A phenotype observation at the level of the cell DNA" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000175 ! molecular component phenotype
-property_value: prefLabel "cell DNA" xsd:string
+property_value: prefLabel "cell DNA phenotype" xsd:string
 
 [Term]
 id: CMPO:0000177
 name: misshapen DNA
 def: "A phenotyoe observation where the nucleus has an irregular shape that is not ovoid." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000176 ! cell DNA phenotype
 
 [Term]
 id: CMPO:0000180
 name: site of double-strand break phenotype
 def: "A phenotype observation at the level of the site of double-strand break, a region of a chromosome at which a DNA double-strand break has occurred." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
 property_value: prefLabel "site of double-strand break" xsd:string
 
@@ -1369,7 +1374,7 @@ property_value: prefLabel "site of double-strand break" xsd:string
 id: CMPO:0000181
 name: decreased number of site of double-strand break phenotype
 def: "A phenotype observation at the level of double strand breaks where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000043 ! decreased cell component number phenotype
 property_value: prefLabel "decreased number of site of double-strand break" xsd:string
 
@@ -1377,22 +1382,22 @@ property_value: prefLabel "decreased number of site of double-strand break" xsd:
 id: CMPO:0000182
 name: increased number of site of double-strand break phenotype
 def: "A phenotype observation where the number of double-strand breaks has increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000180 ! site of double-strand break phenotype
 property_value: prefLabel "increased number of site of double-strand break" xsd:string
 
 [Term]
 id: CMPO:0000185
 name: cell-matrix adhesion phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000028 ! cell adhesion phenotype
-property_value: prefLabel "cell-matrix adhesion" xsd:string
+property_value: prefLabel "cell-matrix adhesion phenotype" xsd:string
 
 [Term]
 id: CMPO:0000186
 name: increased cell component size phenotype
 def: "A phenotype observation at the level of a cellular component where the components size has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000010 ! cell component size phenotype
 property_value: prefLabel "increased cell component size" xsd:string
 
@@ -1400,7 +1405,7 @@ property_value: prefLabel "increased cell component size" xsd:string
 id: CMPO:0000187
 name: decreased cell component size phenotype
 def: "A phenotype observation at the level of a cellular component where the components size has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000010 ! cell component size phenotype
 property_value: prefLabel "decreased cell component size" xsd:string
 
@@ -1408,25 +1413,25 @@ property_value: prefLabel "decreased cell component size" xsd:string
 id: CMPO:0000188
 name: cell spreading phenotype
 def: "A phenotype observation where the morphogenetic process that results in flattening of a cell as a consequence of its adhesion to a substrate." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "substrate adhesion-dependent cell spreading phenotype" EXACT []
 is_a: CMPO:0000028 ! cell adhesion phenotype
 is_a: CMPO:0000189 ! cellular development phenotype
-property_value: prefLabel "cell spreading" xsd:string
+property_value: prefLabel "cell spreading phenotype" xsd:string
 
 [Term]
 id: CMPO:0000189
 name: cellular development phenotype
 def: "A phenotype observation of a biological process whose specific outcome is the progression of a cell over time from an initial condition to a later condition." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000003 ! phenotype
-property_value: prefLabel "cellular development" xsd:string
+property_value: prefLabel "cellular development phenotype" xsd:string
 
 [Term]
 id: CMPO:0000190
 name: decreased number of axons phenotype
 def: "A phenotype observation at the level of axons where the components number has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000074 ! decreased number of cell projections phenotype
 property_value: prefLabel "decreased number of axons" xsd:string
 
@@ -1434,7 +1439,7 @@ property_value: prefLabel "decreased number of axons" xsd:string
 id: CMPO:0000191
 name: increased number of axons phenotype
 def: "A phenotype observation at the level of axons where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000072 ! increased number of cell projections phenotype
 property_value: prefLabel "increased number of axons" xsd:string
 
@@ -1442,15 +1447,15 @@ property_value: prefLabel "increased number of axons" xsd:string
 id: CMPO:0000194
 name: mitotic process phenotype
 def: "A phenotype observation at the level of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000029 ! cell cycle phenotype
-property_value: prefLabel "mitotic process" xsd:string
+property_value: prefLabel "mitotic process phenotype" xsd:string
 
 [Term]
 id: CMPO:0000195
 name: arrested process phenotype
 def: "A phenotype of a cell where a particular process is arrested, or ends earlier in time than expected" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "arrested process" xsd:string
 
@@ -1458,7 +1463,7 @@ property_value: prefLabel "arrested process" xsd:string
 id: CMPO:0000196
 name: M phase arrested phenotype
 def: "A phenotype of a cell where the M phase of mitotic cell cycle process is arrested, or ends earlier in time than expected" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "m phase arrest" EXACT []
 synonym: "mitosis incomplete process phenotype" EXACT []
 synonym: "mitotic arrest" EXACT []
@@ -1470,7 +1475,7 @@ property_value: prefLabel "M phase arrested" xsd:string
 id: CMPO:0000202
 name: mitosis delayed phenotype
 def: "A phenotype observation where mitosis is delayed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "Mitotic delay" EXACT []
 is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000306 ! delayed process phenotype
@@ -1481,7 +1486,7 @@ property_value: prefLabel "mitosis delayed" xsd:string
 id: CMPO:0000203
 name: G2 arrested phenotype
 def: "A phenotype of a cell is arrested in G2 pahse of the cell cycle." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000207 ! G2 phase mitotic phenotype
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
 property_value: prefLabel "G2 arrested" xsd:string
@@ -1490,7 +1495,7 @@ property_value: prefLabel "G2 arrested" xsd:string
 id: CMPO:0000204
 name: S phase arrested phenotype
 def: "A phenotype of a cell where the S pahse process is arrested, or ends earlier in time than expected" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000087 ! S phase mitotic phenotype
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
 property_value: prefLabel "S phase arrested" xsd:string
@@ -1499,7 +1504,7 @@ property_value: prefLabel "S phase arrested" xsd:string
 id: CMPO:0000205
 name: increased duration of exit from mitosis phenotype
 def: "A phenotype observation where the duration of the exit from mitosis is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "prolonged mitotic exit" EXACT []
 is_a: CMPO:0000314 ! exit from mitosis phenotype
 property_value: IAO:0000119 PMID:20711181 xsd:string
@@ -1508,7 +1513,7 @@ property_value: prefLabel "increased duration of exit from mitosis" xsd:string
 [Term]
 id: CMPO:0000206
 name: decreased duration of exit from mitosis phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000314 ! exit from mitosis phenotype
 property_value: prefLabel "decreased duration of exit from mitosis" xsd:string
 
@@ -1516,32 +1521,32 @@ property_value: prefLabel "decreased duration of exit from mitosis" xsd:string
 id: CMPO:0000207
 name: G2 phase mitotic phenotype
 def: "A phenotype observation at the level of a G2 phase of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "G2 phase mitotic" xsd:string
+property_value: prefLabel "G2 phase mitotic phenotype" xsd:string
 
 [Term]
 id: CMPO:0000208
 name: mitotic metaphase phenotype
 def: "A phenotype observation at the level of the mitotic metaphase of the cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "mitotic metaphase" xsd:string
+property_value: prefLabel "mitotic metaphase phenotype" xsd:string
 
 [Term]
 id: CMPO:0000209
 name: mitotic metaphase cells in population
 def: "mitotic metaphase cell phenotype observed in a population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000054 ! cell population process phenotype
 
 [Term]
 id: CMPO:0000210
 name: more mitotic metaphase cells
 def: "increased number of mitotic metaphase cells in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 is_a: CMPO:0000209 ! mitotic metaphase cells in population
 
@@ -1549,7 +1554,7 @@ is_a: CMPO:0000209 ! mitotic metaphase cells in population
 id: CMPO:0000211
 name: fewer mitotic metaphase cells
 def: "decreased number of mitotic metaphase cells in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 is_a: CMPO:0000209 ! mitotic metaphase cells in population
 
@@ -1557,7 +1562,7 @@ is_a: CMPO:0000209 ! mitotic metaphase cells in population
 id: CMPO:0000212
 name: abnormal cell cycle phenotype
 def: "A phenotype where the cell cycle is in some way abnormal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000029 ! cell cycle phenotype
 property_value: prefLabel "abnormal cell cycle" xsd:string
 
@@ -1565,7 +1570,7 @@ property_value: prefLabel "abnormal cell cycle" xsd:string
 id: CMPO:0000213
 name: binuclear cell phenotype
 def: "A phenotype observation where a cell is binucleate, e.g. have two nuclei per cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "nuclei stay close together" EXACT []
 is_a: CMPO:0000018 ! multinucleated cell phenotype
 property_value: prefLabel "binuclear cell" xsd:string
@@ -1574,7 +1579,7 @@ property_value: prefLabel "binuclear cell" xsd:string
 id: CMPO:0000214
 name: increased duration of mitotic chromosome condensation phenotype
 def: "A phenotype observation where the duration of the mitotic chromosome condensation is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "longer mitotic chromosome condensation" EXACT []
 is_a: CMPO:0000218 ! mitotic chromosome condensation phenotype
 property_value: prefLabel "increased duration of mitotic chromosome condensation" xsd:string
@@ -1583,7 +1588,7 @@ property_value: prefLabel "increased duration of mitotic chromosome condensation
 id: CMPO:0000215
 name: decreased duration of mitotic chromosome condensation phenotype
 def: "A phenotype observation where the duration of the mitotic chromosome condensation is decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000218 ! mitotic chromosome condensation phenotype
 property_value: prefLabel "decreased duration of mitotic chromosome condensation" xsd:string
 
@@ -1591,7 +1596,7 @@ property_value: prefLabel "decreased duration of mitotic chromosome condensation
 id: CMPO:0000216
 name: absence of mitotic chromosome decondensation phenotype
 def: "A phenotype resulting from the absence of mitotic chromosome decondensation" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "failure in decondensation" BROAD []
 is_a: CMPO:0000219 ! mitotic chromosome decondensation phenotype
 is_a: CMPO:0000315 ! absence of cell process phenotype
@@ -1601,7 +1606,7 @@ property_value: prefLabel "absence of mitotic chromosome decondensation" xsd:str
 id: CMPO:0000217
 name: absence of mitotic process phenotype
 def: "A phenotype resulting in the absence of mitotic process" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000315 ! absence of cell process phenotype
 property_value: prefLabel "absence of mitotic process" xsd:string
@@ -1610,16 +1615,16 @@ property_value: prefLabel "absence of mitotic process" xsd:string
 id: CMPO:0000218
 name: mitotic chromosome condensation phenotype
 def: "A phenotype observation at the level of mitotic chromosome condensation" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000037 ! metabolic process phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "mitotic chromosome condensation" xsd:string
+property_value: prefLabel "mitotic chromosome condensation phenotype" xsd:string
 
 [Term]
 id: CMPO:0000219
 name: mitotic chromosome decondensation phenotype
 def: "A phenotype observation at the level of mitotic chromosome decondensation" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000194 ! mitotic process phenotype
 property_value: prefLabel "mitotic chromosome decondensation" xsd:string
 
@@ -1627,15 +1632,15 @@ property_value: prefLabel "mitotic chromosome decondensation" xsd:string
 id: CMPO:0000220
 name: cell apoptosis phenotype
 def: "A phenotype where the apoptosis process is observed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000030 ! cell death phenotype
-property_value: prefLabel "cell apoptosis" xsd:string
+property_value: prefLabel "cell apoptosis phenotype" xsd:string
 
 [Term]
 id: CMPO:0000221
 name: more apoptosis in population
 def: "increased number of apoptosis phenotypes in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
 
@@ -1643,7 +1648,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000222
 name: less apoptosis in population
 def: "decreased number of apoptosis phenotypes in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000052 ! decreased cell numbers phenotype
 is_a: CMPO:0000054 ! cell population process phenotype
 
@@ -1651,7 +1656,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000223
 name: increased axon thickness phenotype
 def: "A phenotype observation where the thickness of the axon has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
 property_value: prefLabel "increased axon thickness" xsd:string
@@ -1660,7 +1665,7 @@ property_value: prefLabel "increased axon thickness" xsd:string
 id: CMPO:0000224
 name: decresed axon thickness phenotype
 def: "A phenotype observation where the thickness of the axon has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
 property_value: prefLabel "decresed axon thickness" xsd:string
@@ -1669,7 +1674,7 @@ property_value: prefLabel "decresed axon thickness" xsd:string
 id: CMPO:0000227
 name: increased axon length phenotype
 def: "A phenotype observation at the level of a axon where the components length has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
 property_value: prefLabel "increased axon length" xsd:string
@@ -1678,7 +1683,7 @@ property_value: prefLabel "increased axon length" xsd:string
 id: CMPO:0000228
 name: decreased axon length phenotype
 def: "A phenotype observation at the level of a axon where the components length has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
 property_value: prefLabel "decreased axon length" xsd:string
@@ -1686,7 +1691,7 @@ property_value: prefLabel "decreased axon length" xsd:string
 [Term]
 id: CMPO:0000229
 name: plasma membrane fusion occurance phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell fusion event" BROAD []
 is_a: CMPO:0000032 ! cell membrane organisation phenotype
 property_value: prefLabel "plasma membrane fusion occurance" xsd:string
@@ -1695,7 +1700,7 @@ property_value: prefLabel "plasma membrane fusion occurance" xsd:string
 id: CMPO:0000232
 name: increased rate of cell migration process phenotype
 def: "A phenotype where the cell migration process occurs at an increased rate, typically observed as a faster moving cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000033 ! cell migration phenotype
 property_value: IAO:0000119 PMID:20360735 xsd:string
 property_value: prefLabel "increased rate of cell migration process" xsd:string
@@ -1704,7 +1709,7 @@ property_value: prefLabel "increased rate of cell migration process" xsd:string
 id: CMPO:0000233
 name: decreased rate of cell migration process phenotype
 def: "A phenotype where the cell migration process occurs at an redcued rate, typically observed as a slower moving cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased speed of cell migration" NARROW []
 is_a: CMPO:0000033 ! cell migration phenotype
 property_value: prefLabel "decreased rate of cell migration process" xsd:string
@@ -1713,7 +1718,7 @@ property_value: prefLabel "decreased rate of cell migration process" xsd:string
 id: CMPO:0000234
 name: cell movement phenotype
 def: "A phenotype observation at the level of the whole cell relating to the cell's movement" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
 property_value: prefLabel "cell movement" xsd:string
 
@@ -1721,7 +1726,7 @@ property_value: prefLabel "cell movement" xsd:string
 id: CMPO:0000235
 name: increased cell movement phenotype
 def: "A phenotype observation at the level of the cell movement where cell movement is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000234 ! cell movement phenotype
 property_value: prefLabel "increased cell movement" xsd:string
 
@@ -1729,23 +1734,25 @@ property_value: prefLabel "increased cell movement" xsd:string
 id: CMPO:0000236
 name: increased cell movement speed
 def: "A phenotype observation at the level of the cell movement where the cell moves faster than normal/wild type." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell moves faster" EXACT []
+synonym: "increased cell migration speed" EXACT []
 is_a: CMPO:0000235 ! increased cell movement phenotype
 
 [Term]
 id: CMPO:0000237
 name: increased cell movement distance
 def: "A phenotype observation at the level of the cell movement where the distance travelled by the cell is increased. The distance is measured as the euclidean distance between start and end point of the cell trajectory." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cells cover a longer distance" EXACT []
+synonym: "increased cell migration distance" EXACT []
 is_a: CMPO:0000235 ! increased cell movement phenotype
 
 [Term]
 id: CMPO:0000238
 name: decreased cell movement phenotype
 def: "A phenotype observation at the level of the cell movement where cell movement is decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000234 ! cell movement phenotype
 property_value: prefLabel "decreased cell movement" xsd:string
 
@@ -1753,7 +1760,7 @@ property_value: prefLabel "decreased cell movement" xsd:string
 id: CMPO:0000239
 name: decreased cell movement distance
 def: "A phenotype observation at the level of the cell movement where the distance travelled by the cell is decreased. The distance is measured as the euclidean distance between start and end point of the cell trajectory." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cells cover a shorter distance" EXACT []
 is_a: CMPO:0000238 ! decreased cell movement phenotype
 
@@ -1761,7 +1768,7 @@ is_a: CMPO:0000238 ! decreased cell movement phenotype
 id: CMPO:0000240
 name: decreased cell movement speed
 def: "A phenotype observation at the level of the cell movement where the cell moves slower than normal/wild type." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell moves slower" EXACT []
 is_a: CMPO:0000238 ! decreased cell movement phenotype
 
@@ -1769,7 +1776,7 @@ is_a: CMPO:0000238 ! decreased cell movement phenotype
 id: CMPO:0000241
 name: proliferating cells
 def: "increased number of cells in population phenotype" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "high cell number in population" EXACT []
 synonym: "increased proliferation" EXACT []
 is_a: CMPO:0000051 ! increased cell numbers phenotype
@@ -1779,7 +1786,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000243
 name: actin-mediated cell contraction phenotype
 def: "A phenotype of a cell contraction caused by an actin filament-based process in which cytoplasmic actin filaments slide past one another resulting in contraction of all or part of the cell body." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell contraction" NARROW []
 is_a: CMPO:0000244 ! cell component movement phenotype
 property_value: prefLabel "actin-mediated cell contraction" xsd:string
@@ -1788,7 +1795,7 @@ property_value: prefLabel "actin-mediated cell contraction" xsd:string
 id: CMPO:0000244
 name: cell component movement phenotype
 def: "A phenotype where the directed, self-propelled movement of a cellular component without the involvement of an external agent such as a transporter or a pore is observed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "cell component movement" xsd:string
 
@@ -1796,15 +1803,15 @@ property_value: prefLabel "cell component movement" xsd:string
 id: CMPO:0000245
 name: cell secretion phenotype
 def: "A phenotype observation of the controlled release of a substance by a cell." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000041 ! transport phenotype
-property_value: prefLabel "cell secretion" xsd:string
+property_value: prefLabel "cell secretion phenotype" xsd:string
 
 [Term]
 id: CMPO:0000246
 name: increased rate of protein secretion
 def: "A phenotype observation where the rate of release of proteins from a cell is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "enhanced protein secretion" BROAD []
 is_a: CMPO:0000245 ! cell secretion phenotype
 property_value: IAO:0000119 PMID:22660414 xsd:string
@@ -1813,7 +1820,7 @@ property_value: IAO:0000119 PMID:22660414 xsd:string
 id: CMPO:0000247
 name: decreased rate of protein secretion
 def: "A phenotype observation where the rate of release of proteins from a cell is decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "inhibition of protein secretion" BROAD []
 is_a: CMPO:0000245 ! cell secretion phenotype
 
@@ -1821,7 +1828,7 @@ is_a: CMPO:0000245 ! cell secretion phenotype
 id: CMPO:0000249
 name: nuclear morphology phenotype
 def: "A phenotype observation at the level of the nucleus relating to the nuclear morphology" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000024 ! nuclear phenotype
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "nuclear morphology" xsd:string
@@ -1830,7 +1837,7 @@ property_value: prefLabel "nuclear morphology" xsd:string
 id: CMPO:0000250
 name: golgi morphology phenotype
 def: "A phenotype observation at the level of the golgi relating to the golgi's morphology" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000022 ! golgi phenotype
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "golgi morphology" xsd:string
@@ -1839,15 +1846,15 @@ property_value: prefLabel "golgi morphology" xsd:string
 id: CMPO:0000251
 name: cilium phenotype
 def: "A phenotype observation at the level of the cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000150 ! phenotypes by organelle
-property_value: prefLabel "cilium" xsd:string
+property_value: prefLabel "cilium phenotype" xsd:string
 
 [Term]
 id: CMPO:0000252
 name: cilium morphology phenotype
 def: "A phenotype observation at the level of a cilium relating to the components shape, size or structure" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000251 ! cilium phenotype
 is_a: CMPO:0000303 ! cell component morphology phenotype
 intersection_of: CMPO:0000251 ! cilium phenotype
@@ -1858,24 +1865,24 @@ property_value: prefLabel "cilium morphology" xsd:string
 id: CMPO:0000258
 name: single cell phenotype
 def: "A phenotype observation at the level of a single or whole cell." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000003 ! phenotype
-property_value: prefLabel "single cell" xsd:string
+property_value: prefLabel "single cell phenotype" xsd:string
 
 [Term]
 id: CMPO:0000259
 name: cellular component phenotype
 def: "A phenotype observation at the level of a cellular component" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000003 ! phenotype
-property_value: prefLabel "cellular component" xsd:string
+property_value: prefLabel "cellular component phenotype" xsd:string
 
 [Term]
 id: CMPO:0000261
 name: geometric cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell has a geometric shape with straight edges" []
 comment: request geometric shape in pato
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "geometric cell" xsd:string
@@ -1884,7 +1891,7 @@ property_value: prefLabel "geometric cell" xsd:string
 id: CMPO:0000262
 name: apoptotic DNA
 def: "Fragmented and condensed DNA during or following apoptosis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000176 ! cell DNA phenotype
 property_value: prefLabel "apoptotic DNA" xsd:string
 
@@ -1892,7 +1899,7 @@ property_value: prefLabel "apoptotic DNA" xsd:string
 id: CMPO:0000263
 name: more cells in M phase
 def: "Increased occurrence of mitotic cells" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased number of mitotic cells" EXACT []
 synonym: "increased occurrence of mitosis" EXACT []
 is_a: CMPO:0000051 ! increased cell numbers phenotype
@@ -1902,7 +1909,7 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000264
 name: fewer cells in M phase
 def: "decreased occurrence of mitotic cells in population" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased number of cell in mitosis" EXACT []
 synonym: "decreased number of mitotic cells" EXACT []
 synonym: "decreased occurrence of mitosis" EXACT []
@@ -1914,16 +1921,16 @@ is_a: CMPO:0000054 ! cell population process phenotype
 id: CMPO:0000265
 name: M phase mitotic phenotype
 def: "A phenotype observation at the level of the M phase of the mitotic cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "M phase mitotic" xsd:string
+property_value: prefLabel "M phase mitotic phenotype" xsd:string
 
 [Term]
 id: CMPO:0000266
 name: asymmetric lamellipodia phenotype
 def: "A phenotype observation where more lamellipoda is localised to one side of the cell with respect to the other" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "asymmetric lamellae" EXACT []
 is_a: CMPO:0000065 ! cell component position phenotype
 is_a: CMPO:0000279 ! lamellipodium phenotype
@@ -1934,7 +1941,7 @@ property_value: prefLabel "asymmetric lamellipodia" xsd:string
 id: CMPO:0000267
 name: star shaped cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell has a star-like or bristly shape" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "spiky cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -1944,7 +1951,7 @@ property_value: prefLabel "star shaped cell" xsd:string
 id: CMPO:0000268
 name: spiny shaped cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell has a star-like or bristly shape" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "spiny shaped cell" xsd:string
@@ -1953,7 +1960,7 @@ property_value: prefLabel "spiny shaped cell" xsd:string
 id: CMPO:0000269
 name: increased variability of cell size in population
 def: "A population of cells where the cells exhibit a high variability of size" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "variable cell size" EXACT []
 is_a: CMPO:0000163 ! cell population morphology phenotype
 
@@ -1961,24 +1968,24 @@ is_a: CMPO:0000163 ! cell population morphology phenotype
 id: CMPO:0000270
 name: increased variability of cell shape in population
 def: "A population of cells where the cells exhibit a high variability of shape" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "variable cell shape" EXACT []
 is_a: CMPO:0000163 ! cell population morphology phenotype
 
 [Term]
 id: CMPO:0000271
 name: cortical actin cytoskeleton phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "peripheral actin phenotype" EXACT []
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 property_value: IAO:0000119 "A phenotype observation at the level of the cortical actin cytoskeleton, the portion of the actin cytoskeleton, comprising filamentous actin and associated proteins, that lies just beneath the plasma membrane." xsd:string
-property_value: prefLabel "cortical actin cytoskeleton" xsd:string
+property_value: prefLabel "cortical actin cytoskeleton phenotype" xsd:string
 
 [Term]
 id: CMPO:0000272
 name: increased cortical actin cytoskeleton mass phenotype
 def: "A phenotype observation at the level of the cortical actin cytoskeleton where the components mass has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased peripheral actin" EXACT []
 is_a: CMPO:0000271 ! cortical actin cytoskeleton phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -1988,7 +1995,7 @@ property_value: prefLabel "increased cortical actin cytoskeleton mass" xsd:strin
 id: CMPO:0000273
 name: decreased cortical actin cytoskeleton mass phenotype
 def: "A phenotype observation at the level of the cortical actin cytoskeleton where the components mass has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased peripheral actin" EXACT []
 is_a: CMPO:0000271 ! cortical actin cytoskeleton phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -1998,7 +2005,7 @@ property_value: prefLabel "decreased cortical actin cytoskeleton mass" xsd:strin
 id: CMPO:0000274
 name: disorganised cortical actin cytoskeleton phenotype
 def: "A phenotype observation at the level of the cortical actin cytoskeleton where the component shows an irregular organization" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "disorganised peripheral actin phenotype" EXACT []
 is_a: CMPO:0000012 ! cell component structure phenotype
 is_a: CMPO:0000271 ! cortical actin cytoskeleton phenotype
@@ -2009,7 +2016,7 @@ property_value: prefLabel "disorganised cortical actin cytoskeleton" xsd:string
 id: CMPO:0000276
 name: increased lamellipodia width phenotype
 def: "A phenotype observation at the level of a lamellipodia where the components width has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased width of lamellae" EXACT []
 is_a: CMPO:0000186 ! increased cell component size phenotype
 is_a: CMPO:0000279 ! lamellipodium phenotype
@@ -2020,7 +2027,7 @@ property_value: prefLabel "increased lamellipodia width" xsd:string
 id: CMPO:0000277
 name: decreased lamellipodia width phenotype
 def: "A phenotype observation at the level of a lamellipodia where the components width has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased width of lamellae" EXACT []
 is_a: CMPO:0000187 ! decreased cell component size phenotype
 is_a: CMPO:0000279 ! lamellipodium phenotype
@@ -2031,7 +2038,7 @@ property_value: prefLabel "decreased lamellipodia width" xsd:string
 id: CMPO:0000278
 name: fan-shaped lamellipodia phenotype
 def: "A phenotype observation where the lamellipodia is shaped in the form of a fan." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "motile lamellae" BROAD []
 is_a: CMPO:0000011 ! cell component shape phenotype
 is_a: CMPO:0000279 ! lamellipodium phenotype
@@ -2042,23 +2049,23 @@ property_value: prefLabel "fan-shaped lamellipodia" xsd:string
 id: CMPO:0000279
 name: lamellipodium phenotype
 def: "A phenotype observation at the level of a lamellipodia; a thin sheetlike process extended by the leading edge of a crawling fibroblast; contains a dense meshwork of actin filaments." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000280 ! cell projection phenotype
-property_value: prefLabel "lamellipodium" xsd:string
+property_value: prefLabel "lamellipodium phenotype" xsd:string
 
 [Term]
 id: CMPO:0000280
 name: cell projection phenotype
 def: "A phenotype observation at the level of a cellular component relating to a prolongation or process extending from a cell, e.g. a cilium, lamellipodium or axon." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000259 ! cellular component phenotype
-property_value: prefLabel "cell projection" xsd:string
+property_value: prefLabel "cell projection phenotype" xsd:string
 
 [Term]
 id: CMPO:0000281
 name: filopodium phenotype
 def: "A phenotype observation at the level of the filopodium; a thin, stiff protrusion extended by the leading edge of a motile cell such as a crawling fibroblast." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000280 ! cell projection phenotype
 property_value: prefLabel "filopodium" xsd:string
 
@@ -2066,7 +2073,7 @@ property_value: prefLabel "filopodium" xsd:string
 id: CMPO:0000282
 name: layered cells in population
 def: "Cells not stopping at confluence and growing on top of each other in layers" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "layered cells" BROAD []
 is_a: CMPO:0000163 ! cell population morphology phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -2075,7 +2082,7 @@ property_value: IAO:0000119 PMID:21893601 xsd:string
 id: CMPO:0000283
 name: actin cytoskeleton phenotype
 def: "A phenotype observation at the level of the actin cytoskeleton, the part of the cytoskeleton (the internal framework of a cell) composed of actin and associated proteins. Includes actin cytoskeleton-associated complexes." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 property_value: prefLabel "actin cytoskeleton" xsd:string
 
@@ -2083,7 +2090,7 @@ property_value: prefLabel "actin cytoskeleton" xsd:string
 id: CMPO:0000284
 name: increased actin cytoskeleton mass phenotype
 def: "A phenotype observation at the level of a actin cytoskeleton where the components mass has increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more actin" BROAD []
 is_a: CMPO:0000283 ! actin cytoskeleton phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -2093,7 +2100,7 @@ property_value: prefLabel "increased actin cytoskeleton mass" xsd:string
 id: CMPO:0000285
 name: decreased actin cytoskeleton mass phenotype
 def: "A phenotype observation at the level of a actin cytoskeleton where the components mass has decreased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "less actin" BROAD []
 is_a: CMPO:0000283 ! actin cytoskeleton phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -2102,7 +2109,7 @@ property_value: prefLabel "decreased actin cytoskeleton mass" xsd:string
 [Term]
 id: CMPO:0000286
 name: aggregated microtubules phenotype
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "microtubule clumps" EXACT []
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
@@ -2114,7 +2121,7 @@ property_value: prefLabel "aggregated microtubules" xsd:string
 id: CMPO:0000287
 name: microtubules nuclear bracket phenotype
 def: "A phenotype observation where the microtubules form two crescent shaped brackets around the nucleus" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
@@ -2124,7 +2131,7 @@ property_value: prefLabel "microtubules nuclear bracket" xsd:string
 id: CMPO:0000288
 name: microtubules nuclear ring phenotype
 def: "A phenotype observation where the microtubules form a ring around the nucleus" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "microtubule nuclear ring" EXACT []
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
@@ -2135,7 +2142,7 @@ property_value: prefLabel "microtubules nuclear ring" xsd:string
 id: CMPO:0000289
 name: increased amount of stress fibers phenotype
 def: "A phenotype observation at the level of any stress fibers where the components number has increased. " []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more actin stress fibers" EXACT []
 is_a: CMPO:0000020 ! cytoskeletal phenotype
 property_value: IAO:0000119 pmid:21893601 xsd:string
@@ -2145,7 +2152,7 @@ property_value: prefLabel "increased amount of stress fibers" xsd:string
 id: CMPO:0000290
 name: punctate actin foci phenotype
 def: "A phenotype observation where actin is observed as small patches or spots all over the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "puncta actin filament phenotype" EXACT []
 is_a: CMPO:0000065 ! cell component position phenotype
 is_a: CMPO:0000104 ! actin filament phenotype
@@ -2155,7 +2162,7 @@ property_value: prefLabel "punctate actin foci" xsd:string
 id: CMPO:0000291
 name: increased amount of punctate actin foci phenotype
 def: "A phenotype observation where a cell has an increased amount of actin observed as small patches or spots all over the cell" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased actin puncta" EXACT []
 synonym: "more actin puncta" EXACT []
 is_a: CMPO:0000105 ! increased number of actin filament phenotype
@@ -2167,24 +2174,25 @@ property_value: prefLabel "increased amount of punctate actin foci" xsd:string
 id: CMPO:0000292
 name: cell layer phenotype
 def: "A phenotype of a culture in which cells grow as a monolayer that is attached to the culture substrate." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: IAO:0000119 http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20216 xsd:string
-property_value: prefLabel "cell layer" xsd:string
+property_value: prefLabel "cell layer phenotype" xsd:string
 
 [Term]
 id: CMPO:0000293
-name: loss of cell monolayer
+name: loss of cell monolayer phenotype
 def: "Loss of sheet like monolayer leading to empty patches" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "lost cell monolayer" EXACT []
 is_a: CMPO:0000292 ! cell layer phenotype
+property_value: prefLabel "loss of cell monolayer" xsd:string
 
 [Term]
 id: CMPO:0000294
 name: increased actin localised to the nucleus
 def: "A phenotype observation where many actin filaments are observed in or around the nucleus" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased nuclear actin" EXACT []
 is_a: CMPO:0000105 ! increased number of actin filament phenotype
 property_value: IAO:0000119 "PMID: 21893601" xsd:string
@@ -2193,7 +2201,7 @@ property_value: IAO:0000119 "PMID: 21893601" xsd:string
 id: CMPO:0000296
 name: increased actin localised to the cytoplasm
 def: "A phenotype observation where many actin filaments are observed in the cytoplasm" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased cytoplasmic actin" EXACT []
 is_a: CMPO:0000105 ! increased number of actin filament phenotype
 property_value: IAO:0000119 "PMID: 21893601" xsd:string
@@ -2202,7 +2210,7 @@ property_value: IAO:0000119 "PMID: 21893601" xsd:string
 id: CMPO:0000297
 name: increased amount of stress fibers located in the cell cortex phenotype
 comment: Increased amount of actin stress fibers in the cortical area
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more cortical actin stress fibers" BROAD []
 is_a: CMPO:0000289 ! increased amount of stress fibers phenotype
 property_value: IAO:0000119 "A phenotype observation at the level of stress fibers localized to the cell cortex where the components number has increased. " xsd:string
@@ -2214,7 +2222,7 @@ id: CMPO:0000298
 name: increased amount of transverse stress fibers
 def: "A phenotype observation at the level of stress fibers where the components number has increased and formed transverse arcs which are located in the cell cortex" []
 comment: Increased amount of actin stress fibers, forming transverse arcs located in the cell cortex
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more transverse actin stress fibers" EXACT []
 is_a: CMPO:0000289 ! increased amount of stress fibers phenotype
 property_value: IAO:0000119 pmid:21893601 xsd:string
@@ -2224,7 +2232,7 @@ id: CMPO:0000299
 name: increased amount of zig-zag stress fibers
 def: "A phenotype observation at the level of stress fibers where the components number has increased and formed a zig zag pattern across the cell" []
 comment: Increased amount of actin stress fibers, with zig-zag pattern across the cell
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "more zig-zag actin stress fibers" EXACT []
 is_a: CMPO:0000289 ! increased amount of stress fibers phenotype
 property_value: IAO:0000119 pmid:21893601 xsd:string
@@ -2233,14 +2241,14 @@ property_value: IAO:0000119 pmid:21893601 xsd:string
 id: CMPO:0000300
 name: more multinucleate cells
 def: "Increased cells that are multinucleated" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000051 ! increased cell numbers phenotype
 
 [Term]
 id: CMPO:0000301
 name: no cells phenotype
 def: "Absence of cells" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000002 ! cell population phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "no cells" xsd:string
@@ -2249,7 +2257,7 @@ property_value: prefLabel "no cells" xsd:string
 id: CMPO:0000302
 name: actin nuclear ring phenotype
 def: "A phenotype observation where the microtubules form a ring around the nucleus" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "nuclear actin ring" EXACT []
 is_a: CMPO:0000065 ! cell component position phenotype
 is_a: CMPO:0000104 ! actin filament phenotype
@@ -2260,7 +2268,7 @@ property_value: prefLabel "actin nuclear ring" xsd:string
 id: CMPO:0000303
 name: cell component morphology phenotype
 def: "A phenotype observation at the level of a cellular component relating to the components shape, size or structure" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000259 ! cellular component phenotype
 property_value: prefLabel "cell component morphology" xsd:string
 
@@ -2268,7 +2276,7 @@ property_value: prefLabel "cell component morphology" xsd:string
 id: CMPO:0000304
 name: cell cycle arrested phenotype
 def: "A phenotype of a cell where a particular process is arrested, or ends earlier in time than expected" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000195 ! arrested process phenotype
 property_value: prefLabel "cell cycle arrested" xsd:string
@@ -2277,7 +2285,7 @@ property_value: prefLabel "cell cycle arrested" xsd:string
 id: CMPO:0000305
 name: metaphase arrested phenotype
 def: "A phenotype of a cell arrested in mitotic metaphase" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "metaphase arrest" EXACT []
 is_a: CMPO:0000208 ! mitotic metaphase phenotype
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
@@ -2288,7 +2296,7 @@ property_value: prefLabel "metaphase arrested" xsd:string
 id: CMPO:0000306
 name: delayed process phenotype
 def: "A phenotype of a cell where a particular process is delayed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "delayed process" xsd:string
 
@@ -2296,7 +2304,7 @@ property_value: prefLabel "delayed process" xsd:string
 id: CMPO:0000307
 name: metaphase delayed phenotype
 def: "A phenotype of a cell where mitotic metaphase is delayed" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "metaphase delay" EXACT []
 is_a: CMPO:0000208 ! mitotic metaphase phenotype
 is_a: CMPO:0000306 ! delayed process phenotype
@@ -2307,14 +2315,14 @@ property_value: prefLabel "metaphase delayed" xsd:string
 id: CMPO:0000309
 name: impaired cell migration
 def: "A phenotype where the cell migration is impaired" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000033 ! cell migration phenotype
 
 [Term]
 id: CMPO:0000312
 name: increased duration of cell migration process phenotype
 def: "A phenotype where the cell migration process occurs for longer, typically observed as a cell moving a further distance" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000033 ! cell migration phenotype
 property_value: IAO:0000119 PMID:20360735 xsd:string
 property_value: prefLabel "increased duration of cell migration process" xsd:string
@@ -2323,7 +2331,7 @@ property_value: prefLabel "increased duration of cell migration process" xsd:str
 id: CMPO:0000313
 name: decreased duration of cell migration process phenotype
 def: "A phenotype where the cell migration process duration is reduced, typically observed as a cell moving a shorter distance" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000033 ! cell migration phenotype
 property_value: prefLabel "decreased duration of cell migration process" xsd:string
 
@@ -2331,7 +2339,7 @@ property_value: prefLabel "decreased duration of cell migration process" xsd:str
 id: CMPO:0000314
 name: exit from mitosis phenotype
 def: "A phenotype observation at the level of the exit from mitosis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000194 ! mitotic process phenotype
 property_value: prefLabel "exit from mitosis" xsd:string
 
@@ -2339,7 +2347,7 @@ property_value: prefLabel "exit from mitosis" xsd:string
 id: CMPO:0000315
 name: absence of cell process phenotype
 def: "A phenotype observation at the level of a cellular process where the cell process is absent" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "cell physiology phenotype" EXACT []
 is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "absence of cell process" xsd:string
@@ -2348,7 +2356,7 @@ property_value: prefLabel "absence of cell process" xsd:string
 id: CMPO:0000316
 name: abnormal cell growth phenotype
 def: "A phenotype observation of the process in which the cell growth is abnormal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000035 ! cell growth phenotype
 property_value: prefLabel "abnormal cell growth" xsd:string
 
@@ -2356,7 +2364,7 @@ property_value: prefLabel "abnormal cell growth" xsd:string
 id: CMPO:0000317
 name: cell growth arrested phenotype
 def: "A phenotype observation of the process in which the cell growth is arrested" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000035 ! cell growth phenotype
 is_a: CMPO:0000195 ! arrested process phenotype
 property_value: prefLabel "cell growth arrested" xsd:string
@@ -2365,7 +2373,7 @@ property_value: prefLabel "cell growth arrested" xsd:string
 id: CMPO:0000318
 name: mild decrease in rate of protein secretion
 def: "A phenotype observation where the rate of release of proteins from a cell is mildly decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "mild inhibition of protein secretion" BROAD []
 is_a: CMPO:0000247 ! decreased rate of protein secretion
 property_value: IAO:0000119 PMID:22660414 xsd:string
@@ -2374,8 +2382,8 @@ property_value: IAO:0000119 PMID:22660414 xsd:string
 id: CMPO:0000319
 name: strong decrease in rate of protein secretion
 def: "A phenotype observation where the rate of release of proteins from a cell is severly decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
-synonym: "string inhibition of protein secretion" BROAD []
+subset: cmpo
+synonym: "strong inhibition of protein secretion" BROAD []
 is_a: CMPO:0000247 ! decreased rate of protein secretion
 property_value: IAO:0000119 PMID:22660414 xsd:string
 
@@ -2383,7 +2391,7 @@ property_value: IAO:0000119 PMID:22660414 xsd:string
 id: CMPO:0000320
 name: increased cell spreading phenotype
 def: "A phenotype observation where there is an increased occurance of cell spreading" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000188 ! cell spreading phenotype
 property_value: prefLabel "increased cell spreading" xsd:string
 
@@ -2391,7 +2399,7 @@ property_value: prefLabel "increased cell spreading" xsd:string
 id: CMPO:0000321
 name: mild increase of cell spreading phenotype
 def: "A phenotype observation where there is a mild increase of cell spreading" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "moderate cell spreading" BROAD []
 is_a: CMPO:0000320 ! increased cell spreading phenotype
 property_value: IAO:0000119 PMID:19667130 xsd:string
@@ -2401,7 +2409,7 @@ property_value: prefLabel "mild increase of cell spreading" xsd:string
 id: CMPO:0000322
 name: strong increase of cell spreading phenotype
 def: "A phenotype observation where there is a severe increase in cell spreading" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "extensive cell spreading" BROAD []
 is_a: CMPO:0000320 ! increased cell spreading phenotype
 property_value: prefLabel "strong increase of cell spreading" xsd:string
@@ -2410,7 +2418,7 @@ property_value: prefLabel "strong increase of cell spreading" xsd:string
 id: CMPO:0000323
 name: decreased cell spreading phenotype
 def: "A phenotype observation where there is a decreased occurance of cell spreading" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "poor cell spreading" BROAD []
 is_a: CMPO:0000188 ! cell spreading phenotype
 property_value: IAO:0000119 PMID:19667130 xsd:string
@@ -2420,7 +2428,7 @@ property_value: prefLabel "decreased cell spreading" xsd:string
 id: CMPO:0000324
 name: absence of cell spreading phenotype
 def: "A phenotype observation where cell spreading is absent" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "no spreading cells" EXACT []
 is_a: CMPO:0000188 ! cell spreading phenotype
 is_a: CMPO:0000315 ! absence of cell process phenotype
@@ -2430,7 +2438,7 @@ property_value: prefLabel "absence of cell spreading" xsd:string
 id: CMPO:0000325
 name: spread cell morphology phenotype
 def: "A phenotype observation where a cell shows a thin and large projected areas, with developed matrix adhesions at the cell periphery, as opposed to round cells with no or few adhesion sites" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "spreading cell shape" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: prefLabel "spread cell morphology" xsd:string
@@ -2439,7 +2447,7 @@ property_value: prefLabel "spread cell morphology" xsd:string
 id: CMPO:0000326
 name: abnormal chromosome segregation phenotype
 def: "A phenotype observation of the process in which the chromosome segregation is abnormal" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "chromatin bridges" BROAD []
 synonym: "lagging chromosomes" BROAD []
 synonym: "multiple DNA masses" BROAD []
@@ -2452,16 +2460,16 @@ property_value: prefLabel "abnormal chromosome segregation" xsd:string
 id: CMPO:0000327
 name: mitotic prophase phenotype
 def: "A phenotype observation at the level of the mitotic prophase of the cell cycle" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
-property_value: prefLabel "mitotic prophase" xsd:string
+property_value: prefLabel "mitotic prophase phenotype" xsd:string
 
 [Term]
 id: CMPO:0000328
 name: increased duration of mitotic prophase phenotype
 def: "A phenotype observation where the duration of the mitotic prophase of the cell cycle is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000327 ! mitotic prophase phenotype
 property_value: prefLabel "increased duration of mitotic prophase" xsd:string
 
@@ -2469,7 +2477,7 @@ property_value: prefLabel "increased duration of mitotic prophase" xsd:string
 id: CMPO:0000329
 name: decreased duration of mitotic prophase phenotype
 def: "A phenotype observation where the duration of the mitotic prophase of the cell cycle is decreased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000327 ! mitotic prophase phenotype
 property_value: prefLabel "decreased duration of mitotic prophase" xsd:string
 
@@ -2477,7 +2485,7 @@ property_value: prefLabel "decreased duration of mitotic prophase" xsd:string
 id: CMPO:0000330
 name: decreased frequency of negative regulation of NF-kappaB transcription factor activity phenotype
 def: "A phenotype observation where the frequency of a process that stops, prevents, or reduces the frequency, rate or extent of the activity of the transcription factor NF-kappaB is decreased." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "decreased NF-kB oscillation" RELATED []
 is_a: CMPO:0000039 ! regulation of metabolic process phenotype
 property_value: IAO:0000116 "decreased number of oscillations; the amplitude of the first peak is comparable to control, although the duration may be increased; the time of the second and third peaks is delayed, due to greater interval times between termination and initiation of nuclear translocation responses" xsd:string
@@ -2488,7 +2496,7 @@ property_value: prefLabel "decreased frequency of negative regulation of NF-kapp
 id: CMPO:0000331
 name: increased frequency of negative regulation of NF-kappaB transcription factor activity phenotype
 def: "A phenotype observation where the frequency of a process that stops, prevents, or reduces the frequency, rate or extent of the activity of the transcription factor NF-kappaB is increased." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased NF-kB oscillation" RELATED []
 is_a: CMPO:0000039 ! regulation of metabolic process phenotype
 property_value: IAO:0000116 "increased number of oscillations; the amplitude of the second and third peak is increased and nuclear translocation responses occur at increased intervals." xsd:string
@@ -2499,7 +2507,7 @@ property_value: prefLabel "increased frequency of negative regulation of NF-kapp
 id: CMPO:0000332
 name: cytoplasmic sequestering of NF-kappaB phenotype
 def: "A phenotype observation where the frequency of a process that stops, prevents, or reduces the frequency, rate or extent of the activity of the transcription factor NF-kappaB is increased." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "no NF-kB oscillation phenotype" RELATED []
 is_a: CMPO:0000040 ! regulation of signal transduction phenotype
 property_value: IAO:0000116 "increased number of oscillations; the amplitude of the second and third peak is increased and nuclear translocation responses occur at increased intervals." xsd:string
@@ -2510,7 +2518,7 @@ property_value: prefLabel "cytoplasmic sequestering of NF-kappaB" xsd:string
 id: CMPO:0000333
 name: abnormal release of cytoplasmic sequestered NF-kappaB phenotype
 def: "A phenotype observation where the release of NF-kappaB from specific molecules in the cytoplasm to which it was bound, thereby allowing its translocation into the nucleus, is abnormal." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "different NF-kB oscillation phenotype" RELATED []
 is_a: CMPO:0000040 ! regulation of signal transduction phenotype
 property_value: IAO:0000116 "contains all cases that are significantly different from the rest, but don't share any clear commonalities. NF-kB oscillation patterns are not synchronized within a cell population, oscillation amplitude and frequency follow erratic patterns" xsd:string
@@ -2521,15 +2529,15 @@ property_value: prefLabel "abnormal release of cytoplasmic sequestered NF-kappaB
 id: CMPO:0000334
 name: regulation of process phenotype
 def: "A phenotype observation where any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000007 ! cell process phenotype
-property_value: prefLabel "regulation of process" xsd:string
+property_value: prefLabel "regulation of process phenotype" xsd:string
 
 [Term]
 id: CMPO:0000335
 name: bright nuclear body phenotype
 def: "A phenotype obervation where the nuclear body's color brightness is relatively high." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "increased intensity of nuclear body" RELATED []
 is_a: CMPO:0000125 ! nuclear body phenotype
 property_value: IAO:0000119 pmid:22884692 xsd:string
@@ -2539,14 +2547,14 @@ property_value: prefLabel "bright nuclear body" xsd:string
 id: CMPO:0000337
 name: round focal adhesion
 def: "A phenotype observation where the shape of the focal adhesion has every part of the surface or the circumference equidistant from the center." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 is_a: CMPO:0000011 ! cell component shape phenotype
 
 [Term]
 id: CMPO:0000338
 name: mitosis arrested
 def: "A phenotype of a cell that is arrested at mitosis" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "mitotic arrest" EXACT []
 is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
@@ -2556,7 +2564,7 @@ property_value: IAO:0000119 PMID:20360735 xsd:string
 id: CMPO:0000340
 name: increased cell size in population phenotype
 def: "A population phenotype where the overall cell size in the population is increased" []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "large cells" EXACT []
 is_a: CMPO:0000163 ! cell population morphology phenotype
 property_value: prefLabel "increased cell size in population" xsd:string
@@ -2565,10 +2573,55 @@ property_value: prefLabel "increased cell size in population" xsd:string
 id: CMPO:0000341
 name: pyknotic nuclear phenotype
 def: "A phenotype observation at the level of the nucleus underoging Pyknosis, or karyopyknosis, consisting of the irreversible condensation of chromatin in the nucleus of a cell undergoing necrosis or apoptosis." []
-subset: http://www.ebi.ac.uk/cmpo/subset/cmpo
+subset: cmpo
 synonym: "pyknotic cell" BROAD []
 synonym: "pyknotic nucleus" EXACT []
 is_a: CMPO:0000024 ! nuclear phenotype
+
+[Term]
+id: CMPO:0000343
+name: prometaphase arrested phenotype
+def: "A phenotype of a cell arrested in mitotic prometaphase" []
+subset: cmpo
+synonym: "prometaphase arrest" EXACT []
+is_a: CMPO:0000304 ! cell cycle arrested phenotype
+property_value: prefLabel "prometaphase arrested" xsd:string
+
+[Term]
+id: CMPO:0000344
+name: prometaphase delayed phenotype
+def: "A phenotype of a cell where mitotic prometaphase is delayed" []
+subset: cmpo
+synonym: "prometaphase delay" EXACT []
+is_a: CMPO:0000090 ! cell cycle phase phenotype
+is_a: CMPO:0000306 ! delayed process phenotype
+property_value: prefLabel "prometaphase delayed" xsd:string
+
+[Term]
+id: CMPO:0000345
+name: increased variability of nuclear shape in population
+def: "A population of cells where the nuclei exhibit a high variability of shape" []
+subset: cmpo
+synonym: "variable cell shape" EXACT []
+is_a: CMPO:0000163 ! cell population morphology phenotype
+
+[Term]
+id: CMPO:0000346
+name: decreased rate of intracellular protein transport phenotype
+def: "A phenotype observation where the rate of intracellular protein transport is decreased" []
+subset: cmpo
+is_a: CMPO:0000041 ! transport phenotype
+property_value: IAO:0000119 pmid:21795383 xsd:string
+property_value: prefLabel "decreased rate of intracellular protein transport" xsd:string
+
+[Term]
+id: CMPO:0000347
+name: absence of mitotic metaphase process phenotype
+def: "A phenotype resulting in the absence of mitotic metaphase process" []
+subset: cmpo
+is_a: CMPO:0000194 ! mitotic process phenotype
+is_a: CMPO:0000315 ! absence of cell process phenotype
+property_value: prefLabel "absence of mitotic metaphase" xsd:string
 
 [Typedef]
 id: BFO:0000050
