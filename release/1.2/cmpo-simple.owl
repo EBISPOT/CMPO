@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo.owl#"
-     xml:base="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo.owl"
+<rdf:RDF xmlns="http://www.ebi.ac.uk/cmpo/cmpo.owl"
+     xml:base="http://www.ebi.ac.uk/cmpo/cmpo.owl"
      xmlns:pato="http://purl.obolibrary.org/obo/pato#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
@@ -11,8 +11,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:go="http://purl.obolibrary.org/obo/go#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/2013-12-13/subsets/cmpo.owl"/>
+    <owl:Ontology rdf:about="http://www.ebi.ac.uk/cmpo/cmpo.owl">
+        <owl:versionIRI rdf:resource="http://www.ebi.ac.uk/cmpo/1.2/cmpo.owl"/>
     </owl:Ontology>
     
 
