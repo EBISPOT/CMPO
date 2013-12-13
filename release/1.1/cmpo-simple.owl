@@ -12,7 +12,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:go="http://purl.obolibrary.org/obo/go#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/2013-11-14/subsets/cmpo.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/2013-12-13/subsets/cmpo.owl"/>
     </owl:Ontology>
     
 
@@ -2179,7 +2179,7 @@ Association is weaker than correlation or proportionality. These relations may b
         <rdfs:label xml:lang="en">triangular shaped cell phenotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000005"/>
         <oboInOwl:hasBroadSynonym>arrow shaped cell</oboInOwl:hasBroadSynonym>
-        <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying monopolar cell growth</obo:IAO_0000115>
+        <obo:IAO_0000115>A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying cell motility</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000122</oboInOwl:id>
         <skos:prefLabel xml:lang="en">triangular shaped cell</skos:prefLabel>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
@@ -2252,9 +2252,10 @@ Association is weaker than correlation or proportionality. These relations may b
     <owl:Class rdf:about="http://www.ebi.ac.uk/cmpo/CMPO_0000128">
         <rdfs:label>increased cell size phenotype</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000005"/>
+        <oboInOwl:hasExactSynonym>big cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>increased cell area</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of the cell size where a cell is larger with respect to normal/wild-type</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000128</oboInOwl:id>
-        <oboInOwl:hasExactSynonym xml:lang="en">big cell</oboInOwl:hasExactSynonym>
         <skos:prefLabel xml:lang="en">increased cell size</skos:prefLabel>
         <oboInOwl:hasExactSynonym>large cell</oboInOwl:hasExactSynonym>
         <obo:IAO_0000119>PMID:20531400</obo:IAO_0000119>
@@ -4908,6 +4909,62 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     
 
 
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000348 -->
+
+    <owl:Class rdf:about="http://www.ebi.ac.uk/cmpo/CMPO_0000348">
+        <rdfs:label xml:lang="en">mitotic metaphase plate congression phenotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000194"/>
+        <obo:IAO_0000115>A phenotype observation at the level of the cell cycle process in which chromosomes are aligned at the metaphase plate, a plane halfway between the poles of the mitotic spindle, during mitosis.</obo:IAO_0000115>
+        <oboInOwl:id>CMPO:0000348</oboInOwl:id>
+        <oboInOwl:hasBroadSynonym>metaphase alignment problem</oboInOwl:hasBroadSynonym>
+        <skos:prefLabel xml:lang="en">mitotic metaphase plate congression</skos:prefLabel>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000349 -->
+
+    <owl:Class rdf:about="http://www.ebi.ac.uk/cmpo/CMPO_0000349">
+        <rdfs:label>increased substrate-dependent cell migration, cell extension phenotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000033"/>
+        <skos:prefLabel>increased substrate-dependent cell migration, cell extension</skos:prefLabel>
+        <obo:IAO_0000115>A phenotype where an increased formation of a cell surface protrusion, such as a lamellipodium or filopodium, at the leading edge of a migrating cell is observed.</obo:IAO_0000115>
+        <oboInOwl:id>CMPO:0000349</oboInOwl:id>
+        <oboInOwl:hasExactSynonym xml:lang="en">increased protrusive activity</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000350 -->
+
+    <owl:Class rdf:about="http://www.ebi.ac.uk/cmpo/CMPO_0000350">
+        <rdfs:label xml:lang="en">increased substrate-dependent cell migration phenotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000033"/>
+        <skos:prefLabel>increased substrate-dependent cell migration</skos:prefLabel>
+        <obo:IAO_0000115>A phenotype where an increased occurrence of the orderly movement of a cell from one site to another along a substrate such as the extracellular matrix is observed.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>increased directional cell migration</oboInOwl:hasExactSynonym>
+        <oboInOwl:id>CMPO:0000350</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000351 -->
+
+    <owl:Class rdf:about="http://www.ebi.ac.uk/cmpo/CMPO_0000351">
+        <rdfs:label>increased microtubule-based processes phenotype</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000007"/>
+        <oboInOwl:id>CMPO:0000351</oboInOwl:id>
+        <oboInOwl:hasExactSynonym>microtubule processes</oboInOwl:hasExactSynonym>
+        <skos:prefLabel>increased microtubule-based processes</skos:prefLabel>
+        <obo:IAO_0000115>A phenotype where an increased occurance of any cellular process that depends upon or alters the microtubule cytoskeleton, that part of the cytoskeleton comprising microtubules and their associated proteins, is observed.</obo:IAO_0000115>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -7003,9 +7060,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0004531">
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0044085">
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0003883">
@@ -10239,11 +10293,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022603">
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022607">
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_generic"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_pir"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0005829">
@@ -31278,15 +31327,8 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0004848">
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0030030">
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
-    </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032179">
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_pir"/>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0030031">
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_metagenomics"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0004846">
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gosubset_prok"/>

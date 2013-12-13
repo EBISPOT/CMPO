@@ -876,7 +876,7 @@ is_a: CMPO:0000005 ! cell morphology phenotype
 [Term]
 id: CMPO:0000122
 name: triangular shaped cell phenotype
-def: "A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying monopolar cell growth" []
+def: "A phenotype observation at the level of the cell shape where the cell has a triangular shape, with a wide front and a sharp tail, displaying cell motility" []
 subset: cmpo
 synonym: "arrow shaped cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
@@ -928,6 +928,7 @@ name: increased cell size phenotype
 def: "A phenotype observation at the level of the cell size where a cell is larger with respect to normal/wild-type" []
 subset: cmpo
 synonym: "big cell" EXACT []
+synonym: "increased cell area" EXACT []
 synonym: "large cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: IAO:0000119 PMID:20531400 xsd:string
@@ -2622,6 +2623,42 @@ subset: cmpo
 is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000315 ! absence of cell process phenotype
 property_value: prefLabel "absence of mitotic metaphase" xsd:string
+
+[Term]
+id: CMPO:0000348
+name: mitotic metaphase plate congression phenotype
+def: "A phenotype observation at the level of the cell cycle process in which chromosomes are aligned at the metaphase plate, a plane halfway between the poles of the mitotic spindle, during mitosis." []
+subset: cmpo
+synonym: "metaphase alignment problem" BROAD []
+is_a: CMPO:0000194 ! mitotic process phenotype
+property_value: prefLabel "mitotic metaphase plate congression" xsd:string
+
+[Term]
+id: CMPO:0000349
+name: increased substrate-dependent cell migration, cell extension phenotype
+def: "A phenotype where an increased formation of a cell surface protrusion, such as a lamellipodium or filopodium, at the leading edge of a migrating cell is observed." []
+subset: cmpo
+synonym: "increased protrusive activity" EXACT []
+is_a: CMPO:0000033 ! cell migration phenotype
+property_value: prefLabel "increased substrate-dependent cell migration, cell extension" xsd:string
+
+[Term]
+id: CMPO:0000350
+name: increased substrate-dependent cell migration phenotype
+def: "A phenotype where an increased occurrence of the orderly movement of a cell from one site to another along a substrate such as the extracellular matrix is observed." []
+subset: cmpo
+synonym: "increased directional cell migration" EXACT []
+is_a: CMPO:0000033 ! cell migration phenotype
+property_value: prefLabel "increased substrate-dependent cell migration" xsd:string
+
+[Term]
+id: CMPO:0000351
+name: increased microtubule-based processes phenotype
+def: "A phenotype where an increased occurance of any cellular process that depends upon or alters the microtubule cytoskeleton, that part of the cytoskeleton comprising microtubules and their associated proteins, is observed." []
+subset: cmpo
+synonym: "microtubule processes" EXACT []
+is_a: CMPO:0000007 ! cell process phenotype
+property_value: prefLabel "increased microtubule-based processes" xsd:string
 
 [Typedef]
 id: BFO:0000050
