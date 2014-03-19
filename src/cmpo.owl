@@ -128,6 +128,10 @@
     <owl:ObjectProperty rdf:about="&obo;BFO_0000050">
         <rdf:type rdf:resource="&owl;ReflexiveProperty"/>
         <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:label rdf:datatype="&xsd;string">part_of</rdfs:label>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">BFO:0000050</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="&xsd;string">OBO_REL:part_of</oboInOwl:hasDbXref>
+        <oboInOwl:id rdf:datatype="&xsd;string">part_of</oboInOwl:id>
         <obo:RO_0001900 rdf:resource="&obo;RO_0001901"/>
     </owl:ObjectProperty>
     
@@ -2394,7 +2398,10 @@
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005634"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0044428"/>
+                                    </owl:Restriction>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
                                         <owl:someValuesFrom rdf:resource="&obo;PATO_0000052"/>
@@ -2415,10 +2422,7 @@
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0044428"/>
-                                    </owl:Restriction>
+                                    <rdf:Description rdf:about="&obo;GO_0005634"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
                                         <owl:someValuesFrom rdf:resource="&obo;PATO_0000052"/>
@@ -3044,9 +3048,9 @@
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
-        <skos:prefLabel xml:lang="en">aggregated cells in population</skos:prefLabel>
         <oboInOwl:hasExactSynonym>cell islands</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>Groups of cells gathered or tending to gather into a mass or whole.</obo:IAO_0000115>
+        <skos:prefLabel xml:lang="en">aggregated cells in population</skos:prefLabel>
         <oboInOwl:hasExactSynonym>cell aggregates</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000049</oboInOwl:id>
         <oboInOwl:hasExactSynonym>aggregated cells</oboInOwl:hasExactSynonym>
@@ -4886,19 +4890,11 @@
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005575"/>
-                                    <owl:Class>
-                                        <owl:intersectionOf rdf:parseType="Collection">
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                <owl:someValuesFrom rdf:resource="&obo;GO_0045335"/>
-                                            </owl:Restriction>
-                                            <owl:Restriction>
-                                                <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                                <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
-                                            </owl:Restriction>
-                                        </owl:intersectionOf>
-                                    </owl:Class>
+                                    <rdf:Description rdf:about="&obo;GO_0045335"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
+                                    </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
@@ -4915,11 +4911,19 @@
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0045335"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
-                                    </owl:Restriction>
+                                    <rdf:Description rdf:about="&obo;GO_0005575"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;pato#towards"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;GO_0045335"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
                                 </owl:intersectionOf>
                             </owl:Class>
                         </owl:someValuesFrom>
@@ -4993,6 +4997,27 @@
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                         <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
                                 <owl:someValuesFrom>
@@ -5007,27 +5032,6 @@
                                     </owl:Class>
                                 </owl:someValuesFrom>
                             </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000001"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
                         </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:someValuesFrom>
@@ -7317,6 +7321,30 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0051301"/>
+                                    </owl:Restriction>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
                                     <rdf:Description rdf:about="&obo;GO_0008150"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
@@ -7336,30 +7364,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                                                 </owl:intersectionOf>
                                             </owl:Class>
                                         </owl:someValuesFrom>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0051301"/>
-                                    </owl:Restriction>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -7958,10 +7962,20 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0034446"/>
+                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;PATO_0001236"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0034446"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -7979,20 +7993,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
+                                    <rdf:Description rdf:about="&obo;GO_0034446"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&obo;PATO_0001236"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0034446"/>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -8149,25 +8153,13 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                    </owl:Restriction>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&obo;PATO_0000001"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom>
-                                                            <owl:Restriction>
-                                                                <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
-                                                            </owl:Restriction>
-                                                        </owl:someValuesFrom>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -8216,13 +8208,25 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
-                                    </owl:Restriction>
+                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001236"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;PATO_0000001"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
+                                                        <owl:someValuesFrom>
+                                                            <owl:Restriction>
+                                                                <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                                            </owl:Restriction>
+                                                        </owl:someValuesFrom>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -10826,9 +10830,8 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <oboInOwl:id>CMPO:0000284</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation at the level of a actin cytoskeleton where the components mass has increased</obo:IAO_0000115>
-        <skos:prefLabel xml:lang="en">increased actin cytoskeleton mass</skos:prefLabel>
-        <oboInOwl:hasBroadSynonym>more actin</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
+        <skos:prefLabel xml:lang="en">increased actin cytoskeleton mass</skos:prefLabel>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
@@ -10862,7 +10865,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000119>PMID:21893601</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000285</oboInOwl:id>
-        <oboInOwl:hasBroadSynonym>less actin</oboInOwl:hasBroadSynonym>
         <obo:IAO_0000115>A phenotype observation at the level of a actin cytoskeleton where the components mass has decreased. </obo:IAO_0000115>
         <skos:prefLabel xml:lang="en">decreased actin cytoskeleton mass</skos:prefLabel>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
@@ -11044,6 +11046,27 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
                         <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001512"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
+                        <owl:someValuesFrom>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
                                 <owl:someValuesFrom>
@@ -11063,27 +11086,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                                     </owl:Restriction>
                                 </owl:someValuesFrom>
                             </owl:Restriction>
-                        </owl:someValuesFrom>
-                    </owl:Restriction>
-                </owl:someValuesFrom>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
-                <owl:someValuesFrom>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="&obo;BFO_0000051"/>
-                        <owl:someValuesFrom>
-                            <owl:Class>
-                                <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0005884"/>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0001512"/>
-                                    </owl:Restriction>
-                                </owl:intersectionOf>
-                            </owl:Class>
                         </owl:someValuesFrom>
                     </owl:Restriction>
                 </owl:someValuesFrom>
@@ -11848,13 +11850,20 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
-                                    </owl:Restriction>
+                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000462"/>
+                                        <owl:someValuesFrom>
+                                            <owl:Class>
+                                                <owl:intersectionOf rdf:parseType="Collection">
+                                                    <rdf:Description rdf:about="&obo;PATO_0001558"/>
+                                                    <owl:Restriction>
+                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
+                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
+                                                    </owl:Restriction>
+                                                </owl:intersectionOf>
+                                            </owl:Class>
+                                        </owl:someValuesFrom>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -11872,20 +11881,13 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:someValuesFrom>
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="&obo;GO_0008150"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
+                                    </owl:Restriction>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
-                                        <owl:someValuesFrom>
-                                            <owl:Class>
-                                                <owl:intersectionOf rdf:parseType="Collection">
-                                                    <rdf:Description rdf:about="&obo;PATO_0001558"/>
-                                                    <owl:Restriction>
-                                                        <owl:onProperty rdf:resource="&obo;pato#towards"/>
-                                                        <owl:someValuesFrom rdf:resource="&obo;GO_0008150"/>
-                                                    </owl:Restriction>
-                                                </owl:intersectionOf>
-                                            </owl:Class>
-                                        </owl:someValuesFrom>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0000462"/>
                                     </owl:Restriction>
                                 </owl:intersectionOf>
                             </owl:Class>
@@ -12296,9 +12298,9 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
         <obo:IAO_0000115>A phenotype observation where cell spreading is absent</obo:IAO_0000115>
+        <skos:prefLabel xml:lang="en">absence of cell spreading</skos:prefLabel>
         <oboInOwl:hasExactSynonym>no spreading cells</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000324</oboInOwl:id>
-        <skos:prefLabel xml:lang="en">absence of cell spreading</skos:prefLabel>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
@@ -13173,6 +13175,118 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <skos:prefLabel>increased microtubule-based processes</skos:prefLabel>
         <oboInOwl:hasExactSynonym>microtubule processes</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CMPO:0000351</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000353 -->
+
+    <owl:Class rdf:about="&cmpo;CMPO_0000353">
+        <rdfs:label xml:lang="en">increased monopolar cell elongation phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0042814"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0002051"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000007"/>
+        <oboInOwl:id>CMPO:0000353</oboInOwl:id>
+        <obo:IAO_0000115>A phenotype observation of the process in which a cell increases in size  due to polarized growth from one end of a cell.</obo:IAO_0000115>
+        <skos:prefLabel xml:lang="en">increased monopolar cell elongation</skos:prefLabel>
+        <oboInOwl:hasExactSynonym>increased polar cell elongation</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000354 -->
+
+    <owl:Class rdf:about="&cmpo;CMPO_0000354">
+        <rdfs:label xml:lang="en">decreased monopolar cell elongation phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0042814"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;PATO_0002052"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000007"/>
+        <oboInOwl:hasExactSynonym>decreased polar cell elongation</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>A phenotype observation of the process in which a cell decreases in size  due to polarized growth from one end of a cell.</obo:IAO_0000115>
+        <oboInOwl:id>CMPO:0000354</oboInOwl:id>
+        <skos:prefLabel xml:lang="en">decreased monopolar cell elongation</skos:prefLabel>
+        <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ebi.ac.uk/cmpo/CMPO_0000355 -->
+
+    <owl:Class rdf:about="&cmpo;CMPO_0000355">
+        <rdfs:label xml:lang="en">mild actin-mediated cell contraction phenotype</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002201"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&obo;RO_0000056"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&obo;GO_0070252"/>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&cmpo;CMPO_has_qualifier"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;PATO_0000394"/>
+                                            </owl:Restriction>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&cmpo;CMPO_has_quality"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;PATO_0000057"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
+        <obo:IAO_0000115>A phenotype of a cell contraction caused by an actin filament-based process in which cytoplasmic actin filaments slide past one another resulting in mild contraction of all or part of the cell body.</obo:IAO_0000115>
+        <oboInOwl:id>CMPO:0000355</oboInOwl:id>
+        <skos:prefLabel xml:lang="en">mild actin-mediated cell contraction</skos:prefLabel>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
