@@ -13,7 +13,7 @@
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:go="http://purl.obolibrary.org/obo/go#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/2015-08-21/subsets/cmpo.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/http://www.ebi.ac.uk/cmpo/cmpo.owl/2015-08-24/subsets/cmpo.owl"/>
     </owl:Ontology>
     
 
@@ -2770,13 +2770,13 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000089"/>
+                <owl:someValuesFrom rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000141"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000141"/>
+                <owl:someValuesFrom rdf:resource="http://www.ebi.ac.uk/cmpo/CMPO_0000089"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <oboInOwl:id>CMPO:0000158</oboInOwl:id>
