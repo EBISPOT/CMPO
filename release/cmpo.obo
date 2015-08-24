@@ -1060,8 +1060,8 @@ id: CMPO:0000143
 name: increased nuclei size in G1 phenotype
 def: "A phenotype of a cell that has both an increased nuclei size phenotypes and a  G1 phase phenotype" []
 subset: cmpo
-is_a: CMPO:0000003 ! phenotype
-relationship: BFO:0000051 CMPO:0000140 ! increased nucleus size phenotype
+is_a: CMPO:0000140 ! increased nucleus size phenotype
+relationship: BFO:0000051 CMPO:0000140 ! has_part increased nucleus size phenotype
 property_value: prefLabel "increased nuclei size in G1" xsd:string
 
 [Term]
@@ -1070,9 +1070,10 @@ name: decreased nuclei size in G1 phenotype
 def: "A phenotype of a cell that has both a decreased nuclei size phenotypes and a  G1 phase phenotype" []
 subset: cmpo
 synonym: "small nuclei in G1" EXACT []
-is_a: CMPO:0000003 ! phenotype
-relationship: BFO:0000051 CMPO:0000088 ! G1 phase mitotic phenotype
-relationship: BFO:0000051 CMPO:0000141 ! decreased nucleus size phenotype
+is_a: CMPO:0000088 ! G1 phase mitotic phenotype
+is_a: CMPO:0000141 ! decreased nucleus size phenotype
+relationship: BFO:0000051 CMPO:0000088 ! has_part G1 phase mitotic phenotype
+relationship: BFO:0000051 CMPO:0000141 ! has_part decreased nucleus size phenotype
 property_value: prefLabel "decreased nuclei size in G1" xsd:string
 
 [Term]
@@ -1201,9 +1202,10 @@ id: CMPO:0000158
 name: decreased nuclei size in G2/M phenotype
 def: "A phenotype observation at the level of the G2/M transition of the mitotic cell cycle where the nuclei are decreased in size with respect to normal" []
 subset: cmpo
-is_a: CMPO:0000003 ! phenotype
-relationship: BFO:0000051 CMPO:0000089 ! G2/M transition phenotype
-relationship: BFO:0000051 CMPO:0000141 ! decreased nucleus size phenotype
+is_a: CMPO:0000089 ! G2/M transition phenotype
+is_a: CMPO:0000141 ! decreased nucleus size phenotype
+relationship: BFO:0000051 CMPO:0000089 ! has_part G2/M transition phenotype
+relationship: BFO:0000051 CMPO:0000141 ! has_part decreased nucleus size phenotype
 property_value: prefLabel "decreased nuclei size in G2/M" xsd:string
 
 [Term]
@@ -2735,6 +2737,37 @@ is_a: CMPO:0000360 ! centriole replication phenotype
 property_value: prefLabel "decreased centriole replication" xsd:string
 
 [Term]
+id: CMPO:0000363
+name: protein localization to cellular component phenotype
+subset: cmpo
+is_a: CMPO:0000356 ! cell component localisation phenotype
+
+[Term]
+id: CMPO:0000364
+name: s-shaped cell phenotype
+def: "A phenotype observation at the level of the cell shape where the cell is in a shape that consists of two curves in opposite directions." []
+subset: cmpo
+synonym: "kinked cell" EXACT []
+synonym: "kinky cell" EXACT []
+synonym: "sigmoid cell" EXACT []
+synonym: "z-shaped cell" EXACT []
+xref: FYPO:0002760
+is_a: CMPO:0000005 ! cell morphology phenotype
+property_value: IAO:0000119 "PMID: 25373780" xsd:string
+property_value: prefLabel "S-shaped cell" xsd:string
+
+[Term]
+id: CMPO:0000367
+name: stubby cell phenotype
+def: "A phenotype observation at the level of the cell shape where the shape is stubby.  The cell diameter is larger than normal and the cell length is shorter than normal." []
+subset: cmpo
+synonym: "wide cell" BROAD []
+xref: FYPO:0002106
+is_a: CMPO:0000005 ! cell morphology phenotype
+property_value: IAO:0000119 "PMID: 25373780" xsd:string
+property_value: prefLabel "Stubby cell" xsd:string
+
+[Term]
 id: CMPO:0000368
 name: microtubule cytoskeleton morphology phenotype
 def: "A phenotype observation at the level of the microtubule cytoskeleton relating to the components shape, size or structure" []
@@ -2877,6 +2910,15 @@ is_a: CMPO:0000380 ! cell component organisation phenotype
 property_value: prefLabel "cell component organisation" xsd:string
 
 [Term]
+id: CMPO:0000382
+name: microtubule array phenotype
+def: "A phenotype observation relating to the organisation of microtubules in the cell, where the microtubules are organized into an array." []
+subset: cmpo
+is_a: CMPO:0000381 ! microtubule organisation phenotype
+property_value: IAO:0000119 "PMID: 25373780" xsd:string
+property_value: prefLabel "microtubule array" xsd:string
+
+[Term]
 id: CMPO:0000383
 name: more cells with interphase microtubule arrays phenotype
 def: "An increased number of interphase microtubule array phenotype in population." []
@@ -2934,6 +2976,143 @@ is_a: CMPO:0000375 ! more cells with interphase microtubule phenotype
 property_value: IAO:0000119 "PMID: 25373780" xsd:string
 property_value: prefLabel "fewer cells with interphase microtubule arrays" xsd:string
 
+[Term]
+id: CMPO:0000390
+name: protein localized in golgi phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the Golgi apparatus." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in Golgi" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised in Golgi apparatus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to Golgi" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to Golgi apparatus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000391
+name: protein localized in bud neck phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a cellular bud neck." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in bud neck" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized in cellular bud neck" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to bud neck" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000356 ! cell component localisation phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000392
+name: protein localized in cell periphery phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the cell periphery." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in cell periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to cell periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000356 ! cell component localisation phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000393
+name: protein localized in cytosol phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the cytosol." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in cytosol" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to cytosol" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000356 ! cell component localisation phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000394
+name: protein localized in endoplasmic reticulum phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the endoplasmic reticulum." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in endoplasmic reticulum" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to endoplasmic reticulum" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000395
+name: protein localized in mitochondrion phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a mitochondrion." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in mitochondria" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised in mitochondrion" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to mitochonria" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to mitochonrion" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000396
+name: protein localized in nuclear periphery phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the nuclear periphery." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in nuclear periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to nuclear periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000356 ! cell component localisation phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000397
+name: protein localized in nucleolus phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the nucleolus." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in nucleolus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to nucleolus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000003 ! phenotype
+is_a: CMPO:0000003 {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"} ! phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000398
+name: protein localized in nucleus phenotype
+def: "A phenotype observation in which a protein is observed to be localized within the nucleus." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in nucleus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to nucleus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000399
+name: protein localized in peroxisome phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a peroxisome." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in peroxisome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to peroxisome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000400
+name: protein localized in punctate foci phenotype
+def: "A phenotype observation in which a protein is observed to be localized within punctate foci" [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in punctate foci" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to punctate foci" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000356 ! cell component localisation phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000401
+name: protein localized in vacuole phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a vacuole." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in vacuole" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to vacuole" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000402
+name: protein localized in vacuolar membrane phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a vacuolar membrane." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in vacuolar membrane" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized to vacuolar membrane" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000003 ! phenotype
+is_a: CMPO:0000003 {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"} ! phenotype
+property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
 [Typedef]
 id: BFO:0000050
 name: part_of
@@ -2945,7 +3124,10 @@ is_transitive: true
 
 [Typedef]
 id: BFO:0000051
+name: has_part
+subset: cmpo
 property_value: RO:0001900 RO:0001901
+is_transitive: true
 
 [Typedef]
 id: RO:0000052
