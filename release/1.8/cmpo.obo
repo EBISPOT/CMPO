@@ -3131,6 +3131,8 @@ is_transitive: true
 
 [Typedef]
 id: RO:0000052
+name: inheres_in
+subset: cmpo
 property_value: RO:0001900 RO:0001901
 
 [Typedef]
