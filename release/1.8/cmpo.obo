@@ -1,32 +1,27 @@
 format-version: 1.2
-subsetdef: abnormal_slim "Abnormal/normal slim"
-subsetdef: absent_slim "Absent/present slim"
-subsetdef: attribute_slim "Attribute slim"
-subsetdef: cell_quality "cell_quality"
 subsetdef: cmpo "CMPO subset"
-subsetdef: Cross_product_review "Involved_in"
-subsetdef: disposition_slim "Disposition slim"
+subsetdef: goantislim_grouping "Grouping classes that can be excluded"
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"
 subsetdef: gocheck_do_not_manually_annotate "Term not to be used for direct manual annotation"
 subsetdef: goslim_aspergillus "Aspergillus GO slim"
 subsetdef: goslim_candida "Candida GO slim"
+subsetdef: goslim_chembl "ChEMBL protein targets summary"
 subsetdef: goslim_generic "Generic GO slim"
+subsetdef: goslim_goa "GOA and proteome slim"
 subsetdef: goslim_metagenomics "Metagenomics GO slim"
 subsetdef: goslim_pir "PIR GO slim"
 subsetdef: goslim_plant "Plant GO slim"
 subsetdef: goslim_pombe "Fission yeast GO slim"
+subsetdef: goslim_synapse "synapse GO slim"
+subsetdef: goslim_virus "Viral GO slim"
 subsetdef: goslim_yeast "Yeast GO slim"
 subsetdef: gosubset_prok "Prokaryotic GO subset"
 subsetdef: mf_needs_review "Catalytic activity terms in need of attention"
-subsetdef: mpath_slim "Pathology slim"
-subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
-subsetdef: scalar_slim "Scalar slim"
 subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a template and require additional vetting by editors"
-subsetdef: value_slim "Value slim"
 subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 ontology: http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000143> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002092> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>) <http://www.ebi.ac.uk/cmpo/CMPO_0000140>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000158> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000089>)))\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000369> \"CMPO:0000368\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000050> \"part_of\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000381> \"CMPO:0000380\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000385> \"CMPO:0000384\")\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000143> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002092> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>) <http://www.ebi.ac.uk/cmpo/CMPO_0000140>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000158> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000089>)))\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000369> \"CMPO:0000368\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000050> \"part_of\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000381> \"CMPO:0000380\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000385> \"CMPO:0000384\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000070> \"towards\"^^xsd:string)\n)
 
 [Term]
 id: CMPO:0000002
@@ -293,7 +288,7 @@ id: CMPO:0000041
 name: transport phenotype
 def: "A phenotype observation of the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore." []
 subset: cmpo
-is_a: CMPO:0000007 ! cell process phenotype
+is_a: CMPO:0000356 ! cell component localisation phenotype
 property_value: prefLabel "transport phenotype" xsd:string
 
 [Term]
@@ -630,7 +625,7 @@ id: CMPO:0000090
 name: cell cycle phase phenotype
 def: "A phenotype observation at the level of a cell cycle phase" []
 subset: cmpo
-is_a: CMPO:0000029 ! cell cycle phenotype
+is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "cell cycle phase phenotype" xsd:string
 
 [Term]
@@ -1323,7 +1318,7 @@ name: G0/1 arrested phenotype
 def: "A phenotype of a cell that is arrested at the G0/1 transition" []
 comment: (from GO) Under certain conditions, cells exit the cell cycle during G1 and remain in the G0 state as nongrowing, non-dividing (quiescent) cells. 
 subset: cmpo
-is_a: CMPO:0000195 ! arrested process phenotype
+is_a: CMPO:0000304 ! cell cycle arrested phenotype
 property_value: prefLabel "G0/1 arrested" xsd:string
 
 [Term]
@@ -1605,7 +1600,6 @@ id: CMPO:0000218
 name: mitotic chromosome condensation phenotype
 def: "A phenotype observation at the level of mitotic chromosome condensation" []
 subset: cmpo
-is_a: CMPO:0000037 ! metabolic process phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
 property_value: prefLabel "mitotic chromosome condensation phenotype" xsd:string
 
@@ -1681,7 +1675,7 @@ id: CMPO:0000229
 name: plasma membrane fusion occurance phenotype
 subset: cmpo
 synonym: "cell fusion event" BROAD []
-is_a: CMPO:0000032 ! cell membrane organisation phenotype
+is_a: CMPO:0000007 ! cell process phenotype
 property_value: prefLabel "plasma membrane fusion occurance" xsd:string
 
 [Term]
@@ -1834,7 +1828,7 @@ id: CMPO:0000251
 name: cilium phenotype
 def: "A phenotype observation at the level of the cilium, a specialized eukaryotic organelle that consists of a filiform extrusion of the cell surface." []
 subset: cmpo
-is_a: CMPO:0000150 ! phenotypes by organelle
+is_a: CMPO:0000003 ! phenotype
 property_value: prefLabel "cilium phenotype" xsd:string
 
 [Term]
@@ -1842,6 +1836,7 @@ id: CMPO:0000252
 name: cilium morphology phenotype
 def: "A phenotype observation at the level of a cilium relating to the components shape, size or structure" []
 subset: cmpo
+is_a: CMPO:0000150 ! phenotypes by organelle
 is_a: CMPO:0000251 ! cilium phenotype
 is_a: CMPO:0000280 ! cell projection phenotype
 is_a: CMPO:0000303 ! cell component morphology phenotype
@@ -2260,6 +2255,7 @@ id: CMPO:0000304
 name: cell cycle arrested phenotype
 def: "A phenotype of a cell where a particular process is arrested, or ends earlier in time than expected" []
 subset: cmpo
+is_a: CMPO:0000029 ! cell cycle phenotype
 is_a: CMPO:0000090 ! cell cycle phase phenotype
 is_a: CMPO:0000195 ! arrested process phenotype
 property_value: prefLabel "cell cycle arrested" xsd:string
@@ -2496,6 +2492,7 @@ def: "A phenotype observation where the frequency of a process that stops, preve
 subset: cmpo
 synonym: "no NF-kB oscillation phenotype" RELATED []
 is_a: CMPO:0000040 ! regulation of signal transduction phenotype
+is_a: CMPO:0000356 ! cell component localisation phenotype
 property_value: IAO:0000116 "increased number of oscillations; the amplitude of the second and third peak is increased and nuclear translocation responses occur at increased intervals." xsd:string
 property_value: IAO:0000119 PMID:23300644 xsd:string
 property_value: prefLabel "cytoplasmic sequestering of NF-kappaB" xsd:string
@@ -2571,6 +2568,7 @@ name: prometaphase arrested phenotype
 def: "A phenotype of a cell arrested in mitotic prometaphase" []
 subset: cmpo
 synonym: "prometaphase arrest" EXACT []
+is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
 property_value: prefLabel "prometaphase arrested" xsd:string
 
@@ -2581,6 +2579,7 @@ def: "A phenotype of a cell where mitotic prometaphase is delayed" []
 subset: cmpo
 synonym: "prometaphase delay" EXACT []
 is_a: CMPO:0000090 ! cell cycle phase phenotype
+is_a: CMPO:0000194 ! mitotic process phenotype
 is_a: CMPO:0000306 ! delayed process phenotype
 property_value: prefLabel "prometaphase delayed" xsd:string
 
@@ -2616,6 +2615,7 @@ name: mitotic metaphase plate congression phenotype
 def: "A phenotype observation at the level of the cell cycle process in which chromosomes are aligned at the metaphase plate, a plane halfway between the poles of the mitotic spindle, during mitosis." []
 subset: cmpo
 synonym: "metaphase alignment problem" BROAD []
+is_a: CMPO:0000038 ! organelle localization phenotype
 is_a: CMPO:0000194 ! mitotic process phenotype
 property_value: prefLabel "mitotic metaphase plate congression" xsd:string
 
@@ -3048,7 +3048,7 @@ def: "A phenotype observation in which a protein is observed to be localized wit
 subset: cmpo
 synonym: "protein localised in nuclear periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 synonym: "protein localized to nuclear periphery" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
-is_a: CMPO:0000356 ! cell component localisation phenotype
+is_a: CMPO:0000398 ! protein localized in nucleus phenotype
 property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 
 [Term]
@@ -3058,8 +3058,7 @@ def: "A phenotype observation in which a protein is observed to be localized wit
 subset: cmpo
 synonym: "protein localised in nucleolus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 synonym: "protein localized to nucleolus" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
-is_a: CMPO:0000003 ! phenotype
-is_a: CMPO:0000003 {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"} ! phenotype
+is_a: CMPO:0000398 ! protein localized in nucleus phenotype
 property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 
 [Term]
@@ -3109,8 +3108,7 @@ def: "A phenotype observation in which a protein is observed to be localized wit
 subset: cmpo
 synonym: "protein localised in vacuolar membrane" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 synonym: "protein localized to vacuolar membrane" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
-is_a: CMPO:0000003 ! phenotype
-is_a: CMPO:0000003 {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"} ! phenotype
+is_a: CMPO:0000401 ! protein localized in vacuole phenotype
 property_value: IAO:0000119 "PMID: 23509072" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 
 [Typedef]
@@ -3128,6 +3126,13 @@ name: has_part
 subset: cmpo
 property_value: RO:0001900 RO:0001901
 is_transitive: true
+
+[Typedef]
+id: BFO:0000070
+name: towards
+namespace: quality
+comment: Relation binding a relational quality or disposition to the relevant type of entity.
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
 [Typedef]
 id: RO:0000052
@@ -3182,16 +3187,14 @@ creation_date: 2009-08-26T02:50:08Z
 [Typedef]
 id: ends_during
 name: ends_during
-namespace: gene_ontology
-comment: This relation will be used after 2013-05-21.
+namespace: external
 xref: RO:0002093
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Typedef]
 id: happens_during
 name: happens_during
-namespace: gene_ontology
-comment: This relation will be used after 2013-05-21.
+namespace: external
 xref: RO:0002092
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 is_transitive: true
@@ -3255,8 +3258,8 @@ creation_date: 2009-08-26T02:50:24Z
 
 [Typedef]
 id: negatively_regulates
-name: negatively_regulates
-namespace: gene_ontology
+name: negatively regulates
+namespace: external
 xref: RO:0002212
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
@@ -3265,14 +3268,14 @@ is_a: regulates ! regulates
 [Typedef]
 id: occurs_in
 name: occurs in
-namespace: gene_ontology
+namespace: external
 xref: BFO:0000066
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
 
 [Typedef]
 id: positively_regulates
-name: positively_regulates
-namespace: gene_ontology
+name: positively regulates
+namespace: external
 xref: RO:0002213
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
@@ -3289,31 +3292,15 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 [Typedef]
 id: regulates
 name: regulates
-namespace: gene_ontology
+namespace: external
 xref: RO:0002211
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-
-[Typedef]
-id: results_in
-name: results_in
-namespace: gene_ontology
-comment: This relation is currently used to connect two regulation processes p1 and p2, such that if r1 regulates p1 and r2 regulates p2, and r1 results_in r2 then the regulation of p1 is required for the regulation of p2. For an example of use, see GO:0035958 'regulation of glyoxylate cycle by regulation of transcription from RNA polymerase II promoter'. Note that a precise definition of this relation is under discussion. After it has been formalized it will be added to RO, where it will have a RO ID. Note that the existing identifier and label are subject to change.
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/go.owl
-created_by: cjm
-creation_date: 2012-03-14T10:35:44Z
 
 [Typedef]
 id: similar_in_magnitude_relative_to
 name: similar_in_magnitude_relative_to
 namespace: quality
 def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
-
-[Typedef]
-id: towards
-name: towards
-namespace: quality
-comment: Relation binding a relational quality or disposition to the relevant type of entity.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pato.owl
 
