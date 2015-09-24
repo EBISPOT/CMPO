@@ -6174,9 +6174,9 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000160"/>
-        <oboInOwl:id>CMPO:0000161</oboInOwl:id>
         <skos:prefLabel xml:lang="en">increased cell viability in population</skos:prefLabel>
         <obo:IAO_0000115>increased number of viable cell phenotype in a population</obo:IAO_0000115>
+        <oboInOwl:id>CMPO:0000161</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
@@ -6221,10 +6221,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&obo;PATO_0000051"/>
+                            <rdf:Description rdf:about="&obo;PATO_0000001"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
-                                <owl:someValuesFrom rdf:resource="&obo;CL_0000000"/>
+                                <owl:onProperty rdf:resource="&obo;RO_0000053"/>
+                                <owl:someValuesFrom rdf:resource="&cmpo;CMPO_0000005"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -6237,10 +6237,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:intersectionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="&obo;PATO_0000001"/>
+                            <rdf:Description rdf:about="&obo;PATO_0000051"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000053"/>
-                                <owl:someValuesFrom rdf:resource="&cmpo;CMPO_0000005"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
+                                <owl:someValuesFrom rdf:resource="&obo;CL_0000000"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -6346,7 +6346,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001236"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
                                 <owl:someValuesFrom>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
@@ -6367,7 +6367,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001236"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
+                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
                                 <owl:someValuesFrom>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
@@ -7051,13 +7051,8 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001236"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
-                                <owl:someValuesFrom>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
-                                    </owl:Restriction>
-                                </owl:someValuesFrom>
+                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
+                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -7072,8 +7067,13 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001236"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
-                                <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0000278"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -9138,7 +9138,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0000001"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
+                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
                                 <owl:someValuesFrom rdf:resource="&obo;GO_0015629"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -9154,7 +9154,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0000001"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
                                 <owl:someValuesFrom rdf:resource="&obo;GO_0015629"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -9378,7 +9378,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001512"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
+                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
                                 <owl:someValuesFrom rdf:resource="&obo;GO_0005884"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -9394,7 +9394,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                         <owl:intersectionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="&obo;PATO_0001512"/>
                             <owl:Restriction>
-                                <owl:onProperty rdf:resource="&obo;RO_0000052"/>
+                                <owl:onProperty rdf:resource="&obo;BFO_0000070"/>
                                 <owl:someValuesFrom rdf:resource="&obo;GO_0005884"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
@@ -9805,7 +9805,12 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                             <rdf:Description rdf:about="&obo;PATO_0000297"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&obo;RO_0000052"/>
-                                <owl:someValuesFrom rdf:resource="&obo;GO_0022403"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
+                                        <owl:someValuesFrom rdf:resource="&obo;GO_0022402"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -9821,12 +9826,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                             <rdf:Description rdf:about="&obo;PATO_0000297"/>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="&obo;RO_0000052"/>
-                                <owl:someValuesFrom>
-                                    <owl:Restriction>
-                                        <owl:onProperty rdf:resource="&obo;BFO_0000050"/>
-                                        <owl:someValuesFrom rdf:resource="&obo;GO_0022402"/>
-                                    </owl:Restriction>
-                                </owl:someValuesFrom>
+                                <owl:someValuesFrom rdf:resource="&obo;GO_0022403"/>
                             </owl:Restriction>
                         </owl:intersectionOf>
                     </owl:Class>
@@ -10974,10 +10974,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000003"/>
-        <skos:prefLabel xml:lang="en">decreased rate of intracellular protein transport</skos:prefLabel>
-        <obo:IAO_0000119>pmid:21795383</obo:IAO_0000119>
         <oboInOwl:id>CMPO:0000346</oboInOwl:id>
         <obo:IAO_0000115>A phenotype observation where the rate of intracellular protein transport is decreased</obo:IAO_0000115>
+        <skos:prefLabel xml:lang="en">decreased rate of intracellular protein transport</skos:prefLabel>
+        <obo:IAO_0000119>pmid:21795383</obo:IAO_0000119>
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     
@@ -12326,7 +12326,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000375"/>
+        <rdfs:subClassOf rdf:resource="&cmpo;CMPO_0000002"/>
         <skos:prefLabel>fewer cells with interphase microtubule arrays</skos:prefLabel>
         <obo:IAO_0000115>A decreased number of interphase microtubule array phenotypes in population.</obo:IAO_0000115>
         <oboInOwl:id>CMPO:0000388</oboInOwl:id>
@@ -12384,32 +12384,8 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the Golgi apparatus.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to Golgi apparatus</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in Golgi apparatus</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in Golgi</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -12443,6 +12419,30 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:annotatedTarget>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in Golgi</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the Golgi apparatus.</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to Golgi apparatus</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000390"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -12488,18 +12488,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to bud neck</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
         <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
         <owl:annotatedTarget>
@@ -12530,8 +12518,26 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized in cellular bud neck</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to bud neck</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in bud neck</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -12542,14 +12548,8 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in bud neck</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized in cellular bud neck</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000391"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -12600,27 +12600,9 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to cell periphery</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in cell periphery</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the cell periphery.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -12662,6 +12644,24 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the cell periphery.</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to cell periphery</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000392"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -12709,16 +12709,22 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to cytosol</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the cytosol.</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
     </owl:Axiom>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in cytosol</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -12756,22 +12762,16 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to cytosol</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in cytosol</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000393"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -12816,12 +12816,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
         <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
         <owl:annotatedTarget>
@@ -12852,6 +12846,24 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in endoplasmic reticulum</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to endoplasmic reticulum</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
@@ -12862,18 +12874,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in endoplasmic reticulum</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to endoplasmic reticulum</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000394"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -12919,20 +12919,14 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a mitochondrion.</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in mitochondrion</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to mitochonrion</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to mitochonrion</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to mitochonria</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -12941,6 +12935,18 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a mitochondrion.</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -12975,7 +12981,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to mitochonria</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in mitochondrion</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -12984,12 +12990,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in mitochondria</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000395"/>
     </owl:Axiom>
     
 
@@ -13033,16 +13033,34 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
+    </owl:Axiom>
+    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in nuclear periphery</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nuclear periphery.</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to nuclear periphery</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13074,24 +13092,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
                 </owl:someValuesFrom>
             </owl:Restriction>
         </owl:annotatedTarget>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to nuclear periphery</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nuclear periphery.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000396"/>
     </owl:Axiom>
     
 
@@ -13136,15 +13136,27 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nucleolus.</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in nucleolus</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to nucleolus</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13178,22 +13190,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to nucleolus</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nucleolus.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000397"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
     </owl:Axiom>
     
 
@@ -13237,28 +13237,16 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nucleus.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to nucleus</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in nucleus</owl:annotatedTarget>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13292,10 +13280,22 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within the nucleus.</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
+    </owl:Axiom>
+    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
         <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in nucleus</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000398"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -13340,12 +13340,6 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to peroxisome</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
         <owl:annotatedProperty rdf:resource="&owl;equivalentClass"/>
         <owl:annotatedTarget>
@@ -13377,9 +13371,15 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to peroxisome</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a peroxisome.</owl:annotatedTarget>
@@ -13388,10 +13388,10 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000399"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13454,7 +13454,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to punctate foci</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in punctate foci</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000400"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -13466,7 +13466,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in punctate foci</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to punctate foci</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000400"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
@@ -13512,22 +13512,16 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:inSubset rdf:resource="&obo;subset/cmpo#cmpo"/>
     </owl:Class>
     <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in vacuole</owl:annotatedTarget>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a vacuole.</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in vacuole</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13562,15 +13556,21 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to vacuole</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
-        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to vacuole</owl:annotatedTarget>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000401"/>
+        <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     
 
@@ -13615,9 +13615,21 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
     </owl:Class>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localized to vacuolar membrane</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
     </owl:Axiom>
     <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
@@ -13651,28 +13663,16 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         </owl:annotatedTarget>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a vacuolar membrane.</owl:annotatedTarget>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
-    </owl:Axiom>
-    <owl:Axiom>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
         <owl:annotatedTarget rdf:datatype="&xsd;string">protein localised in vacuolar membrane</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
         <owl:annotatedProperty rdf:resource="&oboInOwl;hasExactSynonym"/>
     </owl:Axiom>
     <owl:Axiom>
-        <owl:annotatedTarget rdf:datatype="&xsd;string">PMID: 23509072</owl:annotatedTarget>
+        <owl:annotatedTarget rdf:datatype="&xsd;string">A phenotype observation in which a protein is observed to be localized within a vacuolar membrane.</owl:annotatedTarget>
         <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedProperty rdf:resource="&obo;IAO_0000119"/>
+        <owl:annotatedProperty rdf:resource="&obo;IAO_0000115"/>
         <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <patterns:createdBy rdf:datatype="&xsd;string">http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern</patterns:createdBy>
-        <owl:annotatedTarget rdf:resource="&cmpo;CMPO_0000003"/>
-        <owl:annotatedSource rdf:resource="&cmpo;CMPO_0000402"/>
-        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
     </owl:Axiom>
     
 
