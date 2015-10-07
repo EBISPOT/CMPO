@@ -3108,6 +3108,55 @@ synonym: "protein localized to nuclear body" EXACT [] {http://www.co-ode.org/pat
 is_a: CMPO:0000398 ! protein localized in nucleus phenotype
 
 [Term]
+id: CMPO:0000404
+name: protein localized in Cajal body phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a Cajal body." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in Cajal body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000403 ! protein localized to nuclear body
+property_value: IAO:0000119 "PubMed ID:24127217" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000405
+name: protein localized in nuclear speckle phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a nuclear speckle." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in nuclear speckle phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000403 ! protein localized to nuclear body
+property_value: IAO:0000119 "PubMed ID:24127217" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000406
+name: protein localized in paraspeckle phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a paraspeckle." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in paraspeckle phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000403 ! protein localized to nuclear body
+property_value: IAO:0000119 "PubMed ID:24127217" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000407
+name: protein localized in PML body phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a PML body." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in PML body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised in Promyelocytic Leukemia nuclear body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized in Promyelocytic Leukemia nuclear body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000403 ! protein localized to nuclear body
+property_value: IAO:0000119 "PubMed ID:24127217" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000408
+name: protein localized in polycomb body phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a polycomb body." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localised in PcG body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized in PcG body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localized in polycomb body phenotype" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000403 ! protein localized to nuclear body
+property_value: IAO:0000119 "PubMed ID:24127217" xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
 id: CMPO:0000410
 name: fewer cells with G1 phase microtubule arrays phenotype
 def: "A decreased number of post-anaphase or G1 phase microtubule arrays in population phenotype" [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
