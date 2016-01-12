@@ -15,6 +15,10 @@ The following CMPO release files are provided
 Simon Jupp <jupp@abi.ac.uk>
 Gabriella Rustici <gabry@ebi.ac.uk>
 
+### Licence ###
+
+Apache License, version 2.0. 
+
 ### Files ###
 
 * __release/cmpo.obo__ 
