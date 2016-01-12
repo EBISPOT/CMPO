@@ -5,10 +5,10 @@ The Cellular Microscopy Phenotype Ontology (CMPO) is a species neutral ontology 
 
 For more information see the CMPO website at http://www.ebi.ac.uk/cmpo
 
-The follwing CMPO release files are provided 
+The following CMPO release files are provided 
 
-http://www.ebi.ac.uk/cmpo/cmpo.owl
-http://www.ebi.ac.uk/cmpo/cmpo-simple.owl - without axioms referening to external ontologies
+* http://www.ebi.ac.uk/cmpo/cmpo.owl
+* http://www.ebi.ac.uk/cmpo/cmpo-simple.owl - without axioms referening to external ontologies
 
 ### Contact ###
 
