@@ -754,6 +754,7 @@ id: CMPO:0000109
 name: centered cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton is located in a position equidistant from the edges of the cell" []
 subset: cmpo
+is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "centered cytoskeleton" xsd:string
 
@@ -805,6 +806,7 @@ id: CMPO:0000115
 name: peripheral cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton's position is at the edge or boundary of a related entity." []
 subset: cmpo
+is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "peripheral cytoskeleton" xsd:string
 
@@ -1106,6 +1108,7 @@ id: CMPO:0000149
 name: radial cytoskeleton phenotype
 def: "A phenotype observation where the cytoskeleton is symmetric, having equal proportions around a central point or axis." []
 subset: cmpo
+is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000065 ! cell component position phenotype
 property_value: prefLabel "radial cytoskeleton" xsd:string
 
@@ -2052,7 +2055,7 @@ id: CMPO:0000283
 name: actin cytoskeleton phenotype
 def: "A phenotype observation at the level of the actin cytoskeleton, the part of the cytoskeleton (the internal framework of a cell) composed of actin and associated proteins. Includes actin cytoskeleton-associated complexes." []
 subset: cmpo
-is_a: CMPO:0000259 ! cellular component phenotype
+is_a: CMPO:0000020 ! cytoskeletal phenotype
 property_value: prefLabel "actin cytoskeleton" xsd:string
 
 [Term]
@@ -2762,6 +2765,7 @@ id: CMPO:0000368
 name: microtubule cytoskeleton morphology phenotype
 def: "A phenotype observation at the level of the microtubule cytoskeleton relating to the components shape, size or structure" []
 subset: cmpo
+is_a: CMPO:0000020 ! cytoskeletal phenotype
 is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "microtubule cytoskeleton morphology" xsd:string
 
