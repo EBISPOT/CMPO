@@ -21,7 +21,7 @@ subsetdef: termgenie_unvetted "Terms created by TermGenie that do not follow a t
 subsetdef: virus_checked "Viral overhaul terms"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 ontology: http://www.ebi.ac.uk/cmpo/cmpo.owl/subsets/cmpo
-owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000143> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002092> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>) <http://www.ebi.ac.uk/cmpo/CMPO_0000140>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000158> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000089>)))\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000369> \"CMPO:0000368\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000050> \"part_of\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000381> \"CMPO:0000380\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000385> \"CMPO:0000384\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000070> \"towards\"^^xsd:string)\n)
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000143> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002092> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>) <http://www.ebi.ac.uk/cmpo/CMPO_0000140>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000144> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000088>)))\nEquivalentClasses(<http://www.ebi.ac.uk/cmpo/CMPO_0000158> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000051> ObjectIntersectionOf(<http://www.ebi.ac.uk/cmpo/CMPO_0000141> <http://www.ebi.ac.uk/cmpo/CMPO_0000089>)))\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000369> \"CMPO:0000368\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000425> \"CMPO_0000425\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000050> \"part_of\"^^xsd:string)\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000381> \"CMPO:0000380\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://www.ebi.ac.uk/cmpo/CMPO_0000385> \"CMPO:0000384\")\nAnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/BFO_0000070> \"towards\"^^xsd:string)\n)
 
 [Term]
 id: CMPO:0000002
@@ -3289,6 +3289,31 @@ subset: cmpo
 is_a: CMPO:0000304 ! cell cycle arrested phenotype
 is_a: CMPO:0000423 ! mitotic telophase phenotype
 property_value: prefLabel "telophase arrested" xsd:string
+
+[Term]
+id: CMPO:0000425
+name: protein localized in centrosome phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a centrosome." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localisation in centrosome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised in centrosome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised to centrosome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localization in centrosome" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000363 ! protein localization to cellular component phenotype
+property_value: IAO:0000119 PMID:23086237 xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000426
+name: protein localized in nuclear pore phenotype
+def: "A phenotype observation in which a protein is observed to be localized within a nuclear pore." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+synonym: "protein localisation in nuclear pore" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised in nuclear pore" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localised to nuclear pore" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+synonym: "protein localization in nuclear pore" EXACT [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+is_a: CMPO:0000032 ! cell membrane organisation phenotype
+is_a: CMPO:0000398 ! protein localized in nucleus phenotype
+property_value: IAO:0000119 PMID:23845946 xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
 
 [Typedef]
 id: BFO:0000050
