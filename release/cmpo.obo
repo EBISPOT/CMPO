@@ -44,6 +44,7 @@ name: cell morphology phenotype
 def: "A collection of qualities that inhere in the whole cell relating to the cell's shape, size or structure" []
 subset: cmpo
 is_a: CMPO:0000258 ! single cell phenotype
+is_a: CMPO:0000303 ! cell component morphology phenotype
 property_value: prefLabel "cell morphology" xsd:string
 
 [Term]
@@ -323,6 +324,7 @@ def: "A phenotype observation at the level of the cell shape where the cell is a
 comment: dispersed outline with blobby protrusions
 subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000012 ! cell component structure phenotype
 property_value: prefLabel "apoptotic cell shape" xsd:string
 
 [Term]
@@ -483,11 +485,11 @@ is_a: CMPO:0000043 ! decreased cell component number phenotype
 
 [Term]
 id: CMPO:0000071
-name: cells with projections
-def: "Population of cells with protrusions" []
+name: cell with projections
+def: "Single cell with protrusions" []
 subset: cmpo
-synonym: "cells with protrusions" EXACT []
-is_a: CMPO:0000002 ! cell population phenotype
+synonym: "cell with protrusions" EXACT []
+is_a: CMPO:0000005 ! cell morphology phenotype
 property_value: IAO:0000119 PMID:20531400 xsd:string
 
 [Term]
@@ -535,6 +537,7 @@ def: "A phenotype observation at the level of the cell shape where the cell is e
 subset: cmpo
 synonym: "bipolar cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: prefLabel "elongated cell" xsd:string
 
 [Term]
@@ -697,6 +700,7 @@ id: CMPO:0000103
 name: phagosomes absent phenotype
 def: "A phenotype observation where phagosomes are absent" []
 subset: cmpo
+is_a: CMPO:0000102 ! phagosomes phenotype
 is_a: CMPO:0000159 ! absence of cellular component phenotype
 property_value: prefLabel "phagosomes absent" xsd:string
 
@@ -816,6 +820,7 @@ name: abnormal cell shape phenotype
 def: "A phenotype observation at the level of the cell shape where the shape is abnormal" []
 subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: prefLabel "abnormal cell shape" xsd:string
 
 [Term]
@@ -837,6 +842,7 @@ synonym: "circular cell" EXACT []
 synonym: "low eccentricity cell" EXACT []
 synonym: "spherical cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "round cell" xsd:string
 
@@ -863,6 +869,7 @@ def: "A phenotype observation at the level of the cell shape where the cell is a
 subset: cmpo
 synonym: "triangular shaped cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 
 [Term]
 id: CMPO:0000122
@@ -871,6 +878,7 @@ def: "A phenotype observation at the level of the cell shape where the cell has 
 subset: cmpo
 synonym: "arrow shaped cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: prefLabel "triangular shaped cell" xsd:string
 
 [Term]
@@ -922,16 +930,18 @@ synonym: "big cell" EXACT []
 synonym: "increased cell area" EXACT []
 synonym: "large cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000186 ! increased cell component size phenotype
 property_value: IAO:0000119 PMID:20531400 xsd:string
 property_value: prefLabel "increased cell size" xsd:string
 
 [Term]
 id: CMPO:0000129
-name: decreased cell size phenoptype
+name: decreased cell size phenotype
 def: "A phenotype observation at the level of the cell size where a cell is smaller with respect to normal/wild-type" []
 subset: cmpo
 synonym: "small cell" EXACT []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000187 ! decreased cell component size phenotype
 
 [Term]
 id: CMPO:0000130
@@ -1543,6 +1553,7 @@ id: CMPO:0000212
 name: abnormal cell cycle phenotype
 def: "A phenotype where the cell cycle is in some way abnormal" []
 subset: cmpo
+synonym: "altered level of protein in cell nucleus" EXACT []
 is_a: CMPO:0000029 ! cell cycle phenotype
 property_value: prefLabel "abnormal cell cycle" xsd:string
 
@@ -1840,7 +1851,7 @@ id: CMPO:0000258
 name: single cell phenotype
 def: "A quality that inherers in a single or whole cell." []
 subset: cmpo
-is_a: CMPO:0000003 ! cellular phenotype
+is_a: CMPO:0000259 ! cellular component phenotype
 property_value: prefLabel "single cell phenotype" xsd:string
 
 [Term]
@@ -1916,6 +1927,7 @@ def: "A phenotype observation at the level of the cell shape where the cell has 
 subset: cmpo
 synonym: "spiky cell" BROAD []
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "star shaped cell" xsd:string
 
@@ -1925,6 +1937,7 @@ name: spiny shaped cell phenotype
 def: "A phenotype observation at the level of the cell shape where the cell has a star-like or bristly shape" []
 subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: IAO:0000119 PMID:21893601 xsd:string
 property_value: prefLabel "spiny shaped cell" xsd:string
 
@@ -2486,6 +2499,7 @@ subset: cmpo
 synonym: "no NF-kB oscillation phenotype" RELATED []
 is_a: CMPO:0000040 ! regulation of signal transduction phenotype
 is_a: CMPO:0000356 ! cell component localization phenotype
+is_a: CMPO:0000435 ! negative regulation of protein import into nucleus phenotype
 property_value: IAO:0000116 "increased number of oscillations; the amplitude of the second and third peak is increased and nuclear translocation responses occur at increased intervals." xsd:string
 property_value: IAO:0000119 PMID:23300644 xsd:string
 property_value: prefLabel "cytoplasmic sequestering of NF-kappaB" xsd:string
@@ -2497,6 +2511,7 @@ def: "A phenotype observation where the release of NF-kappaB from specific molec
 subset: cmpo
 synonym: "different NF-kB oscillation phenotype" RELATED []
 is_a: CMPO:0000040 ! regulation of signal transduction phenotype
+is_a: CMPO:0000436 ! positive regulation of protein import into nucleus phenotype
 property_value: IAO:0000116 "contains all cases that are significantly different from the rest, but don't share any clear commonalities. NF-kB oscillation patterns are not synchronized within a cell population, oscillation amplitude and frequency follow erratic patterns" xsd:string
 property_value: IAO:0000119 PMID:23300644 xsd:string
 property_value: prefLabel "abnormal release of cytoplasmic sequestered NF-kappaB" xsd:string
@@ -2698,6 +2713,7 @@ name: increased amount of DNA
 def: "A phenotype observation where a cell has an increased amount of DNA" []
 subset: cmpo
 is_a: CMPO:0000042 ! increased cell component number phenotype
+is_a: CMPO:0000176 ! cell DNA phenotype
 property_value: prefLabel "increased amount of DNA" xsd:string
 
 [Term]
@@ -2746,6 +2762,7 @@ synonym: "sigmoid cell" EXACT []
 synonym: "z-shaped cell" EXACT []
 xref: FYPO:0002760
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: IAO:0000119 "PMID: 25373780" xsd:string
 property_value: prefLabel "S-shaped cell" xsd:string
 
@@ -2757,6 +2774,7 @@ subset: cmpo
 synonym: "wide cell" BROAD []
 xref: FYPO:0002106
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
 property_value: IAO:0000119 "PMID: 25373780" xsd:string
 property_value: prefLabel "Stubby cell" xsd:string
 
@@ -2892,6 +2910,7 @@ name: cell component organisation phenotype
 def: "A phenotype obesrvation relating to the orgnaistation of cellular componets in the cell." []
 subset: cmpo
 is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000012 ! cell component structure phenotype
 property_value: prefLabel "cell component organisation" xsd:string
 
 [Term]
@@ -3314,6 +3333,122 @@ synonym: "protein localization in nuclear pore" EXACT [] {http://www.co-ode.org/
 is_a: CMPO:0000032 ! cell membrane organisation phenotype
 is_a: CMPO:0000398 ! protein localized in nucleus phenotype
 property_value: IAO:0000119 PMID:23845946 xsd:string {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+
+[Term]
+id: CMPO:0000427
+name: kinetochore phenotype
+def: "A collection of qualities that inhere in  any constituent part of the kinetochore, a multisubunit complex that is located at the centromeric region of DNA and provides an attachment point for the spindle microtubules." []
+subset: cmpo
+is_a: CMPO:0000150 ! organelle phenotype
+property_value: prefLabel "kinetochore phenotype" xsd:string
+
+[Term]
+id: CMPO:0000428
+name: fan-shaped cell phenotype
+def: "A phenotype observation at the level of the cell shape where the cell is fan-shaped" []
+subset: cmpo
+is_a: CMPO:0000005 ! cell morphology phenotype
+is_a: CMPO:0000011 ! cell component shape phenotype
+property_value: prefLabel "fan-shaped cell" xsd:string
+
+[Term]
+id: CMPO:0000429
+name: cell polypeptide phenotype
+def: "A phenotype observation at the level of the cell protein" []
+subset: cmpo
+synonym: "cell protein phenotype" EXACT []
+is_a: CMPO:0000175 ! molecular component phenotype
+property_value: prefLabel "cell protein phenotype" xsd:string
+
+[Term]
+id: CMPO:0000430
+name: altered level of substance in cell
+def: " A cell phenotype in which the amount of a specific substance measured in a cell differs from normal." []
+subset: cmpo
+xref: FYPO:0000989
+xref: PomBase:mah
+is_a: CMPO:0000258 ! single cell phenotype
+property_value: prefLabel "altered level of substance in cell" xsd:string
+
+[Term]
+id: CMPO:0000431
+name: altered level of polypetide in cell
+def: " A cell phenotype in which the amount of polypetide measured in a cell differs from normal." []
+subset: cmpo
+is_a: CMPO:0000429 ! cell polypeptide phenotype
+is_a: CMPO:0000430 ! altered level of substance in cell
+property_value: prefLabel "altered level of polypeptide in cell" xsd:string
+
+[Term]
+id: CMPO:0000432
+name: altered level of polypetide in cell nucleus
+def: " A cell phenotype in which the amount of polypetide measured in a cell nucleus differs from normal." []
+subset: cmpo
+synonym: "altered level of protein in cell nucleus" EXACT []
+is_a: CMPO:0000024 ! nuclear phenotype
+is_a: CMPO:0000431 ! altered level of polypetide in cell
+property_value: prefLabel "altered level of substance in cell nucleus" xsd:string
+
+[Term]
+id: CMPO:0000433
+name: increased level of polypetide in cell nucleus
+def: " A cell phenotype in which the amount of polypetide measured in a cell nucleus increases from normal." []
+subset: cmpo
+synonym: "increased level of protein in cell nucleus" EXACT []
+is_a: CMPO:0000432 ! altered level of polypetide in cell nucleus
+property_value: prefLabel "incressed level of polypetide in cell nucleus" xsd:string
+
+[Term]
+id: CMPO:0000434
+name: decreased level of polypetide in cell nucleus
+def: " A cell phenotype in which the amount of polypetide measured in a cell nucleus descreases from normal." []
+subset: cmpo
+synonym: "decreased level of protein in cell nucleus" EXACT []
+is_a: CMPO:0000432 ! altered level of polypetide in cell nucleus
+property_value: prefLabel "descreased level of polypetide in cell nucleus" xsd:string
+
+[Term]
+id: CMPO:0000435
+name: negative regulation of protein import into nucleus phenotype
+def: "A phenotype observation where any process that stops, prevents, or reduces the frequency, rate or extent of the movement of proteins from the cytoplasm into the nucleus." []
+subset: cmpo
+is_a: CMPO:0000334 ! regulation of process phenotype
+property_value: prefLabel "regulation of process phenotype" xsd:string
+
+[Term]
+id: CMPO:0000436
+name: positive regulation of protein import into nucleus phenotype
+def: "A phenotype observation where any process that starts or increases the frequency, rate or extent of the movement of proteins from the cytoplasm into the nucleus." []
+subset: cmpo
+is_a: CMPO:0000334 ! regulation of process phenotype
+property_value: prefLabel "positive regulation of protein import into nucleus" xsd:string
+
+[Term]
+id: CMPO:0000437
+name: abnormal mitotic cell cycle phase phenotype
+def: "A phenotype where the mitotic cell cycle phase is abnormal" []
+subset: cmpo
+is_a: CMPO:0000090 ! cell cycle phase phenotype
+is_a: CMPO:0000194 ! mitotic process phenotype
+property_value: prefLabel "abnormal mitotic cell cycle phase" xsd:string
+
+[Term]
+id: CMPO:0000438
+name: abnormal microtubule cytoskeleton morphology during mitotic interphase
+def: "A physical cellular phenotype  in interphase of the mitotic cell cycle where the the size, shape, or structure of the microtubule cytoskeleton is abnormal." []
+subset: cmpo
+xref: FYPO:0003625
+is_a: CMPO:0000369 ! microtubule cytoskeleton morphology during mitotic interphase
+property_value: IAO:0000119 "PMID: 25373780 " xsd:string
+property_value: prefLabel "abnormal microtubule cytoskeleton morphology during mitotic interphase" xsd:string
+
+[Term]
+id: CMPO:0000439
+name: absence of protein localized in bud neck phenotype
+def: "A phenotype observation in which a protein is not localized within a cellular bud neck." [] {http://www.co-ode.org/patterns#createdBy="http://www.ebi.ac.uk/ontology/webulous#OPPL_pattern"}
+subset: cmpo
+is_a: CMPO:0000315 ! absence of cell process phenotype
+is_a: CMPO:0000356 ! cell component localization phenotype
 
 [Typedef]
 id: BFO:0000050
