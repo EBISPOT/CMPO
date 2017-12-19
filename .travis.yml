@@ -5,6 +5,7 @@ jdk:
   - oraclejdk8
 
 before_script:
+  - mkdir src/ontology/reports
   - export PATH=$PATH:$PWD/bin
   - chmod +x bin/*
 

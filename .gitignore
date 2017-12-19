@@ -1,7 +1,5 @@
 *.tmp
-reports
 src/ontology/oort
-src/ontology/reports
 src/ontology/imports
 src/ontology/mirror/*
 src/ontology/cmpo.obo
