@@ -1,0 +1,26 @@
+## REMEMBER TO SET UP YOUR GITHUB REPO FOR TRAVIS
+## Go to: https://travis-ci.org/obophenotype for details
+language: java
+jdk:
+  - oraclejdk8
+
+before_script:
+  - export PATH=$PATH:$PWD/bin
+  - chmod +x bin/*
+
+# command to run tests
+script: cd src/ontology && make test
+
+#after_success:
+#  coveralls
+
+# whitelist
+branches:
+  only:
+    - master
+    - test-travis
+
+### UNCOMMENT THIS AND ADD YOUR DETAILS:
+notifications:
+  email:
+    - jupp@ebi.ac.uk
