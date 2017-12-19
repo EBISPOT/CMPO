@@ -1,7 +1,9 @@
-[![DOI](https://zenodo.org/badge/13996/obophenotype/cmpo.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cmpo)
+[![Build Status](https://travis-ci.org/EBISPOT/CMPO.svg?branch=master)](https://travis-ci.org/EBISPOT/CMPO)
 
 CMPO
 ====
+
+![alt text](cmpo.png?raw=true)
 
 The Cellular Microscopy Phenotype Ontology (CMPO) is a species-neutral ontology for describing general phenotypic observations relating to the whole cell, cellular components, cellular processes and cell populations. CMPO is an application ontology developed in OWL that contains precomposed phenotypes descriptions that are defined using the Gene Ontology (GO) and the Phenotype Trait Ontology (PATO).
 
