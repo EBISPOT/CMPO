@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EBISPOT/cmpo.svg?branch=master)](https://travis-ci.org/EBISPOT/cmpo)
+[![Build Status](https://travis-ci.org/EBISPOT/CMPO.svg?branch=master)](https://travis-ci.org/EBISPOT/CMPO)
 
 CMPO
 ====
