@@ -1,5 +1,20 @@
+*.tmp
+reports
+src/ontology/oort
+src/ontology/reports
+src/ontology/imports
+src/ontology/mirror/*
+src/ontology/cmpo.obo
+src/ontology/cmpo.owl
+src/ontology/cmpo-simple.owl
+semantic.cache
 .DS_Store
+*~
 oldfiles*
 Dropbox - Shortcut.lnk
 patterns.docx
-imports/*
+.dropbox
+cmpo-composer
+paper-stats.xlsx
+webulous_submissions
+zooma

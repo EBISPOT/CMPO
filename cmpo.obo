@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: http://www.ebi.ac.uk/cmpo/releases/2017-12-18/cmpo.obo
+data-version: http://www.ebi.ac.uk/cmpo/releases/2017-12-19/cmpo.obo
 subsetdef: cmpo "CMPO subset"
 subsetdef: goantislim_grouping "Grouping classes that can be excluded"
 subsetdef: gocheck_do_not_annotate "Term not to be used for direct annotation"

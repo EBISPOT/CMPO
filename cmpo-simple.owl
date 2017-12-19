@@ -13,7 +13,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/">
     <owl:Ontology rdf:about="http://www.ebi.ac.uk/cmpo/cmpo-simple.owl">
-        <owl:versionIRI rdf:resource="http://www.ebi.ac.uk/cmpo/releases/2017-12-18/cmpo-simple.owl"/>
+        <owl:versionIRI rdf:resource="http://www.ebi.ac.uk/cmpo/releases/2017-12-19/cmpo-simple.owl"/>
     </owl:Ontology>
     
 

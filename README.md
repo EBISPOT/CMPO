@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/13996/obophenotype/cmpo.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cmpo)
+
 CMPO
 ====
 
@@ -22,11 +24,20 @@ Apache License, version 2.0.
 
 ### GitHub Files ###
 
-* __release/cmpo.obo__ 
+* __cmpo.obo__ 
  * A simple OBO formatted released of CMPO
-* __release/cmpo-simple.owl__ 
+* __cmpo-simple.owl__ 
  * A simple OWL formatted version of CMPO, pre-reasoned and exludes logical axioms. 
-* __release/cmpo.owl__ 
+* __cmpo.owl__ 
  * An OWL formatted version of CMPO, pre-reasoned and includes logial axioms. (GO/PATO terms imported using MIREOT)
-* __src/cmpo.owl__ 
+* __src/ontology/cmpo-edit.owl__ 
  * This is the source file for CMPO editors. It includes all logical axioms and imports the Gene Ontology and PATO. (NOTE: If you unpack the imports.tar.gz file and open cmpo.owl in Protege, the Protege will import GO and PATO from your file system rather than pulling form the web)
+
+### Previous releases
+
+Previous releases are available from this repository, see the [releases](releases tab).
+Editors of this ontology should use the edit version, [src/ontology/cmpo-edit.owl](src/ontology/cmpo-edit.owl)
+
+## Acknowledgements
+
+This ontology repository was created using the [ontology starter kit](https://github.com/INCATools/ontology-starter-kit)
