@@ -3639,7 +3639,7 @@ name: decreased nucleus to cell area ratio
 def: "A population of cells where there is is an increased number of cells with a decreased nucleus to cell area ratio" []
 subset: cmpo
 is_a: CMPO:0000163 ! cell population phenotype by morphology
-property_value: prefLabel "increased nucleus to cell area ratio" xsd:string
+property_value: prefLabel "decreased nucleus to cell area ratio" xsd:string
 
 [Term]
 id: CMPO:0000458
