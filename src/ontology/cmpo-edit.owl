@@ -17178,7 +17178,7 @@ Micronucleation, i.e. presumably nuclear envelopes around single chromosomes or 
         <oboInOwl:id>CMPO:0000457</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/subset/cmpo#cmpo"/>
         <rdfs:label>decreased nucleus to cell area ratio</rdfs:label>
-        <skos:prefLabel xml:lang="en">increased nucleus to cell area ratio</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">decreased nucleus to cell area ratio</skos:prefLabel>
     </owl:Class>
     
 
